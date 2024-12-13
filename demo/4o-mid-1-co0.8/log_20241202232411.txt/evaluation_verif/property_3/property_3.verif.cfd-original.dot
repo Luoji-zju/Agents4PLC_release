@@ -1,0 +1,175 @@
+digraph G {
+	subgraph cluster__global1188006919 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global1188006919 [label="_global"];
+		_global1188006919 -> instance622955085;
+		instance622955085 [label = "(F) instance : _global/FB_Fibonacci", fillcolor="white" ];
+		_global1188006919 -> verificationLoop861339480;
+		verificationLoop861339480 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global1188006919 -> EoC1783296129;
+		EoC1783296129 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global1188006919 -> BoC997657863;
+		BoC997657863 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global1188006919 -> FB_Fibonacci190245996;
+		subgraph cluster_FB_Fibonacci190245996 {
+			node [shape="folder", style="filled"];
+			//label="FB_Fibonacci";
+			FB_Fibonacci190245996 [label="FB_Fibonacci"];
+			FB_Fibonacci190245996 -> N1238292935;
+			N1238292935 [label = "(F) N : signed int16", fillcolor="white" ];
+			FB_Fibonacci190245996 -> O929757060;
+			O929757060 [label = "(F) O : signed int16", fillcolor="white" ];
+			FB_Fibonacci190245996 -> F1457684981;
+			F1457684981 [label = "(F) F1 : signed int16", fillcolor="white" ];
+			FB_Fibonacci190245996 -> F2797374927;
+			F2797374927 [label = "(F) F2 : signed int16", fillcolor="white" ];
+			FB_Fibonacci190245996 -> CNT431996456;
+			CNT431996456 [label = "(F) CNT : signed int16", fillcolor="white" ];
+			FB_Fibonacci190245996 -> Temp364998425;
+			Temp364998425 [label = "(F) Temp : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_FB_Fibonacci190245996 [
+				label="ANNOTATIONS\lN : direction=INPUT\lN : PLC type=INT\lO : direction=OUTPUT\lO : PLC type=INT\lF1 : direction=LOCAL\lF1 : PLC type=INT\lF2 : direction=LOCAL\lF2 : PLC type=INT\lCNT : direction=LOCAL\lCNT : PLC type=INT\lTemp : direction=LOCAL\lTemp : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_FB_Fibonacci190245996 [
+				label="INITIAL\lN := 0\lO := 0\lF1 := 1\lF2 := 1\lCNT := 0\lTemp := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1188006919 -> Main925455585;
+		subgraph cluster_Main925455585 {
+			node [shape="folder", style="filled"];
+			//label="Main";
+			Main925455585 [label="Main"];
+			Main925455585 -> InputN1736230120;
+			InputN1736230120 [label = "(F) InputN : signed int16", fillcolor="white" ];
+			Main925455585 -> Result1035062904;
+			Result1035062904 [label = "(F) Result : signed int16", fillcolor="white" ];
+			Main925455585 -> fbFibonacci969407243;
+			fbFibonacci969407243 [label = "(F) fbFibonacci : _global/FB_Fibonacci", fillcolor="white" ];
+			
+			annotations_pseudonode_Main925455585 [
+				label="ANNOTATIONS\lInputN : direction=LOCAL\lInputN : PLC type=INT\lResult : direction=LOCAL\lResult : PLC type=INT\lfbFibonacci : direction=LOCAL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_Main925455585 [
+				label="INITIAL\lInputN := 5\lResult := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1188006919 -> VerificationLoopDS1542221;
+		subgraph cluster_VerificationLoopDS1542221 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS1542221 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS1542221 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS1542221 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global1188006919 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global1188006919 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterFB_Fibonacci {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="FB_Fibonacci : FB_Fibonacci";
+		
+		annotations_pseudonode_FB_Fibonacci [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_FB_Fibonacci [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_FB_Fibonacci [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l2_FB_Fibonacci [label="l2", color="black", fillcolor="white", shape="ellipse"];
+		l3_FB_Fibonacci [label="l3", color="black", fillcolor="white", shape="ellipse"];
+		l4_FB_Fibonacci [label="l4", color="black", fillcolor="white", shape="ellipse"];
+		l5_FB_Fibonacci [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l6_FB_Fibonacci [label="l6", color="black", fillcolor="white", shape="ellipse"];
+		l7_FB_Fibonacci [label="l7", color="black", fillcolor="white", shape="ellipse"];
+		l8_FB_Fibonacci [label="l8", color="black", fillcolor="white", shape="ellipse"];
+		l9_FB_Fibonacci [label="l9", color="black", fillcolor="white", shape="ellipse"];
+		l10_FB_Fibonacci [label="l10", color="black", fillcolor="white", shape="ellipse"];
+		l11_FB_Fibonacci [label="l11", color="black", fillcolor="white", shape="ellipse"];
+		l12_FB_Fibonacci [label="l12", color="black", fillcolor="white", shape="ellipse"];
+		l13_FB_Fibonacci [label="l13", color="black", fillcolor="white", shape="ellipse"];
+		l14_FB_Fibonacci [label="l14", color="black", fillcolor="white", shape="ellipse"];
+		l15_FB_Fibonacci [label="l15", color="black", fillcolor="white", shape="ellipse"];
+		l16_FB_Fibonacci [label="l16", color="black", fillcolor="white", shape="ellipse"];
+		l17_FB_Fibonacci [label="l17", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_FB_Fibonacci -> l1_FB_Fibonacci [color="black", label="[(N <= 2)]"];
+		l1_FB_Fibonacci -> l2_FB_Fibonacci [color="black", label="O := 1"];
+		init_FB_Fibonacci -> l3_FB_Fibonacci [color="black", label="[ELSE]"];
+		l4_FB_Fibonacci -> l5_FB_Fibonacci [color="black", label="Temp := (F1 + F2)"];
+		l5_FB_Fibonacci -> l6_FB_Fibonacci [color="black", label="[(Temp > 32767)]"];
+		l6_FB_Fibonacci -> l7_FB_Fibonacci [color="black", label="O := 32767"];
+		l5_FB_Fibonacci -> l9_FB_Fibonacci [color="black", label="[ELSE]"];
+		l8_FB_Fibonacci -> l10_FB_Fibonacci [color="black", label=""];
+		l9_FB_Fibonacci -> l10_FB_Fibonacci [color="black", label=""];
+		l10_FB_Fibonacci -> l11_FB_Fibonacci [color="black", label="F1 := F2"];
+		l11_FB_Fibonacci -> l12_FB_Fibonacci [color="black", label="F2 := Temp"];
+		l12_FB_Fibonacci -> l13_FB_Fibonacci [color="black", label="O := Temp"];
+		l3_FB_Fibonacci -> l15_FB_Fibonacci [color="black", label="CNT := 3"];
+		l15_FB_Fibonacci -> l4_FB_Fibonacci [color="black", label="[(CNT <= N)]"];
+		l15_FB_Fibonacci -> l14_FB_Fibonacci [color="black", label="[(! (CNT <= N))]"];
+		l13_FB_Fibonacci -> l16_FB_Fibonacci [color="black", label="CNT := (CNT + 1)"];
+		l16_FB_Fibonacci -> l15_FB_Fibonacci [color="black", label=""];
+		l2_FB_Fibonacci -> l17_FB_Fibonacci [color="black", label=""];
+		l14_FB_Fibonacci -> l17_FB_Fibonacci [color="black", label=""];
+		l7_FB_Fibonacci -> l17_FB_Fibonacci [color="black", label=""];
+	}
+	subgraph clusterMain {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="Main : Main";
+		
+		annotations_pseudonode_Main [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_Main [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_Main [label="l1", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_Main -> l1_Main [color="black", label="CALL: FB_Fibonacci:fbFibonacci(\l   IN: N := InputN\l   OUT: Result := O\l)\l"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/N := NONDETERMINISTIC of signed int16\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: FB_Fibonacci:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

@@ -1,0 +1,62 @@
+-- Model
+MODULE main
+	VAR
+		loc : {init_pv, end, loop_start, prepare_BoC, l_main_call, callEnd, prepare_EoC, verificationLoop_VerificationLoop_l8};
+		instance_aaa : signed word[16]; -- frozen
+		instance_bbb : signed word[16]; -- frozen
+		instance_OUT : signed word[16]; -- frozen
+		EoC : boolean; -- frozen
+		BoC : boolean; -- frozen
+		-- Random vars for nondeterministic INTs
+		__random_instance_aaa : signed word[16];
+		__random_instance_bbb : signed word[16];
+	
+	ASSIGN
+		-- CFA structure (loc)
+		init(loc) := init_pv;
+		next(loc) := case
+			loc = init_pv & (TRUE) : loop_start;
+			loc = loop_start & (TRUE) : prepare_BoC;
+			loc = prepare_BoC & (TRUE) : l_main_call;
+			loc = callEnd & (TRUE) : prepare_EoC;
+			loc = prepare_EoC & (TRUE) : loop_start;
+			loc = l_main_call & ((instance_aaa) = (instance_bbb)) : verificationLoop_VerificationLoop_l8;
+			loc = l_main_call & ((!((instance_aaa) = (instance_bbb))) & ((instance_aaa) > (instance_bbb))) : verificationLoop_VerificationLoop_l8;
+			loc = l_main_call & ((!((instance_aaa) = (instance_bbb))) & (!((!((instance_aaa) = (instance_bbb))) & ((instance_aaa) > (instance_bbb))))) : verificationLoop_VerificationLoop_l8;
+			loc = verificationLoop_VerificationLoop_l8 & (TRUE) : callEnd;
+			TRUE: loc;
+		esac;
+		
+		init(instance_aaa) := 0sd16_0;
+		next(instance_aaa) := case
+			loc = loop_start & (TRUE) : __random_instance_aaa; -- Nondeterministic
+			loc = l_main_call & ((instance_aaa) = (instance_bbb)) : (instance_bbb) + (0sd16_1);
+			loc = l_main_call & ((!((instance_aaa) = (instance_bbb))) & (!((!((instance_aaa) = (instance_bbb))) & ((instance_aaa) > (instance_bbb))))) : (instance_aaa) + (0sd16_1);
+			TRUE  : instance_aaa;
+		esac;
+		init(instance_bbb) := 0sd16_0;
+		next(instance_bbb) := case
+			loc = loop_start & (TRUE) : __random_instance_bbb; -- Nondeterministic
+			loc = l_main_call & ((!((instance_aaa) = (instance_bbb))) & ((instance_aaa) > (instance_bbb))) : (instance_bbb) + (0sd16_1);
+			TRUE  : instance_bbb;
+		esac;
+		init(instance_OUT) := 0sd16_0;
+		next(instance_OUT) := case
+			loc = verificationLoop_VerificationLoop_l8 & (TRUE) : (instance_aaa) - (instance_bbb);
+			TRUE  : instance_OUT;
+		esac;
+		init(EoC) := FALSE;
+		next(EoC) := case
+			loc = callEnd & (TRUE) : TRUE;
+			loc = prepare_EoC & (TRUE) : FALSE;
+			TRUE  : EoC;
+		esac;
+		init(BoC) := FALSE;
+		next(BoC) := case
+			loc = loop_start & (TRUE) : TRUE;
+			loc = prepare_BoC & (TRUE) : FALSE;
+			TRUE  : BoC;
+		esac;
+
+-- Requirement
+CTLSPEC AG((EoC) -> ((instance_OUT) = ((instance_aaa) - (instance_bbb))));

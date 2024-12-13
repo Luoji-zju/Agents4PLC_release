@@ -1,0 +1,1 @@
+-- specification AG (EoC -> ((instance_i >= 0sd16_1 & instance_i <= 0sd16_5) -> instance_o = instance_i * instance_i))  is true

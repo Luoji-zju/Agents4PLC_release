@@ -1,0 +1,62 @@
+-- Model
+MODULE main
+	VAR
+		loc : {init_pv, end, loop_start, prepare_BoC, l_main_call, prepare_EoC, verificationLoop_VerificationLoop_l9, verificationLoop_VerificationLoop_l13};
+		instance_latency_xx_ms : signed word[16];
+		instance_min_latency_ms : signed word[16]; -- frozen
+		instance_max_latency_ms : signed word[16]; -- frozen
+		EoC : boolean; -- frozen
+		BoC : boolean; -- frozen
+		-- Random vars for nondeterministic INTs
+		__random_instance_latency_xx_ms : signed word[16];
+		__random_instance_max_latency_ms : signed word[16];
+		__random_instance_min_latency_ms : signed word[16];
+	
+	ASSIGN
+		-- CFA structure (loc)
+		init(loc) := init_pv;
+		next(loc) := case
+			loc = init_pv & (TRUE) : loop_start;
+			loc = loop_start & (TRUE) : prepare_BoC;
+			loc = prepare_BoC & (TRUE) : l_main_call;
+			loc = verificationLoop_VerificationLoop_l13 & (TRUE) : prepare_EoC;
+			loc = prepare_EoC & (TRUE) : loop_start;
+			loc = l_main_call & (((instance_latency_xx_ms) < (instance_min_latency_ms)) | ((instance_min_latency_ms) < (0sd16_0))) : verificationLoop_VerificationLoop_l9;
+			loc = l_main_call & (!(((instance_latency_xx_ms) < (instance_min_latency_ms)) | ((instance_min_latency_ms) < (0sd16_0)))) : verificationLoop_VerificationLoop_l9;
+			loc = verificationLoop_VerificationLoop_l9 & (((instance_latency_xx_ms) > (instance_max_latency_ms)) | ((instance_max_latency_ms) < (0sd16_0))) : verificationLoop_VerificationLoop_l13;
+			loc = verificationLoop_VerificationLoop_l9 & (!(((instance_latency_xx_ms) > (instance_max_latency_ms)) | ((instance_max_latency_ms) < (0sd16_0)))) : verificationLoop_VerificationLoop_l13;
+			TRUE: loc;
+		esac;
+		
+		init(instance_latency_xx_ms) := 0sd16_0;
+		next(instance_latency_xx_ms) := case
+			loc = loop_start & (TRUE) : __random_instance_latency_xx_ms; -- Nondeterministic
+			TRUE  : instance_latency_xx_ms;
+		esac;
+		init(instance_min_latency_ms) := 0sd16_0;
+		next(instance_min_latency_ms) := case
+			loc = loop_start & (TRUE) : __random_instance_min_latency_ms; -- Nondeterministic
+			loc = l_main_call & (((instance_latency_xx_ms) < (instance_min_latency_ms)) | ((instance_min_latency_ms) < (0sd16_0))) : instance_latency_xx_ms;
+			TRUE  : instance_min_latency_ms;
+		esac;
+		init(instance_max_latency_ms) := 0sd16_0;
+		next(instance_max_latency_ms) := case
+			loc = loop_start & (TRUE) : __random_instance_max_latency_ms; -- Nondeterministic
+			loc = verificationLoop_VerificationLoop_l9 & (((instance_latency_xx_ms) > (instance_max_latency_ms)) | ((instance_max_latency_ms) < (0sd16_0))) : instance_latency_xx_ms;
+			TRUE  : instance_max_latency_ms;
+		esac;
+		init(EoC) := FALSE;
+		next(EoC) := case
+			loc = verificationLoop_VerificationLoop_l13 & (TRUE) : TRUE;
+			loc = prepare_EoC & (TRUE) : FALSE;
+			TRUE  : EoC;
+		esac;
+		init(BoC) := FALSE;
+		next(BoC) := case
+			loc = loop_start & (TRUE) : TRUE;
+			loc = prepare_BoC & (TRUE) : FALSE;
+			TRUE  : BoC;
+		esac;
+
+-- Requirement
+CTLSPEC AG((EoC) -> ((instance_min_latency_ms) <= (instance_max_latency_ms)));

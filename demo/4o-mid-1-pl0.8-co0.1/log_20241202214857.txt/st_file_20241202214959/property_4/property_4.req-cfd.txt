@@ -1,0 +1,60 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {BinaryLogicExpression operator=AND}
+ │   │   ├──leftOperand: 
+ │   │   │  {FieldRef frozen=false field:EoC}
+ │   │   │   └──prefix: <null>
+ │   │   └──rightOperand: 
+ │   │      {ComparisonExpression operator=LESS_EQ}
+ │   │       ├──leftOperand: 
+ │   │       │  {FieldRef frozen=false field:input1}
+ │   │       │   └──prefix: 
+ │   │       │      {FieldRef frozen=false field:instance}
+ │   │       │       └──prefix: <null>
+ │   │       ├──rightOperand: 
+ │   │       │  {BinaryArithmeticExpression operator=PLUS}
+ │   │       │   ├──leftOperand: 
+ │   │       │   │  {BinaryArithmeticExpression operator=PLUS}
+ │   │       │   │   ├──leftOperand: 
+ │   │       │   │   │  {BinaryArithmeticExpression operator=MULTIPLICATION}
+ │   │       │   │   │   ├──leftOperand: 
+ │   │       │   │   │   │  {FieldRef frozen=false field:input3}
+ │   │       │   │   │   │   └──prefix: 
+ │   │       │   │   │   │      {FieldRef frozen=false field:instance}
+ │   │       │   │   │   │       └──prefix: <null>
+ │   │       │   │   │   └──rightOperand: 
+ │   │       │   │   │      {FieldRef frozen=false field:input4}
+ │   │       │   │   │       └──prefix: 
+ │   │       │   │   │          {FieldRef frozen=false field:instance}
+ │   │       │   │   │           └──prefix: <null>
+ │   │       │   │   └──rightOperand: 
+ │   │       │   │      {FieldRef frozen=false field:input5}
+ │   │       │   │       └──prefix: 
+ │   │       │   │          {FieldRef frozen=false field:instance}
+ │   │       │   │           └──prefix: <null>
+ │   │       │   └──rightOperand: 
+ │   │       │      {FieldRef frozen=false field:input2}
+ │   │       │       └──prefix: 
+ │   │       │          {FieldRef frozen=false field:instance}
+ │   │       │           └──prefix: <null>
+ │   │       └──type: 
+ │   │          {BoolType}
+ │   └──rightOperand: 
+ │      {ComparisonExpression operator=EQUALS}
+ │       ├──leftOperand: 
+ │       │  {FieldRef frozen=false field:N}
+ │       │   └──prefix: 
+ │       │      {FieldRef frozen=false field:instance}
+ │       │       └──prefix: <null>
+ │       ├──rightOperand: 
+ │       │  {FieldRef frozen=false field:input1}
+ │       │   └──prefix: 
+ │       │      {FieldRef frozen=false field:instance}
+ │       │       └──prefix: <null>
+ │       └──type: 
+ │          {BoolType}
+ └──type: 
+    {TemporalBoolType}
+

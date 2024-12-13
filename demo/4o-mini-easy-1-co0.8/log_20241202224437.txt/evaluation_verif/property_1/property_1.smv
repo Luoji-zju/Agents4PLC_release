@@ -1,0 +1,39 @@
+-- Model
+MODULE main
+	VAR
+		loc : {init_pv, end, loop_start, prepare_BoC, l_main_call, prepare_EoC};
+		__assertion_error : unsigned word[16]; -- frozen
+		EoC : boolean; -- frozen
+		BoC : boolean; -- frozen
+	
+	ASSIGN
+		-- CFA structure (loc)
+		init(loc) := init_pv;
+		next(loc) := case
+			loc = init_pv & (TRUE) : loop_start;
+			loc = loop_start & (TRUE) : prepare_BoC;
+			loc = prepare_BoC & (TRUE) : l_main_call;
+			loc = l_main_call & (TRUE) : prepare_EoC;
+			loc = prepare_EoC & (TRUE) : loop_start;
+			TRUE: loc;
+		esac;
+		
+		init(__assertion_error) := 0ud16_0;
+		next(__assertion_error) := case
+			TRUE  : __assertion_error;
+		esac;
+		init(EoC) := FALSE;
+		next(EoC) := case
+			loc = l_main_call & (TRUE) : TRUE;
+			loc = prepare_EoC & (TRUE) : FALSE;
+			TRUE  : EoC;
+		esac;
+		init(BoC) := FALSE;
+		next(BoC) := case
+			loc = loop_start & (TRUE) : TRUE;
+			loc = prepare_BoC & (TRUE) : FALSE;
+			TRUE  : BoC;
+		esac;
+
+-- Requirement
+CTLSPEC AG((EoC) -> ((__assertion_error) = (0ud16_0)));

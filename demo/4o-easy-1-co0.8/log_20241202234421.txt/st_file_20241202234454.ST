@@ -1,0 +1,17 @@
+
+
+FUNCTION_BLOCK LED_Control
+VAR_INPUT
+    PB1 : BOOL;
+    PB2 : BOOL;
+END_VAR
+
+VAR_OUTPUT
+    LED : BOOL;
+END_VAR
+
+(* Implement the logic: LED = PB1 AND NOT PB2 *)
+LED := PB1 AND NOT PB2;
+
+END_FUNCTION_BLOCK
+

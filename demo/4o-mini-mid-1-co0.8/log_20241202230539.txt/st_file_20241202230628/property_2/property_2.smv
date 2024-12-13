@@ -1,0 +1,54 @@
+-- Model
+MODULE main
+	VAR
+		loc : {init_pv, end, loop_start, prepare_BoC, l_main_call, callEnd, prepare_EoC, verificationLoop_VerificationLoop_l2};
+		instance_Start_Stop : boolean;
+		instance_ONS_Trig : boolean; -- frozen
+		instance_Previous_Start_Stop : boolean;
+		EoC : boolean; -- frozen
+		BoC : boolean; -- frozen
+	
+	ASSIGN
+		-- CFA structure (loc)
+		init(loc) := init_pv;
+		next(loc) := case
+			loc = init_pv & (TRUE) : loop_start;
+			loc = loop_start & (TRUE) : prepare_BoC;
+			loc = prepare_BoC & (TRUE) : l_main_call;
+			loc = callEnd & (TRUE) : prepare_EoC;
+			loc = prepare_EoC & (TRUE) : loop_start;
+			loc = verificationLoop_VerificationLoop_l2 & (TRUE) : callEnd;
+			loc = l_main_call & (TRUE) : verificationLoop_VerificationLoop_l2;
+			TRUE: loc;
+		esac;
+		
+		init(instance_Start_Stop) := FALSE;
+		next(instance_Start_Stop) := case
+			loc = loop_start & (TRUE) : {TRUE, FALSE};
+			TRUE  : instance_Start_Stop;
+		esac;
+		init(instance_ONS_Trig) := FALSE;
+		next(instance_ONS_Trig) := case
+			loc = l_main_call & (TRUE) : (instance_Start_Stop) & (!(instance_Previous_Start_Stop));
+			TRUE  : instance_ONS_Trig;
+		esac;
+		init(instance_Previous_Start_Stop) := FALSE;
+		next(instance_Previous_Start_Stop) := case
+			loc = verificationLoop_VerificationLoop_l2 & (TRUE) : instance_Start_Stop;
+			TRUE  : instance_Previous_Start_Stop;
+		esac;
+		init(EoC) := FALSE;
+		next(EoC) := case
+			loc = callEnd & (TRUE) : TRUE;
+			loc = prepare_EoC & (TRUE) : FALSE;
+			TRUE  : EoC;
+		esac;
+		init(BoC) := FALSE;
+		next(BoC) := case
+			loc = loop_start & (TRUE) : TRUE;
+			loc = prepare_BoC & (TRUE) : FALSE;
+			TRUE  : BoC;
+		esac;
+
+-- Requirement
+CTLSPEC EF((EoC) & ((instance_ONS_Trig) = (TRUE)));

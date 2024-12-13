@@ -1,0 +1,52 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {FieldRef frozen=false field:EoC}
+ │   │   └──prefix: <null>
+ │   └──rightOperand: 
+ │      {BinaryLogicExpression operator=AND}
+ │       ├──leftOperand: 
+ │       │  {BinaryLogicExpression operator=AND}
+ │       │   ├──leftOperand: 
+ │       │   │  {ComparisonExpression operator=LESS_EQ}
+ │       │   │   ├──leftOperand: 
+ │       │   │   │  {FieldRef frozen=false field:aaa}
+ │       │   │   │   └──prefix: 
+ │       │   │   │      {FieldRef frozen=false field:instance}
+ │       │   │   │       └──prefix: <null>
+ │       │   │   ├──rightOperand: 
+ │       │   │   │  {IntLiteral value=2147483647}
+ │       │   │   │   └──type: 
+ │       │   │   │      {IntType signed=true bits=32}
+ │       │   │   └──type: 
+ │       │   │      {BoolType}
+ │       │   └──rightOperand: 
+ │       │      {ComparisonExpression operator=LESS_EQ}
+ │       │       ├──leftOperand: 
+ │       │       │  {FieldRef frozen=false field:bbb}
+ │       │       │   └──prefix: 
+ │       │       │      {FieldRef frozen=false field:instance}
+ │       │       │       └──prefix: <null>
+ │       │       ├──rightOperand: 
+ │       │       │  {IntLiteral value=2147483647}
+ │       │       │   └──type: 
+ │       │       │      {IntType signed=true bits=32}
+ │       │       └──type: 
+ │       │          {BoolType}
+ │       └──rightOperand: 
+ │          {ComparisonExpression operator=LESS_EQ}
+ │           ├──leftOperand: 
+ │           │  {FieldRef frozen=false field:OUT}
+ │           │   └──prefix: 
+ │           │      {FieldRef frozen=false field:instance}
+ │           │       └──prefix: <null>
+ │           ├──rightOperand: 
+ │           │  {IntLiteral value=2147483647}
+ │           │   └──type: 
+ │           │      {IntType signed=true bits=32}
+ │           └──type: 
+ │              {BoolType}
+ └──type: 
+    {TemporalBoolType}
+

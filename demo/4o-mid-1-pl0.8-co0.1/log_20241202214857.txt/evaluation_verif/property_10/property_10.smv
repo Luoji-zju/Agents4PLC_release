@@ -1,0 +1,86 @@
+-- Model
+MODULE main
+	VAR
+		loc : {init_pv, end, loop_start, prepare_BoC, l_main_call, prepare_EoC, verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1, verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5, verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1, verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11, verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51, verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52};
+		instance_input1 : signed word[16]; -- frozen
+		instance_input2 : signed word[16]; -- frozen
+		instance_input3 : signed word[16]; -- frozen
+		instance_M : signed word[16]; -- frozen
+		instance_user_max_b : signed word[16];
+		instance_user_max_max_value : signed word[16];
+		EoC : boolean; -- frozen
+		BoC : boolean; -- frozen
+		-- Random vars for nondeterministic INTs
+		__random_instance_input1 : signed word[16];
+		__random_instance_input2 : signed word[16];
+		__random_instance_input3 : signed word[16];
+	
+	ASSIGN
+		-- CFA structure (loc)
+		init(loc) := init_pv;
+		next(loc) := case
+			loc = init_pv & (TRUE) : loop_start;
+			loc = loop_start & (TRUE) : prepare_BoC;
+			loc = prepare_BoC & (TRUE) : l_main_call;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52 & (TRUE) : prepare_EoC;
+			loc = prepare_EoC & (TRUE) : loop_start;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1 & ((instance_input3) > (instance_input2)) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1 & (!((instance_input3) > (instance_input2))) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5 & (TRUE) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1 & (TRUE) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11 & ((instance_user_max_b) > (instance_input1)) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11 & (!((instance_user_max_b) > (instance_input1))) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51 & (TRUE) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52;
+			loc = l_main_call & (TRUE) : verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1;
+			TRUE: loc;
+		esac;
+		
+		init(instance_input1) := 0sd16_0;
+		next(instance_input1) := case
+			loc = loop_start & (TRUE) : __random_instance_input1; -- Nondeterministic
+			TRUE  : instance_input1;
+		esac;
+		init(instance_input2) := 0sd16_0;
+		next(instance_input2) := case
+			loc = loop_start & (TRUE) : __random_instance_input2; -- Nondeterministic
+			TRUE  : instance_input2;
+		esac;
+		init(instance_input3) := 0sd16_0;
+		next(instance_input3) := case
+			loc = loop_start & (TRUE) : __random_instance_input3; -- Nondeterministic
+			TRUE  : instance_input3;
+		esac;
+		init(instance_M) := 0sd16_0;
+		next(instance_M) := case
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51 & (TRUE) : instance_user_max_max_value;
+			TRUE  : instance_M;
+		esac;
+		init(instance_user_max_b) := 0sd16_0;
+		next(instance_user_max_b) := case
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5 & (TRUE) : instance_user_max_max_value;
+			loc = l_main_call & (TRUE) : instance_input3;
+			TRUE  : instance_user_max_b;
+		esac;
+		init(instance_user_max_max_value) := 0sd16_0;
+		next(instance_user_max_max_value) := case
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1 & ((instance_input3) > (instance_input2)) : instance_input3;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1 & (TRUE) : instance_input1;
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11 & ((instance_user_max_b) > (instance_input1)) : instance_user_max_b;
+			loc = l_main_call & (TRUE) : instance_input2;
+			TRUE  : instance_user_max_max_value;
+		esac;
+		init(EoC) := FALSE;
+		next(EoC) := case
+			loc = verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52 & (TRUE) : TRUE;
+			loc = prepare_EoC & (TRUE) : FALSE;
+			TRUE  : EoC;
+		esac;
+		init(BoC) := FALSE;
+		next(BoC) := case
+			loc = loop_start & (TRUE) : TRUE;
+			loc = prepare_BoC & (TRUE) : FALSE;
+			TRUE  : BoC;
+		esac;
+
+-- Requirement
+CTLSPEC AG(((EoC) & (((instance_input1) < (instance_input3)) & ((instance_input3) >= (instance_input2)))) -> ((instance_M) = (instance_input3)));

@@ -1,0 +1,29 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {FieldRef frozen=false field:EoC}
+ │   │   └──prefix: <null>
+ │   └──rightOperand: 
+ │      {ComparisonExpression operator=EQUALS}
+ │       ├──leftOperand: 
+ │       │  {FieldRef frozen=false field:UPDATED_CYCLE}
+ │       │   └──prefix: 
+ │       │      {FieldRef frozen=false field:instance}
+ │       │       └──prefix: <null>
+ │       ├──rightOperand: 
+ │       │  {BinaryArithmeticExpression operator=PLUS}
+ │       │   ├──leftOperand: 
+ │       │   │  {FieldRef frozen=false field:CYCLE}
+ │       │   │   └──prefix: 
+ │       │   │      {FieldRef frozen=false field:instance}
+ │       │   │       └──prefix: <null>
+ │       │   └──rightOperand: 
+ │       │      {IntLiteral value=1}
+ │       │       └──type: 
+ │       │          {IntType signed=true bits=16}
+ │       └──type: 
+ │          {BoolType}
+ └──type: 
+    {TemporalBoolType}
+

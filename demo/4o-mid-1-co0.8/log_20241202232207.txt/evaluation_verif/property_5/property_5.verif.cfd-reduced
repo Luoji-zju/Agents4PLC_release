@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfadeclaration:CfaNetworkDeclaration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfadeclaration="cern.plcverif.base.models.cfa.cfadeclaration" xmlns:expr="cern.plcverif.base.models.expr" xmi:id="network" name="network" displayName="network" mainAutomaton="network_VerificationLoop">
+  <automata xmi:id="network_USER_MAX" name="USER_MAX" displayName="USER_MAX" initialLocation="network_USER_MAX_init" endLocation="network_USER_MAX_l5">
+    <locations xmi:id="network_USER_MAX_init" name="init" displayName="init" frozen="true" outgoing="network_USER_MAX_t1"/>
+    <locations xmi:id="network_USER_MAX_l1" name="l1" displayName="l1" incoming="network_USER_MAX_t1" outgoing="network_USER_MAX_t2 network_USER_MAX_t4"/>
+    <locations xmi:id="network_USER_MAX_l5" name="l5" displayName="l5" incoming="network_USER_MAX_t4 network_USER_MAX_t2"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_USER_MAX_t1" name="t1" displayName="t1" source="network_USER_MAX_init" target="network_USER_MAX_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id0" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id1"/>
+      </condition>
+      <assignments xmi:id="id2">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id3" field="network__global_USER_MAX_MAX_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id4" field="network__global_USER_MAX_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_USER_MAX_t2" name="t2" displayName="t2" source="network_USER_MAX_l1" target="network_USER_MAX_l5">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id5" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id6" field="network__global_USER_MAX_B"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id7" field="network__global_USER_MAX_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id8"/>
+      </condition>
+      <assignments xmi:id="id9">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id10" field="network__global_USER_MAX_MAX_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id11" field="network__global_USER_MAX_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_USER_MAX_t4" name="t4" displayName="t4" source="network_USER_MAX_l1" target="network_USER_MAX_l5">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id12">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id13" operator="GREATER_THAN">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id14" field="network__global_USER_MAX_B"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id15" field="network__global_USER_MAX_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id16"/>
+        </operand>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id17" definition="network__global_USER_MAX"/>
+  </automata>
+  <automata xmi:id="network_USER_MIN" name="USER_MIN" displayName="USER_MIN" initialLocation="network_USER_MIN_init" endLocation="network_USER_MIN_l5">
+    <locations xmi:id="network_USER_MIN_init" name="init" displayName="init" frozen="true" outgoing="network_USER_MIN_t1"/>
+    <locations xmi:id="network_USER_MIN_l1" name="l1" displayName="l1" incoming="network_USER_MIN_t1" outgoing="network_USER_MIN_t2 network_USER_MIN_t4"/>
+    <locations xmi:id="network_USER_MIN_l5" name="l5" displayName="l5" incoming="network_USER_MIN_t4 network_USER_MIN_t2"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_USER_MIN_t1" name="t1" displayName="t1" source="network_USER_MIN_init" target="network_USER_MIN_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id18" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id19"/>
+      </condition>
+      <assignments xmi:id="id20">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id21" field="network__global_USER_MIN_MIN_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id22" field="network__global_USER_MIN_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_USER_MIN_t2" name="t2" displayName="t2" source="network_USER_MIN_l1" target="network_USER_MIN_l5">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id23" operator="LESS_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id24" field="network__global_USER_MIN_B"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id25" field="network__global_USER_MIN_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id26"/>
+      </condition>
+      <assignments xmi:id="id27">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id28" field="network__global_USER_MIN_MIN_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id29" field="network__global_USER_MIN_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_USER_MIN_t4" name="t4" displayName="t4" source="network_USER_MIN_l1" target="network_USER_MIN_l5">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id30">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id31" operator="LESS_THAN">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id32" field="network__global_USER_MIN_B"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id33" field="network__global_USER_MIN_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id34"/>
+        </operand>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id35" definition="network__global_USER_MIN"/>
+  </automata>
+  <automata xmi:id="network_FB_ValueComparison" name="FB_ValueComparison" displayName="FB_ValueComparison" initialLocation="network_FB_ValueComparison_init" endLocation="network_FB_ValueComparison_l11">
+    <locations xmi:id="network_FB_ValueComparison_init" name="init" displayName="init" frozen="true" outgoing="network_FB_ValueComparison_t1"/>
+    <locations xmi:id="network_FB_ValueComparison_l1" name="l1" displayName="l1" incoming="network_FB_ValueComparison_t1" outgoing="network_FB_ValueComparison_t2"/>
+    <locations xmi:id="network_FB_ValueComparison_l2" name="l2" displayName="l2" incoming="network_FB_ValueComparison_t2" outgoing="network_FB_ValueComparison_t3"/>
+    <locations xmi:id="network_FB_ValueComparison_l3" name="l3" displayName="l3" incoming="network_FB_ValueComparison_t3" outgoing="network_FB_ValueComparison_t4"/>
+    <locations xmi:id="network_FB_ValueComparison_l4" name="l4" displayName="l4" incoming="network_FB_ValueComparison_t4" outgoing="network_FB_ValueComparison_t5"/>
+    <locations xmi:id="network_FB_ValueComparison_l5" name="l5" displayName="l5" incoming="network_FB_ValueComparison_t5" outgoing="network_FB_ValueComparison_t6"/>
+    <locations xmi:id="network_FB_ValueComparison_l6" name="l6" displayName="l6" incoming="network_FB_ValueComparison_t6" outgoing="network_FB_ValueComparison_t7"/>
+    <locations xmi:id="network_FB_ValueComparison_l7" name="l7" displayName="l7" incoming="network_FB_ValueComparison_t7" outgoing="network_FB_ValueComparison_t8"/>
+    <locations xmi:id="network_FB_ValueComparison_l8" name="l8" displayName="l8" incoming="network_FB_ValueComparison_t8" outgoing="network_FB_ValueComparison_t9"/>
+    <locations xmi:id="network_FB_ValueComparison_l9" name="l9" displayName="l9" incoming="network_FB_ValueComparison_t9" outgoing="network_FB_ValueComparison_t10"/>
+    <locations xmi:id="network_FB_ValueComparison_l11" name="l11" displayName="l11" incoming="network_FB_ValueComparison_t10"/>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_FB_ValueComparison_t1" name="t1" displayName="t1" source="network_FB_ValueComparison_init" target="network_FB_ValueComparison_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id36" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id37"/>
+      </condition>
+      <calls xmi:id="id38" calledAutomaton="network_USER_MAX">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id39" field="network__global_FB_ValueComparison_max_block"/>
+        <inputAssignments xmi:id="id40">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id41" field="network__global_USER_MAX_A"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id42" field="network__global_FB_ValueComparison_input2"/>
+        </inputAssignments>
+        <inputAssignments xmi:id="id43">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id44" field="network__global_USER_MAX_B"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id45" field="network__global_FB_ValueComparison_input3"/>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_ValueComparison_t2" name="t2" displayName="t2" source="network_FB_ValueComparison_l1" target="network_FB_ValueComparison_l2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id46" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id47"/>
+      </condition>
+      <assignments xmi:id="id48">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id49" field="network__global_FB_ValueComparison_TEMP_MAX_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id50" field="network__global_USER_MAX_MAX_OUT">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id51" field="network__global_FB_ValueComparison_max_block"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_FB_ValueComparison_t3" name="t3" displayName="t3" source="network_FB_ValueComparison_l2" target="network_FB_ValueComparison_l3">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id52" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id53"/>
+      </condition>
+      <calls xmi:id="id54" calledAutomaton="network_USER_MAX">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id55" field="network__global_FB_ValueComparison_max_block"/>
+        <inputAssignments xmi:id="id56">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id57" field="network__global_USER_MAX_A"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id58" field="network__global_FB_ValueComparison_input1"/>
+        </inputAssignments>
+        <inputAssignments xmi:id="id59">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id60" field="network__global_USER_MAX_B"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id61" field="network__global_FB_ValueComparison_TEMP_MAX_OUT"/>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_ValueComparison_t4" name="t4" displayName="t4" source="network_FB_ValueComparison_l3" target="network_FB_ValueComparison_l4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id62" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id63"/>
+      </condition>
+      <assignments xmi:id="id64">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id65" field="network__global_FB_ValueComparison_M"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id66" field="network__global_USER_MAX_MAX_OUT">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id67" field="network__global_FB_ValueComparison_max_block"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_FB_ValueComparison_t5" name="t5" displayName="t5" source="network_FB_ValueComparison_l4" target="network_FB_ValueComparison_l5">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id68" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id69"/>
+      </condition>
+      <calls xmi:id="id70" calledAutomaton="network_USER_MIN">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id71" field="network__global_FB_ValueComparison_min_block"/>
+        <inputAssignments xmi:id="id72">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id73" field="network__global_USER_MIN_A"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id74" field="network__global_FB_ValueComparison_input4"/>
+        </inputAssignments>
+        <inputAssignments xmi:id="id75">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id76" field="network__global_USER_MIN_B"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id77" field="network__global_FB_ValueComparison_input5"/>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_ValueComparison_t6" name="t6" displayName="t6" source="network_FB_ValueComparison_l5" target="network_FB_ValueComparison_l6">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id78" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id79"/>
+      </condition>
+      <assignments xmi:id="id80">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id81" field="network__global_FB_ValueComparison_TEMP_MIN_2_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id82" field="network__global_USER_MIN_MIN_OUT">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id83" field="network__global_FB_ValueComparison_min_block"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_FB_ValueComparison_t7" name="t7" displayName="t7" source="network_FB_ValueComparison_l6" target="network_FB_ValueComparison_l7">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id84" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id85"/>
+      </condition>
+      <calls xmi:id="id86" calledAutomaton="network_USER_MIN">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id87" field="network__global_FB_ValueComparison_min_block"/>
+        <inputAssignments xmi:id="id88">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id89" field="network__global_USER_MIN_A"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id90" field="network__global_FB_ValueComparison_input2"/>
+        </inputAssignments>
+        <inputAssignments xmi:id="id91">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id92" field="network__global_USER_MIN_B"/>
+          <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id93">
+            <leftOperand xsi:type="expr:BinaryArithmeticExpression" xmi:id="id94" operator="MULTIPLICATION">
+              <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id95" field="network__global_FB_ValueComparison_input3"/>
+              <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id96" field="network__global_FB_ValueComparison_TEMP_MIN_2_OUT"/>
+            </leftOperand>
+            <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id97" field="network__global_FB_ValueComparison_input2"/>
+          </rightValue>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_ValueComparison_t8" name="t8" displayName="t8" source="network_FB_ValueComparison_l7" target="network_FB_ValueComparison_l8">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id98" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id99"/>
+      </condition>
+      <assignments xmi:id="id100">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id101" field="network__global_FB_ValueComparison_TEMP_MIN_3_OUT"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id102" field="network__global_USER_MIN_MIN_OUT">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id103" field="network__global_FB_ValueComparison_min_block"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_FB_ValueComparison_t9" name="t9" displayName="t9" source="network_FB_ValueComparison_l8" target="network_FB_ValueComparison_l9">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id104" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id105"/>
+      </condition>
+      <calls xmi:id="id106" calledAutomaton="network_USER_MIN">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id107" field="network__global_FB_ValueComparison_min_block"/>
+        <inputAssignments xmi:id="id108">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id109" field="network__global_USER_MIN_A"/>
+          <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id110" field="network__global_FB_ValueComparison_input1"/>
+        </inputAssignments>
+        <inputAssignments xmi:id="id111">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id112" field="network__global_USER_MIN_B"/>
+          <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id113">
+            <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id114" field="network__global_FB_ValueComparison_TEMP_MIN_3_OUT"/>
+            <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id115" field="network__global_FB_ValueComparison_input3"/>
+          </rightValue>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_ValueComparison_t10" name="t10" displayName="t10" source="network_FB_ValueComparison_l9" target="network_FB_ValueComparison_l11">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id116" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id117"/>
+      </condition>
+      <assignments xmi:id="id118">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id119" field="network__global_FB_ValueComparison_N"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id120" field="network__global_USER_MIN_MIN_OUT">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id121" field="network__global_FB_ValueComparison_min_block"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id122">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id123" field="network__global_FB_ValueComparison_UPDATED_CYCLE"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id124">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id125" field="network__global_FB_ValueComparison_CYCLE"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id126" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id127" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <localDataStructure xmi:id="id128" definition="network__global_FB_ValueComparison"/>
+  </automata>
+  <automata xmi:id="network_VerificationLoop" name="VerificationLoop" displayName="VerificationLoop" initialLocation="network_VerificationLoop_init" endLocation="network_VerificationLoop_end">
+    <locations xmi:id="network_VerificationLoop_init" name="init" displayName="init" frozen="true" outgoing="network_VerificationLoop_t_params"/>
+    <locations xmi:id="network_VerificationLoop_end" name="end" displayName="end" frozen="true" incoming="network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_loop_start" name="loop_start" displayName="loop_start" incoming="network_VerificationLoop_t_params network_VerificationLoop_restart" outgoing="network_VerificationLoop_set_BoC network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_prepare_BoC" name="prepare_BoC" displayName="prepare_BoC" frozen="true" incoming="network_VerificationLoop_set_BoC" outgoing="network_VerificationLoop_t_inputs"/>
+    <locations xmi:id="network_VerificationLoop_l_main_call" name="l_main_call" displayName="l_main_call" incoming="network_VerificationLoop_t_inputs" outgoing="network_VerificationLoop_main_call"/>
+    <locations xmi:id="network_VerificationLoop_callEnd" name="callEnd" displayName="callEnd" incoming="network_VerificationLoop_main_call" outgoing="network_VerificationLoop_set_EoC"/>
+    <locations xmi:id="network_VerificationLoop_prepare_EoC" name="prepare_EoC" displayName="prepare_EoC" frozen="true" incoming="network_VerificationLoop_set_EoC" outgoing="network_VerificationLoop_restart"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_params" name="t_params" displayName="t_params" source="network_VerificationLoop_init" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id129" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id130"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_BoC" name="set_BoC" displayName="set_BoC" frozen="true" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_prepare_BoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id131" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id132"/>
+      </condition>
+      <assignments xmi:id="id133">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id134" field="network__global_FB_ValueComparison_CYCLE">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id135" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id136">
+          <type xsi:type="expr:IntType" xmi:id="id137" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id138">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id139" field="network__global_FB_ValueComparison_input1">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id140" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id141">
+          <type xsi:type="expr:IntType" xmi:id="id142" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id143">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id144" field="network__global_FB_ValueComparison_input2">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id145" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id146">
+          <type xsi:type="expr:IntType" xmi:id="id147" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id148">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id149" field="network__global_FB_ValueComparison_input3">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id150" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id151">
+          <type xsi:type="expr:IntType" xmi:id="id152" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id153">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id154" field="network__global_FB_ValueComparison_input4">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id155" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id156">
+          <type xsi:type="expr:IntType" xmi:id="id157" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id158">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id159" field="network__global_FB_ValueComparison_input5">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id160" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id161">
+          <type xsi:type="expr:IntType" xmi:id="id162" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id163" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id164" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id165" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id166"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_inputs" name="t_inputs" displayName="t_inputs" frozen="true" source="network_VerificationLoop_prepare_BoC" target="network_VerificationLoop_l_main_call">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id167" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id168"/>
+      </condition>
+      <assignments xmi:id="id169" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id170" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id171" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id172"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_VerificationLoop_main_call" name="main_call" displayName="main_call" source="network_VerificationLoop_l_main_call" target="network_VerificationLoop_callEnd">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id173" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id174"/>
+      </condition>
+      <calls xmi:id="id175" calledAutomaton="network_FB_ValueComparison">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id176" field="network__global_instance"/>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_EoC" name="set_EoC" displayName="set_EoC" frozen="true" source="network_VerificationLoop_callEnd" target="network_VerificationLoop_prepare_EoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id177" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id178"/>
+      </condition>
+      <assignments xmi:id="id179" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id180" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id181" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id182"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_restart" name="restart" displayName="restart" frozen="true" source="network_VerificationLoop_prepare_EoC" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id183" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id184"/>
+      </condition>
+      <assignments xmi:id="id185" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id186" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id187" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id188"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_end1" name="end1" displayName="end" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_end">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id189" value="false">
+        <type xsi:type="expr:BoolType" xmi:id="id190"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id191" definition="network__global_VerificationLoopDS"/>
+  </automata>
+  <rootDataStructure xmi:id="network__global" name="_global" displayName="_global">
+    <fields xmi:id="network__global_instance" name="instance" displayName="instance">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id192" definition="network__global_FB_ValueComparison"/>
+    </fields>
+    <fields xmi:id="network__global_verificationLoop" name="verificationLoop" displayName="verificationLoop">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id193" definition="network__global_VerificationLoopDS"/>
+    </fields>
+    <fields xmi:id="network__global_EoC" name="EoC" displayName="EoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id194"/>
+      <initialAssignments xmi:id="id195">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id196" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id197" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id198"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id199"/>
+    </fields>
+    <fields xmi:id="network__global_BoC" name="BoC" displayName="BoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id200"/>
+      <initialAssignments xmi:id="id201">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id202" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id203" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id204"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id205"/>
+    </fields>
+    <complexTypes xmi:id="network__global_USER_MAX" name="USER_MAX" displayName="USER_MAX">
+      <fields xmi:id="network__global_USER_MAX_A" name="A" displayName="A">
+        <type xsi:type="expr:IntType" xmi:id="id206" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id207">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id208" field="network__global_USER_MAX_A"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id209" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id210" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id211"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id212" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_USER_MAX_B" name="B" displayName="B">
+        <type xsi:type="expr:IntType" xmi:id="id213" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id214">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id215" field="network__global_USER_MAX_B"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id216" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id217" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id218"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id219" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_USER_MAX_MAX_OUT" name="MAX_OUT" displayName="MAX_OUT">
+        <type xsi:type="expr:IntType" xmi:id="id220" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id221">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id222" field="network__global_USER_MAX_MAX_OUT"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id223" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id224" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id225" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id226" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_USER_MIN" name="USER_MIN" displayName="USER_MIN">
+      <fields xmi:id="network__global_USER_MIN_A" name="A" displayName="A">
+        <type xsi:type="expr:IntType" xmi:id="id227" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id228">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id229" field="network__global_USER_MIN_A"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id230" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id231" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id232"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id233" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_USER_MIN_B" name="B" displayName="B">
+        <type xsi:type="expr:IntType" xmi:id="id234" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id235">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id236" field="network__global_USER_MIN_B"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id237" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id238" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id239"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id240" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_USER_MIN_MIN_OUT" name="MIN_OUT" displayName="MIN_OUT">
+        <type xsi:type="expr:IntType" xmi:id="id241" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id242">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id243" field="network__global_USER_MIN_MIN_OUT"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id244" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id245" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id246" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id247" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_FB_ValueComparison" name="FB_ValueComparison" displayName="FB_ValueComparison">
+      <fields xmi:id="network__global_FB_ValueComparison_input1" name="input1" displayName="input1">
+        <type xsi:type="expr:IntType" xmi:id="id248" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id249">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id250" field="network__global_FB_ValueComparison_input1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id251" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id252" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id253"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id254" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_input2" name="input2" displayName="input2">
+        <type xsi:type="expr:IntType" xmi:id="id255" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id256">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id257" field="network__global_FB_ValueComparison_input2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id258" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id259" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id260"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id261" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_input3" name="input3" displayName="input3">
+        <type xsi:type="expr:IntType" xmi:id="id262" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id263">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id264" field="network__global_FB_ValueComparison_input3"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id265" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id266" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id267"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id268" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_input4" name="input4" displayName="input4">
+        <type xsi:type="expr:IntType" xmi:id="id269" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id270">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id271" field="network__global_FB_ValueComparison_input4"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id272" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id273" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id274"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id275" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_input5" name="input5" displayName="input5">
+        <type xsi:type="expr:IntType" xmi:id="id276" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id277">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id278" field="network__global_FB_ValueComparison_input5"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id279" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id280" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id281"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id282" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_CYCLE" name="CYCLE" displayName="CYCLE">
+        <type xsi:type="expr:IntType" xmi:id="id283" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id284">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id285" field="network__global_FB_ValueComparison_CYCLE"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id286" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id287" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id288"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id289" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_M" name="M" displayName="M">
+        <type xsi:type="expr:IntType" xmi:id="id290" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id291">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id292" field="network__global_FB_ValueComparison_M"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id293" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id294" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id295" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id296" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_N" name="N" displayName="N">
+        <type xsi:type="expr:IntType" xmi:id="id297" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id298">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id299" field="network__global_FB_ValueComparison_N"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id300" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id301" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id302" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id303" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_UPDATED_CYCLE" name="UPDATED_CYCLE" displayName="UPDATED_CYCLE">
+        <type xsi:type="expr:IntType" xmi:id="id304" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id305">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id306" field="network__global_FB_ValueComparison_UPDATED_CYCLE"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id307" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id308" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id309" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id310" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_TEMP_MAX_OUT" name="TEMP_MAX_OUT" displayName="TEMP_MAX_OUT">
+        <type xsi:type="expr:IntType" xmi:id="id311" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id312">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id313" field="network__global_FB_ValueComparison_TEMP_MAX_OUT"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id314" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id315" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id316" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id317" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_TEMP_MIN_2_OUT" name="TEMP_MIN_2_OUT" displayName="TEMP_MIN_2_OUT">
+        <type xsi:type="expr:IntType" xmi:id="id318" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id319">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id320" field="network__global_FB_ValueComparison_TEMP_MIN_2_OUT"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id321" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id322" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id323" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id324" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_TEMP_MIN_3_OUT" name="TEMP_MIN_3_OUT" displayName="TEMP_MIN_3_OUT">
+        <type xsi:type="expr:IntType" xmi:id="id325" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id326">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id327" field="network__global_FB_ValueComparison_TEMP_MIN_3_OUT"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id328" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id329" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id330" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id331" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_max_block" name="max_block" displayName="max_block">
+        <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id332" definition="network__global_USER_MAX"/>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id333" direction="LOCAL"/>
+      </fields>
+      <fields xmi:id="network__global_FB_ValueComparison_min_block" name="min_block" displayName="min_block">
+        <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id334" definition="network__global_USER_MIN"/>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id335" direction="LOCAL"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_VerificationLoopDS" name="VerificationLoopDS" displayName="VerificationLoopDS"/>
+  </rootDataStructure>
+  <mainContext xsi:type="cfadeclaration:FieldRef" xmi:id="id336" field="network__global_verificationLoop"/>
+</cfadeclaration:CfaNetworkDeclaration>

@@ -1,0 +1,75 @@
+{UnaryLtlExpression operator=G lowerBound=-1 upperBound=-1}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {BinaryLogicExpression operator=AND}
+ │   │   ├──leftOperand: 
+ │   │   │  {BinaryLogicExpression operator=AND}
+ │   │   │   ├──leftOperand: 
+ │   │   │   │  {FieldRef frozen=false field:EoC}
+ │   │   │   │   └──prefix: <null>
+ │   │   │   └──rightOperand: 
+ │   │   │      {BinaryLogicExpression operator=AND}
+ │   │   │       ├──leftOperand: 
+ │   │   │       │  {UnaryLogicExpression operator=NEG}
+ │   │   │       │   └──operand: 
+ │   │   │       │      {FieldRef frozen=false field:Button}
+ │   │   │       │       └──prefix: 
+ │   │   │       │          {FieldRef frozen=false field:instance}
+ │   │   │       │           └──prefix: <null>
+ │   │   │       └──rightOperand: 
+ │   │   │          {UnaryLogicExpression operator=NEG}
+ │   │   │           └──operand: 
+ │   │   │              {FieldRef frozen=false field:ToggledOutput}
+ │   │   │               └──prefix: 
+ │   │   │                  {FieldRef frozen=false field:instance}
+ │   │   │                   └──prefix: <null>
+ │   │   └──rightOperand: 
+ │   │      {UnaryLtlExpression operator=X lowerBound=-1 upperBound=-1}
+ │   │       ├──operand: 
+ │   │       │  {BinaryLtlExpression operator=U}
+ │   │       │   ├──leftOperand: 
+ │   │       │   │  {UnaryLogicExpression operator=NEG}
+ │   │       │   │   └──operand: 
+ │   │       │   │      {FieldRef frozen=false field:EoC}
+ │   │       │   │       └──prefix: <null>
+ │   │       │   ├──rightOperand: 
+ │   │       │   │  {BinaryLogicExpression operator=AND}
+ │   │       │   │   ├──leftOperand: 
+ │   │       │   │   │  {FieldRef frozen=false field:EoC}
+ │   │       │   │   │   └──prefix: <null>
+ │   │       │   │   └──rightOperand: 
+ │   │       │   │      {FieldRef frozen=false field:Button}
+ │   │       │   │       └──prefix: 
+ │   │       │   │          {FieldRef frozen=false field:instance}
+ │   │       │   │           └──prefix: <null>
+ │   │       │   └──type: 
+ │   │       │      {TemporalBoolType}
+ │   │       └──type: 
+ │   │          {TemporalBoolType}
+ │   └──rightOperand: 
+ │      {UnaryLtlExpression operator=X lowerBound=-1 upperBound=-1}
+ │       ├──operand: 
+ │       │  {BinaryLtlExpression operator=U}
+ │       │   ├──leftOperand: 
+ │       │   │  {UnaryLogicExpression operator=NEG}
+ │       │   │   └──operand: 
+ │       │   │      {FieldRef frozen=false field:EoC}
+ │       │   │       └──prefix: <null>
+ │       │   ├──rightOperand: 
+ │       │   │  {BinaryLogicExpression operator=AND}
+ │       │   │   ├──leftOperand: 
+ │       │   │   │  {FieldRef frozen=false field:EoC}
+ │       │   │   │   └──prefix: <null>
+ │       │   │   └──rightOperand: 
+ │       │   │      {FieldRef frozen=false field:ToggledOutput}
+ │       │   │       └──prefix: 
+ │       │   │          {FieldRef frozen=false field:instance}
+ │       │   │           └──prefix: <null>
+ │       │   └──type: 
+ │       │      {TemporalBoolType}
+ │       └──type: 
+ │          {TemporalBoolType}
+ └──type: 
+    {TemporalBoolType}
+

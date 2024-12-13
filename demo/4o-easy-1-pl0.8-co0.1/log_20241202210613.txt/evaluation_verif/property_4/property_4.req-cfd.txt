@@ -1,0 +1,66 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {FieldRef frozen=false field:EoC}
+ │   │   └──prefix: <null>
+ │   └──rightOperand: 
+ │      {BinaryLogicExpression operator=IMPLIES}
+ │       ├──leftOperand: 
+ │       │  {BinaryLogicExpression operator=AND}
+ │       │   ├──leftOperand: 
+ │       │   │  {ComparisonExpression operator=GREATER_EQ}
+ │       │   │   ├──leftOperand: 
+ │       │   │   │  {FieldRef frozen=false field:i}
+ │       │   │   │   └──prefix: 
+ │       │   │   │      {FieldRef frozen=false field:instance}
+ │       │   │   │       └──prefix: <null>
+ │       │   │   ├──rightOperand: 
+ │       │   │   │  {IntLiteral value=6}
+ │       │   │   │   └──type: 
+ │       │   │   │      {IntType signed=true bits=16}
+ │       │   │   └──type: 
+ │       │   │      {BoolType}
+ │       │   └──rightOperand: 
+ │       │      {ComparisonExpression operator=LESS_EQ}
+ │       │       ├──leftOperand: 
+ │       │       │  {FieldRef frozen=false field:i}
+ │       │       │   └──prefix: 
+ │       │       │      {FieldRef frozen=false field:instance}
+ │       │       │       └──prefix: <null>
+ │       │       ├──rightOperand: 
+ │       │       │  {IntLiteral value=10}
+ │       │       │   └──type: 
+ │       │       │      {IntType signed=true bits=16}
+ │       │       └──type: 
+ │       │          {BoolType}
+ │       └──rightOperand: 
+ │          {ComparisonExpression operator=EQUALS}
+ │           ├──leftOperand: 
+ │           │  {FieldRef frozen=false field:o}
+ │           │   └──prefix: 
+ │           │      {FieldRef frozen=false field:instance}
+ │           │       └──prefix: <null>
+ │           ├──rightOperand: 
+ │           │  {BinaryArithmeticExpression operator=PLUS}
+ │           │   ├──leftOperand: 
+ │           │   │  {FieldRef frozen=false field:i}
+ │           │   │   └──prefix: 
+ │           │   │      {FieldRef frozen=false field:instance}
+ │           │   │       └──prefix: <null>
+ │           │   └──rightOperand: 
+ │           │      {BinaryArithmeticExpression operator=MULTIPLICATION}
+ │           │       ├──leftOperand: 
+ │           │       │  {FieldRef frozen=false field:i}
+ │           │       │   └──prefix: 
+ │           │       │      {FieldRef frozen=false field:instance}
+ │           │       │       └──prefix: <null>
+ │           │       └──rightOperand: 
+ │           │          {IntLiteral value=2}
+ │           │           └──type: 
+ │           │              {IntType signed=true bits=16}
+ │           └──type: 
+ │              {BoolType}
+ └──type: 
+    {TemporalBoolType}
+

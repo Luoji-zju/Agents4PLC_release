@@ -1,0 +1,163 @@
+digraph G {
+	subgraph cluster__global1816073816 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global1816073816 [label="_global"];
+		_global1816073816 -> instance1836765429;
+		instance1836765429 [label = "(F) instance : _global/FB_LoopCounter", fillcolor="white" ];
+		_global1816073816 -> __assertion_error1586519852;
+		__assertion_error1586519852 [label = "(F) __assertion_error : unsigned int16", fillcolor="white" ];
+		_global1816073816 -> verificationLoop2135563436;
+		verificationLoop2135563436 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global1816073816 -> EoC783339262;
+		EoC783339262 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global1816073816 -> BoC685193713;
+		BoC685193713 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global1816073816 -> FB_LoopCounter286169474;
+		subgraph cluster_FB_LoopCounter286169474 {
+			node [shape="folder", style="filled"];
+			//label="FB_LoopCounter";
+			FB_LoopCounter286169474 [label="FB_LoopCounter"];
+			FB_LoopCounter286169474 -> i1406593369;
+			i1406593369 [label = "(F) i : bool", fillcolor="white" ];
+			FB_LoopCounter286169474 -> macro1227041903;
+			macro1227041903 [label = "(F) macro : signed int16", fillcolor="white" ];
+			FB_LoopCounter286169474 -> micro995760621;
+			micro995760621 [label = "(F) micro : signed int16", fillcolor="white" ];
+			FB_LoopCounter286169474 -> o1045677229;
+			o1045677229 [label = "(F) o : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_FB_LoopCounter286169474 [
+				label="ANNOTATIONS\li : direction=INPUT\li : PLC type=BOOL\lmacro : direction=LOCAL\lmacro : PLC type=INT\lmicro : direction=LOCAL\lmicro : PLC type=INT\lo : direction=OUTPUT\lo : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_FB_LoopCounter286169474 [
+				label="INITIAL\li := false\lmacro := 1\lmicro := 1\lo := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1816073816 -> prg2059316201;
+		subgraph cluster_prg2059316201 {
+			node [shape="folder", style="filled"];
+			//label="prg";
+			prg2059316201 [label="prg"];
+			prg2059316201 -> trigger311536309;
+			trigger311536309 [label = "(F) trigger : bool", fillcolor="white" ];
+			prg2059316201 -> loopCounter518261596;
+			loopCounter518261596 [label = "(F) loopCounter : _global/FB_LoopCounter", fillcolor="white" ];
+			
+			annotations_pseudonode_prg2059316201 [
+				label="ANNOTATIONS\ltrigger : direction=INPUT\ltrigger : PLC type=BOOL\lloopCounter : direction=LOCAL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_prg2059316201 [
+				label="INITIAL\ltrigger := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1816073816 -> VerificationLoopDS1237443220;
+		subgraph cluster_VerificationLoopDS1237443220 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS1237443220 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS1237443220 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS1237443220 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global1816073816 [
+			label="ANNOTATIONS\l__assertion_error : generated\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global1816073816 [
+			label="INITIAL\l__assertion_error := 0\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterFB_LoopCounter {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="FB_LoopCounter : FB_LoopCounter";
+		
+		annotations_pseudonode_FB_LoopCounter [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_FB_LoopCounter [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_FB_LoopCounter [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l2_FB_LoopCounter [label="l2", color="black", fillcolor="white", shape="ellipse"];
+		l3_FB_LoopCounter [label="l3", color="black", fillcolor="white", shape="ellipse"];
+		l4_FB_LoopCounter [label="l4", color="black", fillcolor="white", shape="ellipse"];
+		l5_FB_LoopCounter [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l6_FB_LoopCounter [label="l6", color="black", fillcolor="white", shape="ellipse"];
+		l7_FB_LoopCounter [label="l7", color="black", fillcolor="white", shape="ellipse"];
+		l8_FB_LoopCounter [label="l8", color="black", fillcolor="white", shape="ellipse"];
+		l9_FB_LoopCounter [label="l9", color="black", fillcolor="white", shape="ellipse"];
+		l10_FB_LoopCounter [label="l10", color="black", fillcolor="white", shape="ellipse"];
+		l11_FB_LoopCounter [label="l11", color="black", fillcolor="white", shape="ellipse"];
+		l12_FB_LoopCounter [label="l12", color="black", fillcolor="white", shape="ellipse"];
+		l13_FB_LoopCounter [label="l13", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_FB_LoopCounter -> l1_FB_LoopCounter [color="black", label="[i]"];
+		l1_FB_LoopCounter -> l2_FB_LoopCounter [color="black", label="[(micro > 0)]"];
+		l2_FB_LoopCounter -> l3_FB_LoopCounter [color="black", label="micro := (micro - 1)"];
+		l1_FB_LoopCounter -> l4_FB_LoopCounter [color="black", label="[ELSE]"];
+		l3_FB_LoopCounter -> l5_FB_LoopCounter [color="black", label=""];
+		l4_FB_LoopCounter -> l5_FB_LoopCounter [color="black", label=""];
+		l5_FB_LoopCounter -> l6_FB_LoopCounter [color="black", label="[(micro = 0)]"];
+		l6_FB_LoopCounter -> l7_FB_LoopCounter [color="black", label="macro := (macro + 1)"];
+		l7_FB_LoopCounter -> l8_FB_LoopCounter [color="black", label="micro := macro"];
+		l5_FB_LoopCounter -> l9_FB_LoopCounter [color="black", label="[ELSE]"];
+		l8_FB_LoopCounter -> l10_FB_LoopCounter [color="black", label=""];
+		l9_FB_LoopCounter -> l10_FB_LoopCounter [color="black", label=""];
+		init_FB_LoopCounter -> l11_FB_LoopCounter [color="black", label="[ELSE]"];
+		l10_FB_LoopCounter -> l12_FB_LoopCounter [color="black", label=""];
+		l11_FB_LoopCounter -> l12_FB_LoopCounter [color="black", label=""];
+		l12_FB_LoopCounter -> l13_FB_LoopCounter [color="black", label="o := macro"];
+	}
+	subgraph clusterprg {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="prg : prg";
+		
+		annotations_pseudonode_prg [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_prg [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_prg [label="l1", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_prg -> l1_prg [color="black", label="CALL: FB_LoopCounter:loopCounter(\l   IN: i := trigger\l   OUT: )\l"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/i := NONDETERMINISTIC of bool\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: FB_LoopCounter:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

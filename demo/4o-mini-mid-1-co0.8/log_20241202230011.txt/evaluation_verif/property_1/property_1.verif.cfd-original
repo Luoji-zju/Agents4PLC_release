@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfadeclaration:CfaNetworkDeclaration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfabase="cern.plcverif.base.models.cfa.cfabase" xmlns:cfadeclaration="cern.plcverif.base.models.cfa.cfadeclaration" xmlns:expr="cern.plcverif.base.models.expr" xmi:id="network" name="network" displayName="network" mainAutomaton="network_VerificationLoop">
+  <automata xmi:id="network_F_CollectInput" name="F_CollectInput" displayName="F_CollectInput" initialLocation="network_F_CollectInput_init" endLocation="network_F_CollectInput_l17">
+    <locations xmi:id="network_F_CollectInput_init" name="init" displayName="init" frozen="true" outgoing="network_F_CollectInput_t1 network_F_CollectInput_t17"/>
+    <locations xmi:id="network_F_CollectInput_l1" name="l1" displayName="l1" incoming="network_F_CollectInput_t1" outgoing="network_F_CollectInput_t2"/>
+    <locations xmi:id="network_F_CollectInput_l2" name="l2" displayName="l2" incoming="network_F_CollectInput_t2" outgoing="network_F_CollectInput_t3"/>
+    <locations xmi:id="network_F_CollectInput_l3" name="l3" displayName="l3" incoming="network_F_CollectInput_t3" outgoing="network_F_CollectInput_t4"/>
+    <locations xmi:id="network_F_CollectInput_l4" name="l4" displayName="l4" incoming="network_F_CollectInput_t4" outgoing="network_F_CollectInput_t5"/>
+    <locations xmi:id="network_F_CollectInput_l5" name="l5" displayName="l5" incoming="network_F_CollectInput_t5" outgoing="network_F_CollectInput_t6"/>
+    <locations xmi:id="network_F_CollectInput_l6" name="l6" displayName="l6" incoming="network_F_CollectInput_t6" outgoing="network_F_CollectInput_t7"/>
+    <locations xmi:id="network_F_CollectInput_l7" name="l7" displayName="l7" incoming="network_F_CollectInput_t7" outgoing="network_F_CollectInput_t8"/>
+    <locations xmi:id="network_F_CollectInput_l8" name="l8" displayName="l8" incoming="network_F_CollectInput_t8" outgoing="network_F_CollectInput_t9"/>
+    <locations xmi:id="network_F_CollectInput_l9" name="l9" displayName="l9" incoming="network_F_CollectInput_t9" outgoing="network_F_CollectInput_t10"/>
+    <locations xmi:id="network_F_CollectInput_l10" name="l10" displayName="l10" incoming="network_F_CollectInput_t10" outgoing="network_F_CollectInput_t11"/>
+    <locations xmi:id="network_F_CollectInput_l11" name="l11" displayName="l11" incoming="network_F_CollectInput_t11" outgoing="network_F_CollectInput_t12 network_F_CollectInput_t14"/>
+    <locations xmi:id="network_F_CollectInput_l12" name="l12" displayName="l12" incoming="network_F_CollectInput_t12" outgoing="network_F_CollectInput_t13"/>
+    <locations xmi:id="network_F_CollectInput_l13" name="l13" displayName="l13" incoming="network_F_CollectInput_t13" outgoing="network_F_CollectInput_t15"/>
+    <locations xmi:id="network_F_CollectInput_l14" name="l14" displayName="l14" incoming="network_F_CollectInput_t14" outgoing="network_F_CollectInput_t16"/>
+    <locations xmi:id="network_F_CollectInput_l15" name="l15" displayName="l15" incoming="network_F_CollectInput_t15 network_F_CollectInput_t16" outgoing="network_F_CollectInput_t18"/>
+    <locations xmi:id="network_F_CollectInput_l16" name="l16" displayName="l16" incoming="network_F_CollectInput_t17" outgoing="network_F_CollectInput_t19"/>
+    <locations xmi:id="network_F_CollectInput_l17" name="l17" displayName="l17" incoming="network_F_CollectInput_t18 network_F_CollectInput_t19"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t1" name="t1" displayName="t1" source="network_F_CollectInput_init" target="network_F_CollectInput_l1">
+      <condition xsi:type="cfadeclaration:FieldRef" xmi:id="id0" field="network__global_F_CollectInput_TICK"/>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t2" name="t2" displayName="t2" source="network_F_CollectInput_l1" target="network_F_CollectInput_l2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id1" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id2"/>
+      </condition>
+      <assignments xmi:id="id3">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id4">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id5" field="network__global_F_CollectInput_Data"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id6" field="network__global_F_CollectInput_index"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id7" field="network__global_F_CollectInput_IN1"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t3" name="t3" displayName="t3" source="network_F_CollectInput_l2" target="network_F_CollectInput_l3">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id8" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id9"/>
+      </condition>
+      <assignments xmi:id="id10">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id11" field="network__global_F_CollectInput_index"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id12">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id13" field="network__global_F_CollectInput_index"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id14" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id15" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t4" name="t4" displayName="t4" source="network_F_CollectInput_l3" target="network_F_CollectInput_l4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id16" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id17"/>
+      </condition>
+      <assignments xmi:id="id18">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id19">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id20" field="network__global_F_CollectInput_Data"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id21" field="network__global_F_CollectInput_index"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id22" field="network__global_F_CollectInput_IN2"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t5" name="t5" displayName="t5" source="network_F_CollectInput_l4" target="network_F_CollectInput_l5">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id23" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id24"/>
+      </condition>
+      <assignments xmi:id="id25">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id26" field="network__global_F_CollectInput_index"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id27">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id28" field="network__global_F_CollectInput_index"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id29" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id30" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t6" name="t6" displayName="t6" source="network_F_CollectInput_l5" target="network_F_CollectInput_l6">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id31" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id32"/>
+      </condition>
+      <assignments xmi:id="id33">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id34">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id35" field="network__global_F_CollectInput_Data"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id36" field="network__global_F_CollectInput_index"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id37" field="network__global_F_CollectInput_IN3"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t7" name="t7" displayName="t7" source="network_F_CollectInput_l6" target="network_F_CollectInput_l7">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id38" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id39"/>
+      </condition>
+      <assignments xmi:id="id40">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id41" field="network__global_F_CollectInput_index"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id42">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id43" field="network__global_F_CollectInput_index"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id44" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id45" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t8" name="t8" displayName="t8" source="network_F_CollectInput_l7" target="network_F_CollectInput_l8">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id46" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id47"/>
+      </condition>
+      <assignments xmi:id="id48">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id49">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id50" field="network__global_F_CollectInput_Data"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id51" field="network__global_F_CollectInput_index"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id52" field="network__global_F_CollectInput_IN4"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t9" name="t9" displayName="t9" source="network_F_CollectInput_l8" target="network_F_CollectInput_l9">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id53" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id54"/>
+      </condition>
+      <assignments xmi:id="id55">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id56" field="network__global_F_CollectInput_index"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id57">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id58" field="network__global_F_CollectInput_index"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id59" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id60" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t10" name="t10" displayName="t10" source="network_F_CollectInput_l9" target="network_F_CollectInput_l10">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id61" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id62"/>
+      </condition>
+      <assignments xmi:id="id63">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id64">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id65" field="network__global_F_CollectInput_Data"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id66" field="network__global_F_CollectInput_index"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id67" field="network__global_F_CollectInput_IN5"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t11" name="t11" displayName="t11" source="network_F_CollectInput_l10" target="network_F_CollectInput_l11">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id68" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id69"/>
+      </condition>
+      <assignments xmi:id="id70">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id71" field="network__global_F_CollectInput_index"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id72">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id73" field="network__global_F_CollectInput_index"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id74" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id75" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t12" name="t12" displayName="t12" source="network_F_CollectInput_l11" target="network_F_CollectInput_l12">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id76" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id77" field="network__global_F_CollectInput_index"/>
+        <rightOperand xsi:type="expr:IntLiteral" xmi:id="id78" value="5">
+          <type xsi:type="expr:IntType" xmi:id="id79" signed="true" bits="16"/>
+        </rightOperand>
+        <type xsi:type="expr:BoolType" xmi:id="id80"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t13" name="t13" displayName="t13" source="network_F_CollectInput_l12" target="network_F_CollectInput_l13">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id81" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id82"/>
+      </condition>
+      <assignments xmi:id="id83">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id84" field="network__global_F_CollectInput_index"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id85" value="1">
+          <type xsi:type="expr:IntType" xmi:id="id86" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t14" name="t14" displayName="t14" source="network_F_CollectInput_l11" target="network_F_CollectInput_l14">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id87">
+        <type xsi:type="expr:BoolType" xmi:id="id88"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t15" name="t15" displayName="t15" source="network_F_CollectInput_l13" target="network_F_CollectInput_l15">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id89" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id90"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t16" name="t16" displayName="t16" source="network_F_CollectInput_l14" target="network_F_CollectInput_l15">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id91" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id92"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t17" name="t17" displayName="t17" source="network_F_CollectInput_init" target="network_F_CollectInput_l16">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id93">
+        <type xsi:type="expr:BoolType" xmi:id="id94"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t18" name="t18" displayName="t18" source="network_F_CollectInput_l15" target="network_F_CollectInput_l17">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id95" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id96"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_F_CollectInput_t19" name="t19" displayName="t19" source="network_F_CollectInput_l16" target="network_F_CollectInput_l17">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id97" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id98"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id99" definition="network__global_F_CollectInput"/>
+  </automata>
+  <automata xmi:id="network_VerificationLoop" name="VerificationLoop" displayName="VerificationLoop" initialLocation="network_VerificationLoop_init" endLocation="network_VerificationLoop_end">
+    <locations xmi:id="network_VerificationLoop_init" name="init" displayName="init" frozen="true" outgoing="network_VerificationLoop_t_params"/>
+    <locations xmi:id="network_VerificationLoop_end" name="end" displayName="end" frozen="true" incoming="network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_loop_start" name="loop_start" displayName="loop_start" incoming="network_VerificationLoop_t_params network_VerificationLoop_restart" outgoing="network_VerificationLoop_set_BoC network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_prepare_BoC" name="prepare_BoC" displayName="prepare_BoC" frozen="true" incoming="network_VerificationLoop_set_BoC" outgoing="network_VerificationLoop_t_inputs"/>
+    <locations xmi:id="network_VerificationLoop_l_main_call" name="l_main_call" displayName="l_main_call" incoming="network_VerificationLoop_t_inputs" outgoing="network_VerificationLoop_main_call"/>
+    <locations xmi:id="network_VerificationLoop_callEnd" name="callEnd" displayName="callEnd" incoming="network_VerificationLoop_main_call" outgoing="network_VerificationLoop_set_EoC"/>
+    <locations xmi:id="network_VerificationLoop_prepare_EoC" name="prepare_EoC" displayName="prepare_EoC" frozen="true" incoming="network_VerificationLoop_set_EoC" outgoing="network_VerificationLoop_restart"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_params" name="t_params" displayName="t_params" source="network_VerificationLoop_init" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id100" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id101"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_BoC" name="set_BoC" displayName="set_BoC" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_prepare_BoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id102" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id103"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_inputs" name="t_inputs" displayName="t_inputs" source="network_VerificationLoop_prepare_BoC" target="network_VerificationLoop_l_main_call">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id104" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id105"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_VerificationLoop_main_call" name="main_call" displayName="main_call" source="network_VerificationLoop_l_main_call" target="network_VerificationLoop_callEnd">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id106" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id107"/>
+      </condition>
+      <calls xmi:id="id108" calledAutomaton="network_F_CollectInput">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id109" field="network__global_instance"/>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_EoC" name="set_EoC" displayName="set_EoC" source="network_VerificationLoop_callEnd" target="network_VerificationLoop_prepare_EoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id110" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id111"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_restart" name="restart" displayName="restart" frozen="true" source="network_VerificationLoop_prepare_EoC" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id112" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id113"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_end1" name="end1" displayName="end" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_end">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id114" value="false">
+        <type xsi:type="expr:BoolType" xmi:id="id115"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id116" definition="network__global_VerificationLoopDS"/>
+  </automata>
+  <rootDataStructure xmi:id="network__global" name="_global" displayName="_global">
+    <fields xmi:id="network__global_instance" name="instance" displayName="instance">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id117" definition="network__global_F_CollectInput"/>
+    </fields>
+    <fields xmi:id="network__global___assertion_error" name="__assertion_error" displayName="__assertion_error" frozen="true">
+      <type xsi:type="expr:IntType" xmi:id="id118" signed="false" bits="16"/>
+      <initialAssignments xmi:id="id119">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id120" field="network__global___assertion_error"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id121" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id122" signed="false" bits="16"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id123"/>
+    </fields>
+    <fields xmi:id="network__global_verificationLoop" name="verificationLoop" displayName="verificationLoop">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id124" definition="network__global_VerificationLoopDS"/>
+    </fields>
+    <complexTypes xmi:id="network__global_F_CollectInput" name="F_CollectInput" displayName="F_CollectInput">
+      <fields xmi:id="network__global_F_CollectInput_TICK" name="TICK" displayName="TICK">
+        <type xsi:type="expr:BoolType" xmi:id="id125"/>
+        <initialAssignments xmi:id="id126">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id127" field="network__global_F_CollectInput_TICK"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id128" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id129"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id130" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id131" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_IN1" name="IN1" displayName="IN1">
+        <type xsi:type="expr:BoolType" xmi:id="id132"/>
+        <initialAssignments xmi:id="id133">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id134" field="network__global_F_CollectInput_IN1"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id135" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id136"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id137" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id138" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_IN2" name="IN2" displayName="IN2">
+        <type xsi:type="expr:BoolType" xmi:id="id139"/>
+        <initialAssignments xmi:id="id140">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id141" field="network__global_F_CollectInput_IN2"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id142" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id143"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id144" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id145" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_IN3" name="IN3" displayName="IN3">
+        <type xsi:type="expr:BoolType" xmi:id="id146"/>
+        <initialAssignments xmi:id="id147">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id148" field="network__global_F_CollectInput_IN3"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id149" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id150"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id151" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id152" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_IN4" name="IN4" displayName="IN4">
+        <type xsi:type="expr:BoolType" xmi:id="id153"/>
+        <initialAssignments xmi:id="id154">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id155" field="network__global_F_CollectInput_IN4"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id156" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id157"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id158" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id159" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_IN5" name="IN5" displayName="IN5">
+        <type xsi:type="expr:BoolType" xmi:id="id160"/>
+        <initialAssignments xmi:id="id161">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id162" field="network__global_F_CollectInput_IN5"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id163" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id164"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id165" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id166" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_Data" name="Data" displayName="Data">
+        <type xsi:type="cfabase:ArrayType" xmi:id="id167">
+          <elementType xsi:type="expr:BoolType" xmi:id="id168"/>
+          <dimension xmi:id="id169" defined="true" lowerIndex="1" upperIndex="5"/>
+        </type>
+        <initialAssignments xmi:id="id170">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id171">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id172" field="network__global_F_CollectInput_Data"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id173" value="1">
+              <type xsi:type="expr:IntType" xmi:id="id174" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id175" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id176"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id177">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id178">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id179" field="network__global_F_CollectInput_Data"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id180" value="2">
+              <type xsi:type="expr:IntType" xmi:id="id181" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id182" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id183"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id184">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id185">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id186" field="network__global_F_CollectInput_Data"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id187" value="3">
+              <type xsi:type="expr:IntType" xmi:id="id188" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id189" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id190"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id191">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id192">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id193" field="network__global_F_CollectInput_Data"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id194" value="4">
+              <type xsi:type="expr:IntType" xmi:id="id195" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id196" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id197"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id198">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id199">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id200" field="network__global_F_CollectInput_Data"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id201" value="5">
+              <type xsi:type="expr:IntType" xmi:id="id202" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id203" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id204"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id205" direction="LOCAL"/>
+      </fields>
+      <fields xmi:id="network__global_F_CollectInput_index" name="index" displayName="index">
+        <type xsi:type="expr:IntType" xmi:id="id206" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id207">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id208" field="network__global_F_CollectInput_index"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id209" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id210" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id211" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id212" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_VerificationLoopDS" name="VerificationLoopDS" displayName="VerificationLoopDS"/>
+  </rootDataStructure>
+  <mainContext xsi:type="cfadeclaration:FieldRef" xmi:id="id213" field="network__global_verificationLoop"/>
+</cfadeclaration:CfaNetworkDeclaration>

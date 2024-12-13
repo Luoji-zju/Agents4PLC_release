@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfainstance:CfaNetworkInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfainstance="cern.plcverif.base.models.cfa.cfainstance" xmlns:expr="cern.plcverif.base.models.expr" xmi:id="network" name="network" displayName="network" mainAutomaton="network_verificationLoop_VerificationLoop">
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_input1" name="instance_input1" displayName="instance/input1">
+    <type xsi:type="expr:IntType" xmi:id="id0" signed="true" bits="16"/>
+    <fqn xmi:id="id1">
+      <identifiers>instance</identifiers>
+      <identifiers>input1</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id2"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id3" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id4" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_input2" name="instance_input2" displayName="instance/input2">
+    <type xsi:type="expr:IntType" xmi:id="id5" signed="true" bits="16"/>
+    <fqn xmi:id="id6">
+      <identifiers>instance</identifiers>
+      <identifiers>input2</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id7"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id8" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id9" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_input3" name="instance_input3" displayName="instance/input3">
+    <type xsi:type="expr:IntType" xmi:id="id10" signed="true" bits="16"/>
+    <fqn xmi:id="id11">
+      <identifiers>instance</identifiers>
+      <identifiers>input3</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id12"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id13" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id14" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_input4" name="instance_input4" displayName="instance/input4">
+    <type xsi:type="expr:IntType" xmi:id="id15" signed="true" bits="16"/>
+    <fqn xmi:id="id16">
+      <identifiers>instance</identifiers>
+      <identifiers>input4</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id17"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id18" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id19" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_input5" name="instance_input5" displayName="instance/input5">
+    <type xsi:type="expr:IntType" xmi:id="id20" signed="true" bits="16"/>
+    <fqn xmi:id="id21">
+      <identifiers>instance</identifiers>
+      <identifiers>input5</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id22"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id23" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id24" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_CYCLE" name="instance_CYCLE" displayName="instance/CYCLE">
+    <type xsi:type="expr:IntType" xmi:id="id25" signed="true" bits="16"/>
+    <fqn xmi:id="id26">
+      <identifiers>instance</identifiers>
+      <identifiers>CYCLE</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id27"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id28" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id29" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_M" name="instance_M" displayName="instance/M">
+    <type xsi:type="expr:IntType" xmi:id="id30" signed="true" bits="16"/>
+    <fqn xmi:id="id31">
+      <identifiers>instance</identifiers>
+      <identifiers>M</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id32" direction="OUTPUT"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id33" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id34" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_N" name="instance_N" displayName="instance/N">
+    <type xsi:type="expr:IntType" xmi:id="id35" signed="true" bits="16"/>
+    <fqn xmi:id="id36">
+      <identifiers>instance</identifiers>
+      <identifiers>N</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id37" direction="OUTPUT"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id38" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id39" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_UPDATED_CYCLE" name="instance_UPDATED_CYCLE" displayName="instance/UPDATED_CYCLE">
+    <type xsi:type="expr:IntType" xmi:id="id40" signed="true" bits="16"/>
+    <fqn xmi:id="id41">
+      <identifiers>instance</identifiers>
+      <identifiers>UPDATED_CYCLE</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id42" direction="OUTPUT"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id43" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id44" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_TEMP_MAX_OUT" name="instance_TEMP_MAX_OUT" displayName="instance/TEMP_MAX_OUT">
+    <type xsi:type="expr:IntType" xmi:id="id45" signed="true" bits="16"/>
+    <fqn xmi:id="id46">
+      <identifiers>instance</identifiers>
+      <identifiers>TEMP_MAX_OUT</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id47" direction="LOCAL"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id48" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id49" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_TEMP_MIN_2_OUT" name="instance_TEMP_MIN_2_OUT" displayName="instance/TEMP_MIN_2_OUT">
+    <type xsi:type="expr:IntType" xmi:id="id50" signed="true" bits="16"/>
+    <fqn xmi:id="id51">
+      <identifiers>instance</identifiers>
+      <identifiers>TEMP_MIN_2_OUT</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id52" direction="LOCAL"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id53" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id54" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_TEMP_MIN_3_OUT" name="instance_TEMP_MIN_3_OUT" displayName="instance/TEMP_MIN_3_OUT">
+    <type xsi:type="expr:IntType" xmi:id="id55" signed="true" bits="16"/>
+    <fqn xmi:id="id56">
+      <identifiers>instance</identifiers>
+      <identifiers>TEMP_MIN_3_OUT</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id57" direction="LOCAL"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id58" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id59" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_max_block_A" name="instance_max_block_A" displayName="instance/max_block/A">
+    <type xsi:type="expr:IntType" xmi:id="id60" signed="true" bits="16"/>
+    <fqn xmi:id="id61">
+      <identifiers>instance</identifiers>
+      <identifiers>max_block</identifiers>
+      <identifiers>A</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id62" direction="LOCAL"/>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id63"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id64" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id65" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_max_block_B" name="instance_max_block_B" displayName="instance/max_block/B">
+    <type xsi:type="expr:IntType" xmi:id="id66" signed="true" bits="16"/>
+    <fqn xmi:id="id67">
+      <identifiers>instance</identifiers>
+      <identifiers>max_block</identifiers>
+      <identifiers>B</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id68" direction="LOCAL"/>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id69"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id70" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id71" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_max_block_MAX_OUT" name="instance_max_block_MAX_OUT" displayName="instance/max_block/MAX_OUT">
+    <type xsi:type="expr:IntType" xmi:id="id72" signed="true" bits="16"/>
+    <fqn xmi:id="id73">
+      <identifiers>instance</identifiers>
+      <identifiers>max_block</identifiers>
+      <identifiers>MAX_OUT</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id74" direction="LOCAL"/>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id75" direction="OUTPUT"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id76" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id77" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_min_block_A" name="instance_min_block_A" displayName="instance/min_block/A">
+    <type xsi:type="expr:IntType" xmi:id="id78" signed="true" bits="16"/>
+    <fqn xmi:id="id79">
+      <identifiers>instance</identifiers>
+      <identifiers>min_block</identifiers>
+      <identifiers>A</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id80" direction="LOCAL"/>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id81"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id82" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id83" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_min_block_B" name="instance_min_block_B" displayName="instance/min_block/B">
+    <type xsi:type="expr:IntType" xmi:id="id84" signed="true" bits="16"/>
+    <fqn xmi:id="id85">
+      <identifiers>instance</identifiers>
+      <identifiers>min_block</identifiers>
+      <identifiers>B</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id86" direction="LOCAL"/>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id87"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id88" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id89" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_instance_min_block_MIN_OUT" name="instance_min_block_MIN_OUT" displayName="instance/min_block/MIN_OUT">
+    <type xsi:type="expr:IntType" xmi:id="id90" signed="true" bits="16"/>
+    <fqn xmi:id="id91">
+      <identifiers>instance</identifiers>
+      <identifiers>min_block</identifiers>
+      <identifiers>MIN_OUT</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id92" direction="LOCAL"/>
+    <annotations xsi:type="cfainstance:DirectionVariableAnnotation" xmi:id="id93" direction="OUTPUT"/>
+    <initialValue xsi:type="expr:IntLiteral" xmi:id="id94" value="0">
+      <type xsi:type="expr:IntType" xmi:id="id95" signed="true" bits="16"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_EoC" name="EoC" displayName="EoC" frozen="true">
+    <type xsi:type="expr:BoolType" xmi:id="id96"/>
+    <fqn xmi:id="id97">
+      <identifiers>EoC</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:InternalGeneratedVariableAnnotation" xmi:id="id98"/>
+    <initialValue xsi:type="expr:BoolLiteral" xmi:id="id99" value="false">
+      <type xsi:type="expr:BoolType" xmi:id="id100"/>
+    </initialValue>
+  </variables>
+  <variables xsi:type="cfainstance:Variable" xmi:id="network_BoC" name="BoC" displayName="BoC" frozen="true">
+    <type xsi:type="expr:BoolType" xmi:id="id101"/>
+    <fqn xmi:id="id102">
+      <identifiers>BoC</identifiers>
+    </fqn>
+    <annotations xsi:type="cfainstance:InternalGeneratedVariableAnnotation" xmi:id="id103"/>
+    <initialValue xsi:type="expr:BoolLiteral" xmi:id="id104" value="false">
+      <type xsi:type="expr:BoolType" xmi:id="id105"/>
+    </initialValue>
+  </variables>
+  <automata xmi:id="network_verificationLoop_VerificationLoop" name="verificationLoop_VerificationLoop" displayName="verificationLoop.VerificationLoop" initialLocation="network_verificationLoop_VerificationLoop_init" endLocation="network_verificationLoop_VerificationLoop_end">
+    <locations xmi:id="network_verificationLoop_VerificationLoop_init" name="init" displayName="init" frozen="true" outgoing="network_verificationLoop_VerificationLoop_t_params"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_end" name="end" displayName="end" frozen="true" incoming="network_verificationLoop_VerificationLoop_end1"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_loop_start" name="loop_start" displayName="loop_start" incoming="network_verificationLoop_VerificationLoop_t_params network_verificationLoop_VerificationLoop_restart" outgoing="network_verificationLoop_VerificationLoop_set_BoC network_verificationLoop_VerificationLoop_end1"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_prepare_BoC" name="prepare_BoC" displayName="prepare_BoC" frozen="true" incoming="network_verificationLoop_VerificationLoop_set_BoC" outgoing="network_verificationLoop_VerificationLoop_t_inputs"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_l_main_call" name="l_main_call" displayName="l_main_call" incoming="network_verificationLoop_VerificationLoop_t_inputs" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_inputs"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_callEnd" name="callEnd" displayName="callEnd" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_outputs" outgoing="network_verificationLoop_VerificationLoop_set_EoC"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_prepare_EoC" name="prepare_EoC" displayName="prepare_EoC" frozen="true" incoming="network_verificationLoop_VerificationLoop_set_EoC" outgoing="network_verificationLoop_VerificationLoop_restart"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_init" name="verificationLoop_VerificationLoop_init" displayName="verificationLoop.VerificationLoop_init" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_inputs" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l1" name="verificationLoop_VerificationLoop_l1" displayName="verificationLoop.VerificationLoop_l1" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t2"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l2" name="verificationLoop_VerificationLoop_l2" displayName="verificationLoop.VerificationLoop_l2" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t2" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs1"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l3" name="verificationLoop_VerificationLoop_l3" displayName="verificationLoop.VerificationLoop_l3" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs1" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t4"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l4" name="verificationLoop_VerificationLoop_l4" displayName="verificationLoop.VerificationLoop_l4" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t4" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs2"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l5" name="verificationLoop_VerificationLoop_l5" displayName="verificationLoop.VerificationLoop_l5" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs2" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t6"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l6" name="verificationLoop_VerificationLoop_l6" displayName="verificationLoop.VerificationLoop_l6" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t6" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs3"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l7" name="verificationLoop_VerificationLoop_l7" displayName="verificationLoop.VerificationLoop_l7" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs3" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t8"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l8" name="verificationLoop_VerificationLoop_l8" displayName="verificationLoop.VerificationLoop_l8" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t8" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs4"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l9" name="verificationLoop_VerificationLoop_l9" displayName="verificationLoop.VerificationLoop_l9" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs4" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t10"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l11" name="verificationLoop_VerificationLoop_l11" displayName="verificationLoop.VerificationLoop_l11" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t10" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_outputs"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_init" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_init" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t1"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l1" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t1" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t2 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t4"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l5" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t2 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t4" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_init1" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs1" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t11"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l11" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t11" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t21 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t41"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l51" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t21 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t41" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs1"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init2" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_init2" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_init2" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs2" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t12"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l12" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l12" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l12" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t12" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t22 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t42"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l52" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t22 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t42" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs2"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init3" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_init3" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_init3" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs3" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t13"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l13" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l13" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l13" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t13" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t23 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t43"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l53" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l53" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l53" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t23 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t43" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs3"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init4" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_init4" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_init4" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs4" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t14"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l14" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l14" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l14" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t14" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t24 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t44"/>
+    <locations xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l54" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_l54" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_l54" incoming="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t24 network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t44" outgoing="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs4"/>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_t_params" name="t_params" displayName="t_params" source="network_verificationLoop_VerificationLoop_init" target="network_verificationLoop_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id106" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id107"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_set_BoC" name="set_BoC" displayName="set_BoC" frozen="true" source="network_verificationLoop_VerificationLoop_loop_start" target="network_verificationLoop_VerificationLoop_prepare_BoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id108" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id109"/>
+      </condition>
+      <assignments xmi:id="id110">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id111" variable="network_instance_CYCLE"/>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id112">
+          <type xsi:type="expr:IntType" xmi:id="id113" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id114">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id115" variable="network_instance_input1"/>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id116">
+          <type xsi:type="expr:IntType" xmi:id="id117" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id118">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id119" variable="network_instance_input2"/>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id120">
+          <type xsi:type="expr:IntType" xmi:id="id121" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id122">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id123" variable="network_instance_input3"/>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id124">
+          <type xsi:type="expr:IntType" xmi:id="id125" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id126">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id127" variable="network_instance_input4"/>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id128">
+          <type xsi:type="expr:IntType" xmi:id="id129" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id130">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id131" variable="network_instance_input5"/>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id132">
+          <type xsi:type="expr:IntType" xmi:id="id133" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id134" frozen="true">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id135" frozen="true" variable="network_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id136" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id137"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_t_inputs" name="t_inputs" displayName="t_inputs" frozen="true" source="network_verificationLoop_VerificationLoop_prepare_BoC" target="network_verificationLoop_VerificationLoop_l_main_call">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id138" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id139"/>
+      </condition>
+      <assignments xmi:id="id140" frozen="true">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id141" frozen="true" variable="network_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id142" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id143"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_set_EoC" name="set_EoC" displayName="set_EoC" frozen="true" source="network_verificationLoop_VerificationLoop_callEnd" target="network_verificationLoop_VerificationLoop_prepare_EoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id144" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id145"/>
+      </condition>
+      <assignments xmi:id="id146" frozen="true">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id147" frozen="true" variable="network_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id148" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id149"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_restart" name="restart" displayName="restart" frozen="true" source="network_verificationLoop_VerificationLoop_prepare_EoC" target="network_verificationLoop_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id150" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id151"/>
+      </condition>
+      <assignments xmi:id="id152" frozen="true">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id153" frozen="true" variable="network_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id154" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id155"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_end1" name="end1" displayName="end" source="network_verificationLoop_VerificationLoop_loop_start" target="network_verificationLoop_VerificationLoop_end">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id156" value="false">
+        <type xsi:type="expr:BoolType" xmi:id="id157"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t2" name="verificationLoop_VerificationLoop_t2" displayName="verificationLoop.VerificationLoop_t2" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l1" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id158" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id159"/>
+      </condition>
+      <assignments xmi:id="id160">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id161" variable="network_instance_TEMP_MAX_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id162" variable="network_instance_max_block_MAX_OUT"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t4" name="verificationLoop_VerificationLoop_t4" displayName="verificationLoop.VerificationLoop_t4" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l3" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id163" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id164"/>
+      </condition>
+      <assignments xmi:id="id165">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id166" variable="network_instance_M"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id167" variable="network_instance_max_block_MAX_OUT"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t6" name="verificationLoop_VerificationLoop_t6" displayName="verificationLoop.VerificationLoop_t6" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l5" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l6">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id168" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id169"/>
+      </condition>
+      <assignments xmi:id="id170">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id171" variable="network_instance_TEMP_MIN_2_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id172" variable="network_instance_min_block_MIN_OUT"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t8" name="verificationLoop_VerificationLoop_t8" displayName="verificationLoop.VerificationLoop_t8" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l7" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l8">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id173" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id174"/>
+      </condition>
+      <assignments xmi:id="id175">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id176" variable="network_instance_TEMP_MIN_3_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id177" variable="network_instance_min_block_MIN_OUT"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_t10" name="verificationLoop_VerificationLoop_t10" displayName="verificationLoop.VerificationLoop_t10" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l9" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l11">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id178" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id179"/>
+      </condition>
+      <assignments xmi:id="id180">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id181" variable="network_instance_N"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id182" variable="network_instance_min_block_MIN_OUT"/>
+      </assignments>
+      <assignments xmi:id="id183">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id184" variable="network_instance_UPDATED_CYCLE"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id185">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id186" variable="network_instance_CYCLE"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id187" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id188" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t1" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t1" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t1" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id189" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id190"/>
+      </condition>
+      <assignments xmi:id="id191">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id192" variable="network_instance_max_block_MAX_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id193" variable="network_instance_max_block_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t2" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t2" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t2" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id194" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id195" variable="network_instance_max_block_B"/>
+        <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id196" variable="network_instance_max_block_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id197"/>
+      </condition>
+      <assignments xmi:id="id198">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id199" variable="network_instance_max_block_MAX_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id200" variable="network_instance_max_block_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t4" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t4" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t4" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l1" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id201">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id202" operator="GREATER_THAN">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id203" variable="network_instance_max_block_B"/>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id204" variable="network_instance_max_block_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id205"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_inputs" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_init" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id206" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id207"/>
+      </condition>
+      <assignments xmi:id="id208">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id209" variable="network_instance_max_block_A"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id210" variable="network_instance_input2"/>
+      </assignments>
+      <assignments xmi:id="id211">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id212" variable="network_instance_max_block_B"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id213" variable="network_instance_input3"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_outputs" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l5" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id214" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id215"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t11" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t11" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t11" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id216" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id217"/>
+      </condition>
+      <assignments xmi:id="id218">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id219" variable="network_instance_max_block_MAX_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id220" variable="network_instance_max_block_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t21" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t21" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t21" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id221" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id222" variable="network_instance_max_block_B"/>
+        <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id223" variable="network_instance_max_block_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id224"/>
+      </condition>
+      <assignments xmi:id="id225">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id226" variable="network_instance_max_block_MAX_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id227" variable="network_instance_max_block_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t41" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t41" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t41" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l11" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id228">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id229" operator="GREATER_THAN">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id230" variable="network_instance_max_block_B"/>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id231" variable="network_instance_max_block_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id232"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs1" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs1" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_inputs1" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l2" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id233" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id234"/>
+      </condition>
+      <assignments xmi:id="id235">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id236" variable="network_instance_max_block_A"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id237" variable="network_instance_input1"/>
+      </assignments>
+      <assignments xmi:id="id238">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id239" variable="network_instance_max_block_B"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id240" variable="network_instance_TEMP_MAX_OUT"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs1" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs1" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_outputs1" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l51" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l3">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id241" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id242"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t12" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t12" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t12" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init2" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l12">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id243" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id244"/>
+      </condition>
+      <assignments xmi:id="id245">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id246" variable="network_instance_min_block_MIN_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id247" variable="network_instance_min_block_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t22" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t22" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t22" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l12" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id248" operator="LESS_THAN">
+        <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id249" variable="network_instance_min_block_B"/>
+        <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id250" variable="network_instance_min_block_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id251"/>
+      </condition>
+      <assignments xmi:id="id252">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id253" variable="network_instance_min_block_MIN_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id254" variable="network_instance_min_block_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t42" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t42" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t42" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l12" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id255">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id256" operator="LESS_THAN">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id257" variable="network_instance_min_block_B"/>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id258" variable="network_instance_min_block_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id259"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs2" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs2" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_inputs2" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l4" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id260" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id261"/>
+      </condition>
+      <assignments xmi:id="id262">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id263" variable="network_instance_min_block_A"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id264" variable="network_instance_input4"/>
+      </assignments>
+      <assignments xmi:id="id265">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id266" variable="network_instance_min_block_B"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id267" variable="network_instance_input5"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs2" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs2" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_outputs2" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l52" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l5">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id268" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id269"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t13" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t13" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t13" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init3" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l13">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id270" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id271"/>
+      </condition>
+      <assignments xmi:id="id272">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id273" variable="network_instance_min_block_MIN_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id274" variable="network_instance_min_block_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t23" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t23" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t23" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l13" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l53">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id275" operator="LESS_THAN">
+        <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id276" variable="network_instance_min_block_B"/>
+        <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id277" variable="network_instance_min_block_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id278"/>
+      </condition>
+      <assignments xmi:id="id279">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id280" variable="network_instance_min_block_MIN_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id281" variable="network_instance_min_block_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t43" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t43" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t43" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l13" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l53">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id282">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id283" operator="LESS_THAN">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id284" variable="network_instance_min_block_B"/>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id285" variable="network_instance_min_block_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id286"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs3" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs3" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_inputs3" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l6" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init3">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id287" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id288"/>
+      </condition>
+      <assignments xmi:id="id289">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id290" variable="network_instance_min_block_A"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id291" variable="network_instance_input2"/>
+      </assignments>
+      <assignments xmi:id="id292">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id293" variable="network_instance_min_block_B"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id294">
+          <leftOperand xsi:type="expr:BinaryArithmeticExpression" xmi:id="id295" operator="MULTIPLICATION">
+            <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id296" variable="network_instance_input3"/>
+            <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id297" variable="network_instance_TEMP_MIN_2_OUT"/>
+          </leftOperand>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id298" variable="network_instance_input2"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs3" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs3" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_outputs3" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l53" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l7">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id299" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id300"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t14" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t14" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t14" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init4" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l14">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id301" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id302"/>
+      </condition>
+      <assignments xmi:id="id303">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id304" variable="network_instance_min_block_MIN_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id305" variable="network_instance_min_block_A"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t24" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t24" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t24" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l14" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l54">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id306" operator="LESS_THAN">
+        <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id307" variable="network_instance_min_block_B"/>
+        <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id308" variable="network_instance_min_block_A"/>
+        <type xsi:type="expr:BoolType" xmi:id="id309"/>
+      </condition>
+      <assignments xmi:id="id310">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id311" variable="network_instance_min_block_MIN_OUT"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id312" variable="network_instance_min_block_B"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_t44" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_t44" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_t44" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l14" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l54">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id313">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id314" operator="LESS_THAN">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id315" variable="network_instance_min_block_B"/>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id316" variable="network_instance_min_block_A"/>
+          <type xsi:type="expr:BoolType" xmi:id="id317"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs4" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_inputs4" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_inputs4" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l8" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_init4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id318" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id319"/>
+      </condition>
+      <assignments xmi:id="id320">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id321" variable="network_instance_min_block_A"/>
+        <rightValue xsi:type="cfainstance:VariableRef" xmi:id="id322" variable="network_instance_input1"/>
+      </assignments>
+      <assignments xmi:id="id323">
+        <leftValue xsi:type="cfainstance:VariableRef" xmi:id="id324" variable="network_instance_min_block_B"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id325">
+          <leftOperand xsi:type="cfainstance:VariableRef" xmi:id="id326" variable="network_instance_TEMP_MIN_3_OUT"/>
+          <rightOperand xsi:type="cfainstance:VariableRef" xmi:id="id327" variable="network_instance_input3"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs4" name="verificationLoop_VerificationLoop_instance_FB_ValueComparison_outputs4" displayName="verificationLoop.VerificationLoop_instance_FB_ValueComparison_outputs4" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_instance_FB_ValueComparison_l54" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l9">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id328" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id329"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_inputs" name="verificationLoop_VerificationLoop_inputs" displayName="verificationLoop.VerificationLoop_inputs" source="network_verificationLoop_VerificationLoop_l_main_call" target="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_init">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id330" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id331"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfainstance:AssignmentTransition" xmi:id="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_outputs" name="verificationLoop_VerificationLoop_outputs" displayName="verificationLoop.VerificationLoop_outputs" source="network_verificationLoop_VerificationLoop_verificationLoop_VerificationLoop_l11" target="network_verificationLoop_VerificationLoop_callEnd">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id332" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id333"/>
+      </condition>
+    </transitions>
+  </automata>
+</cfainstance:CfaNetworkInstance>

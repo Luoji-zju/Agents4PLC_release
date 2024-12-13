@@ -1,0 +1,112 @@
+digraph G {
+	subgraph cluster__global2137748518 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global2137748518 [label="_global"];
+		_global2137748518 -> instance1686091139;
+		instance1686091139 [label = "(F) instance : _global/LatencyMonitor", fillcolor="white" ];
+		_global2137748518 -> verificationLoop283092975;
+		verificationLoop283092975 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global2137748518 -> EoC979248421;
+		EoC979248421 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global2137748518 -> BoC635340952;
+		BoC635340952 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global2137748518 -> LatencyMonitor1753134165;
+		subgraph cluster_LatencyMonitor1753134165 {
+			node [shape="folder", style="filled"];
+			//label="LatencyMonitor";
+			LatencyMonitor1753134165 [label="LatencyMonitor"];
+			LatencyMonitor1753134165 -> latency_xx_ms1314688755;
+			latency_xx_ms1314688755 [label = "(F) latency_xx_ms : signed int16", fillcolor="white" ];
+			LatencyMonitor1753134165 -> NODE_xx_STATUS657820185;
+			NODE_xx_STATUS657820185 [label = "(F) NODE_xx_STATUS : signed int16", fillcolor="white" ];
+			LatencyMonitor1753134165 -> errors_xx1805031342;
+			errors_xx1805031342 [label = "(F) errors_xx : signed int16", fillcolor="white" ];
+			LatencyMonitor1753134165 -> errors_all181451598;
+			errors_all181451598 [label = "(F) errors_all : signed int16", fillcolor="white" ];
+			LatencyMonitor1753134165 -> min_latency_ms1994834032;
+			min_latency_ms1994834032 [label = "(F) min_latency_ms : signed int16", fillcolor="white" ];
+			LatencyMonitor1753134165 -> max_latency_ms1321037782;
+			max_latency_ms1321037782 [label = "(F) max_latency_ms : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_LatencyMonitor1753134165 [
+				label="ANNOTATIONS\llatency_xx_ms : direction=INPUT\llatency_xx_ms : PLC type=INT\lNODE_xx_STATUS : direction=INPUT\lNODE_xx_STATUS : PLC type=INT\lerrors_xx : direction=INOUT\lerrors_xx : PLC type=INT\lerrors_all : direction=INOUT\lerrors_all : PLC type=INT\lmin_latency_ms : direction=INOUT\lmin_latency_ms : PLC type=INT\lmax_latency_ms : direction=INOUT\lmax_latency_ms : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_LatencyMonitor1753134165 [
+				label="INITIAL\llatency_xx_ms := 0\lNODE_xx_STATUS := 0\lerrors_xx := 0\lerrors_all := 0\lmin_latency_ms := 0\lmax_latency_ms := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global2137748518 -> VerificationLoopDS2121754508;
+		subgraph cluster_VerificationLoopDS2121754508 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS2121754508 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS2121754508 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS2121754508 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global2137748518 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global2137748518 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterLatencyMonitor {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="LatencyMonitor : LatencyMonitor";
+		
+		annotations_pseudonode_LatencyMonitor [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_LatencyMonitor [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l5_LatencyMonitor [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l9_LatencyMonitor [label="l9", color="black", fillcolor="white", shape="ellipse"];
+		l13_LatencyMonitor [label="l13", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_LatencyMonitor -> l5_LatencyMonitor [color="black", label="[((latency_xx_ms = 0) || (NODE_xx_STATUS != 1))]\lerrors_xx := (errors_xx + 1)\lerrors_all := (errors_all + 1)\l"];
+		init_LatencyMonitor -> l5_LatencyMonitor [color="black", label="[(! ((latency_xx_ms = 0) || (NODE_xx_STATUS != 1))\l)]\l"];
+		l5_LatencyMonitor -> l9_LatencyMonitor [color="black", label="[((latency_xx_ms < min_latency_ms) || (min_latency\l_ms < 0))]\lmin_latency_ms := latency_xx_ms\l"];
+		l5_LatencyMonitor -> l9_LatencyMonitor [color="black", label="[(! ((latency_xx_ms < min_latency_ms) || (min_late\lncy_ms < 0)))]\l"];
+		l9_LatencyMonitor -> l13_LatencyMonitor [color="black", label="[((latency_xx_ms > max_latency_ms) || (max_latency\l_ms < 0))]\lmax_latency_ms := latency_xx_ms\l"];
+		l9_LatencyMonitor -> l13_LatencyMonitor [color="black", label="[(! ((latency_xx_ms > max_latency_ms) || (max_late\lncy_ms < 0)))]\l"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/NODE_xx_STATUS := NONDETERMINISTIC of sig\lned int16\linstance/errors_all := NONDETERMINISTIC of signed \lint16\linstance/errors_xx := NONDETERMINISTIC of signed i\lnt16\linstance/latency_xx_ms := NONDETERMINISTIC of sign\led int16\linstance/max_latency_ms := NONDETERMINISTIC of sig\lned int16\linstance/min_latency_ms := NONDETERMINISTIC of sig\lned int16\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: LatencyMonitor:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

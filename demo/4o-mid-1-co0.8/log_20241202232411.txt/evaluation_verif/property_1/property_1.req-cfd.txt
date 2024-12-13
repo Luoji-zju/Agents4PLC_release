@@ -1,0 +1,15 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {ComparisonExpression operator=EQUALS}
+ │   ├──leftOperand: 
+ │   │  {FieldRef frozen=true field:__assertion_error}
+ │   │   └──prefix: <null>
+ │   ├──rightOperand: 
+ │   │  {IntLiteral value=0}
+ │   │   └──type: 
+ │   │      {IntType signed=false bits=16}
+ │   └──type: 
+ │      {BoolType}
+ └──type: 
+    {TemporalBoolType}
+

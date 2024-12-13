@@ -1,0 +1,117 @@
+digraph G {
+	subgraph cluster__global1812442582 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global1812442582 [label="_global"];
+		_global1812442582 -> instance443645305;
+		instance443645305 [label = "(F) instance : _global/FB_LoopCounter", fillcolor="white" ];
+		_global1812442582 -> verificationLoop1159206653;
+		verificationLoop1159206653 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global1812442582 -> EoC1252261018;
+		EoC1252261018 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global1812442582 -> BoC1690893563;
+		BoC1690893563 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global1812442582 -> FB_LoopCounter237413343;
+		subgraph cluster_FB_LoopCounter237413343 {
+			node [shape="folder", style="filled"];
+			//label="FB_LoopCounter";
+			FB_LoopCounter237413343 [label="FB_LoopCounter"];
+			FB_LoopCounter237413343 -> i2013683661;
+			i2013683661 [label = "(F) i : bool", fillcolor="white" ];
+			FB_LoopCounter237413343 -> macro1102782217;
+			macro1102782217 [label = "(F) macro : signed int16", fillcolor="white" ];
+			FB_LoopCounter237413343 -> micro800097023;
+			micro800097023 [label = "(F) micro : signed int16", fillcolor="white" ];
+			FB_LoopCounter237413343 -> o45515497;
+			o45515497 [label = "(F) o : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_FB_LoopCounter237413343 [
+				label="ANNOTATIONS\li : direction=INPUT\li : PLC type=BOOL\lmacro : direction=LOCAL\lmacro : PLC type=INT\lmicro : direction=LOCAL\lmicro : PLC type=INT\lo : direction=OUTPUT\lo : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_FB_LoopCounter237413343 [
+				label="INITIAL\li := false\lmacro := 0\lmicro := 0\lo := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1812442582 -> VerificationLoopDS2044082767;
+		subgraph cluster_VerificationLoopDS2044082767 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS2044082767 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS2044082767 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS2044082767 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global1812442582 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global1812442582 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterFB_LoopCounter {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="FB_LoopCounter : FB_LoopCounter";
+		
+		annotations_pseudonode_FB_LoopCounter [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_FB_LoopCounter [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_FB_LoopCounter [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l5_FB_LoopCounter [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l7_FB_LoopCounter [label="l7", color="black", fillcolor="white", shape="ellipse"];
+		l9_FB_LoopCounter [label="l9", color="black", fillcolor="white", shape="ellipse"];
+		l10_FB_LoopCounter [label="l10", color="black", fillcolor="white", shape="ellipse"];
+		l14_FB_LoopCounter [label="l14", color="black", fillcolor="white", shape="ellipse"];
+		l18_FB_LoopCounter [label="l18", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_FB_LoopCounter -> l1_FB_LoopCounter [color="black", label="[i]"];
+		l1_FB_LoopCounter -> l7_FB_LoopCounter [color="black", label="[(micro > 0)]\lmicro := (micro - 1)\l"];
+		l1_FB_LoopCounter -> l5_FB_LoopCounter [color="black", label="[(! (micro > 0))]\lmacro := (macro + 1)\l"];
+		l5_FB_LoopCounter -> l7_FB_LoopCounter [color="black", label="micro := macro"];
+		init_FB_LoopCounter -> l9_FB_LoopCounter [color="black", label="[(! i)]"];
+		l7_FB_LoopCounter -> l9_FB_LoopCounter [color="black", label=""];
+		l9_FB_LoopCounter -> l10_FB_LoopCounter [color="black", label="o := macro"];
+		l10_FB_LoopCounter -> l14_FB_LoopCounter [color="black", label="[(macro < 0)]\lmacro := 0\l"];
+		l10_FB_LoopCounter -> l14_FB_LoopCounter [color="black", label="[(! (macro < 0))]"];
+		l14_FB_LoopCounter -> l18_FB_LoopCounter [color="black", label="[(micro < 0)]\lmicro := 0\l"];
+		l14_FB_LoopCounter -> l18_FB_LoopCounter [color="black", label="[(! (micro < 0))]"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/i := NONDETERMINISTIC of bool\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: FB_LoopCounter:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

@@ -1,0 +1,102 @@
+digraph G {
+	subgraph cluster__global2079332573 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global2079332573 [label="_global"];
+		_global2079332573 -> instance1784533123;
+		instance1784533123 [label = "(F) instance : _global/TOGGLE_OUTPUT", fillcolor="white" ];
+		_global2079332573 -> verificationLoop26428217;
+		verificationLoop26428217 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global2079332573 -> EoC2061011390;
+		EoC2061011390 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global2079332573 -> BoC217930962;
+		BoC217930962 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global2079332573 -> TOGGLE_OUTPUT363384509;
+		subgraph cluster_TOGGLE_OUTPUT363384509 {
+			node [shape="folder", style="filled"];
+			//label="TOGGLE_OUTPUT";
+			TOGGLE_OUTPUT363384509 [label="TOGGLE_OUTPUT"];
+			TOGGLE_OUTPUT363384509 -> Button768413249;
+			Button768413249 [label = "(F) Button : bool", fillcolor="white" ];
+			TOGGLE_OUTPUT363384509 -> ToggledOutput731915467;
+			ToggledOutput731915467 [label = "(F) ToggledOutput : bool", fillcolor="white" ];
+			TOGGLE_OUTPUT363384509 -> PrevButtonState457218681;
+			PrevButtonState457218681 [label = "(F) PrevButtonState : bool", fillcolor="white" ];
+			
+			annotations_pseudonode_TOGGLE_OUTPUT363384509 [
+				label="ANNOTATIONS\lButton : direction=INPUT\lButton : PLC type=BOOL\lToggledOutput : direction=OUTPUT\lToggledOutput : PLC type=BOOL\lPrevButtonState : direction=LOCAL\lPrevButtonState : PLC type=BOOL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_TOGGLE_OUTPUT363384509 [
+				label="INITIAL\lButton := false\lToggledOutput := false\lPrevButtonState := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global2079332573 -> VerificationLoopDS351108575;
+		subgraph cluster_VerificationLoopDS351108575 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS351108575 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS351108575 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS351108575 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global2079332573 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global2079332573 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterTOGGLE_OUTPUT {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="TOGGLE_OUTPUT : TOGGLE_OUTPUT";
+		
+		annotations_pseudonode_TOGGLE_OUTPUT [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_TOGGLE_OUTPUT [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l4_TOGGLE_OUTPUT [label="l4", color="black", fillcolor="white", shape="ellipse"];
+		l5_TOGGLE_OUTPUT [label="l5", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_TOGGLE_OUTPUT -> l4_TOGGLE_OUTPUT [color="black", label="[((Button = true) && (PrevButtonState = false))]\lToggledOutput := (! ToggledOutput)\l"];
+		init_TOGGLE_OUTPUT -> l4_TOGGLE_OUTPUT [color="black", label="[(! ((Button = true) && (PrevButtonState = false))\l)]\l"];
+		l4_TOGGLE_OUTPUT -> l5_TOGGLE_OUTPUT [color="black", label="PrevButtonState := Button"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/Button := NONDETERMINISTIC of bool\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: TOGGLE_OUTPUT:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

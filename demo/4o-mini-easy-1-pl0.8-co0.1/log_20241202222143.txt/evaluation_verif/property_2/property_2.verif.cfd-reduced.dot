@@ -1,0 +1,100 @@
+digraph G {
+	subgraph cluster__global1958814164 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global1958814164 [label="_global"];
+		_global1958814164 -> instance488063551;
+		instance488063551 [label = "(F) instance : _global/FB_MotorControl", fillcolor="white" ];
+		_global1958814164 -> verificationLoop1179573791;
+		verificationLoop1179573791 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global1958814164 -> EoC1365349839;
+		EoC1365349839 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global1958814164 -> BoC1400677006;
+		BoC1400677006 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global1958814164 -> FB_MotorControl709379856;
+		subgraph cluster_FB_MotorControl709379856 {
+			node [shape="folder", style="filled"];
+			//label="FB_MotorControl";
+			FB_MotorControl709379856 [label="FB_MotorControl"];
+			FB_MotorControl709379856 -> Pressure_LOW353761154;
+			Pressure_LOW353761154 [label = "(F) Pressure_LOW : float32", fillcolor="white" ];
+			FB_MotorControl709379856 -> Motor_Critical1928254791;
+			Motor_Critical1928254791 [label = "(F) Motor_Critical : bool", fillcolor="white" ];
+			FB_MotorControl709379856 -> Threshold582479659;
+			Threshold582479659 [label = "(F) Threshold : float32", fillcolor="white" ];
+			
+			annotations_pseudonode_FB_MotorControl709379856 [
+				label="ANNOTATIONS\lPressure_LOW : direction=INPUT\lPressure_LOW : PLC type=REAL\lMotor_Critical : direction=OUTPUT\lMotor_Critical : PLC type=BOOL\lThreshold : direction=LOCAL\lThreshold : PLC type=REAL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_FB_MotorControl709379856 [
+				label="INITIAL\lPressure_LOW := 0.0\lMotor_Critical := false\lThreshold := 36464.0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1958814164 -> VerificationLoopDS218857805;
+		subgraph cluster_VerificationLoopDS218857805 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS218857805 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS218857805 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS218857805 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global1958814164 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global1958814164 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterFB_MotorControl {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="FB_MotorControl : FB_MotorControl";
+		
+		annotations_pseudonode_FB_MotorControl [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_FB_MotorControl [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l5_FB_MotorControl [label="l5", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_FB_MotorControl -> l5_FB_MotorControl [color="black", label="[(Pressure_LOW < Threshold)]\lMotor_Critical := true\l"];
+		init_FB_MotorControl -> l5_FB_MotorControl [color="black", label="[(! (Pressure_LOW < Threshold))]\lMotor_Critical := false\l"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/Pressure_LOW := NONDETERMINISTIC of float\l32\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: FB_MotorControl:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

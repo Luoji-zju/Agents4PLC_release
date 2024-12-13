@@ -1,0 +1,34 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {BinaryLogicExpression operator=AND}
+ │   │   ├──leftOperand: 
+ │   │   │  {FieldRef frozen=false field:EoC}
+ │   │   │   └──prefix: <null>
+ │   │   └──rightOperand: 
+ │   │      {BinaryLogicExpression operator=OR}
+ │   │       ├──leftOperand: 
+ │   │       │  {UnaryLogicExpression operator=NEG}
+ │   │       │   └──operand: 
+ │   │       │      {FieldRef frozen=false field:Input1}
+ │   │       │       └──prefix: 
+ │   │       │          {FieldRef frozen=false field:instance}
+ │   │       │           └──prefix: <null>
+ │   │       └──rightOperand: 
+ │   │          {UnaryLogicExpression operator=NEG}
+ │   │           └──operand: 
+ │   │              {FieldRef frozen=false field:Input2}
+ │   │               └──prefix: 
+ │   │                  {FieldRef frozen=false field:instance}
+ │   │                   └──prefix: <null>
+ │   └──rightOperand: 
+ │      {UnaryLogicExpression operator=NEG}
+ │       └──operand: 
+ │          {FieldRef frozen=false field:AndResult}
+ │           └──prefix: 
+ │              {FieldRef frozen=false field:instance}
+ │               └──prefix: <null>
+ └──type: 
+    {TemporalBoolType}
+

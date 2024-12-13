@@ -1,0 +1,68 @@
+{UnaryLtlExpression operator=G lowerBound=-1 upperBound=-1}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {BinaryLogicExpression operator=AND}
+ │   │   ├──leftOperand: 
+ │   │   │  {FieldRef frozen=false field:EoC}
+ │   │   │   └──prefix: <null>
+ │   │   └──rightOperand: 
+ │   │      {ComparisonExpression operator=EQUALS}
+ │   │       ├──leftOperand: 
+ │   │       │  {FieldRef frozen=false field:ONS_Trig}
+ │   │       │   └──prefix: 
+ │   │       │      {FieldRef frozen=false field:instance}
+ │   │       │       └──prefix: <null>
+ │   │       ├──rightOperand: 
+ │   │       │  {BoolLiteral value=true}
+ │   │       │   └──type: 
+ │   │       │      {BoolType}
+ │   │       └──type: 
+ │   │          {BoolType}
+ │   └──rightOperand: 
+ │      {UnaryLtlExpression operator=O lowerBound=-1 upperBound=-1}
+ │       ├──operand: 
+ │       │  {BinaryLtlExpression operator=U}
+ │       │   ├──leftOperand: 
+ │       │   │  {BinaryLogicExpression operator=IMPLIES}
+ │       │   │   ├──leftOperand: 
+ │       │   │   │  {FieldRef frozen=false field:EoC}
+ │       │   │   │   └──prefix: <null>
+ │       │   │   └──rightOperand: 
+ │       │   │      {ComparisonExpression operator=EQUALS}
+ │       │   │       ├──leftOperand: 
+ │       │   │       │  {FieldRef frozen=false field:ON_OFF}
+ │       │   │       │   └──prefix: 
+ │       │   │       │      {FieldRef frozen=false field:instance}
+ │       │   │       │       └──prefix: <null>
+ │       │   │       ├──rightOperand: 
+ │       │   │       │  {BoolLiteral value=true}
+ │       │   │       │   └──type: 
+ │       │   │       │      {BoolType}
+ │       │   │       └──type: 
+ │       │   │          {BoolType}
+ │       │   ├──rightOperand: 
+ │       │   │  {BinaryLogicExpression operator=IMPLIES}
+ │       │   │   ├──leftOperand: 
+ │       │   │   │  {FieldRef frozen=false field:EoC}
+ │       │   │   │   └──prefix: <null>
+ │       │   │   └──rightOperand: 
+ │       │   │      {ComparisonExpression operator=EQUALS}
+ │       │   │       ├──leftOperand: 
+ │       │   │       │  {FieldRef frozen=false field:ON_OFF}
+ │       │   │       │   └──prefix: 
+ │       │   │       │      {FieldRef frozen=false field:instance}
+ │       │   │       │       └──prefix: <null>
+ │       │   │       ├──rightOperand: 
+ │       │   │       │  {BoolLiteral value=false}
+ │       │   │       │   └──type: 
+ │       │   │       │      {BoolType}
+ │       │   │       └──type: 
+ │       │   │          {BoolType}
+ │       │   └──type: 
+ │       │      {TemporalBoolType}
+ │       └──type: 
+ │          {TemporalBoolType}
+ └──type: 
+    {TemporalBoolType}
+

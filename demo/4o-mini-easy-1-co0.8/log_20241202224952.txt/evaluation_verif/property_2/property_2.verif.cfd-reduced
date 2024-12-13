@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfadeclaration:CfaNetworkDeclaration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfadeclaration="cern.plcverif.base.models.cfa.cfadeclaration" xmlns:expr="cern.plcverif.base.models.expr" xmi:id="network" name="network" displayName="network" mainAutomaton="network_VerificationLoop">
+  <automata xmi:id="network_FIND_MAX_VALUE" name="FIND_MAX_VALUE" displayName="FIND_MAX_VALUE" initialLocation="network_FIND_MAX_VALUE_init" endLocation="network_FIND_MAX_VALUE_l5">
+    <locations xmi:id="network_FIND_MAX_VALUE_init" name="init" displayName="init" frozen="true" outgoing="network_FIND_MAX_VALUE_t1 network_FIND_MAX_VALUE_t3"/>
+    <locations xmi:id="network_FIND_MAX_VALUE_l5" name="l5" displayName="l5" incoming="network_FIND_MAX_VALUE_t1 network_FIND_MAX_VALUE_t3"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_VALUE_t1" name="t1" displayName="t1" source="network_FIND_MAX_VALUE_init" target="network_FIND_MAX_VALUE_l5">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id0" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id1" field="network__global_FIND_MAX_VALUE_Value1"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id2" field="network__global_FIND_MAX_VALUE_Value2"/>
+        <type xsi:type="expr:BoolType" xmi:id="id3"/>
+      </condition>
+      <assignments xmi:id="id4">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id5" field="network__global_FIND_MAX_VALUE_MaxValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id6" field="network__global_FIND_MAX_VALUE_Value1"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_VALUE_t3" name="t3" displayName="t3" source="network_FIND_MAX_VALUE_init" target="network_FIND_MAX_VALUE_l5">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id7">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id8" operator="GREATER_THAN">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id9" field="network__global_FIND_MAX_VALUE_Value1"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id10" field="network__global_FIND_MAX_VALUE_Value2"/>
+          <type xsi:type="expr:BoolType" xmi:id="id11"/>
+        </operand>
+      </condition>
+      <assignments xmi:id="id12">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id13" field="network__global_FIND_MAX_VALUE_MaxValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id14" field="network__global_FIND_MAX_VALUE_Value2"/>
+      </assignments>
+    </transitions>
+    <localDataStructure xmi:id="id15" definition="network__global_FIND_MAX_VALUE"/>
+  </automata>
+  <automata xmi:id="network_FIND_MIN_VALUE" name="FIND_MIN_VALUE" displayName="FIND_MIN_VALUE" initialLocation="network_FIND_MIN_VALUE_init" endLocation="network_FIND_MIN_VALUE_l5">
+    <locations xmi:id="network_FIND_MIN_VALUE_init" name="init" displayName="init" frozen="true" outgoing="network_FIND_MIN_VALUE_t1 network_FIND_MIN_VALUE_t3"/>
+    <locations xmi:id="network_FIND_MIN_VALUE_l5" name="l5" displayName="l5" incoming="network_FIND_MIN_VALUE_t1 network_FIND_MIN_VALUE_t3"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MIN_VALUE_t1" name="t1" displayName="t1" source="network_FIND_MIN_VALUE_init" target="network_FIND_MIN_VALUE_l5">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id16" operator="LESS_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id17" field="network__global_FIND_MIN_VALUE_Value1"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id18" field="network__global_FIND_MIN_VALUE_Value2"/>
+        <type xsi:type="expr:BoolType" xmi:id="id19"/>
+      </condition>
+      <assignments xmi:id="id20">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id21" field="network__global_FIND_MIN_VALUE_MinValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id22" field="network__global_FIND_MIN_VALUE_Value1"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MIN_VALUE_t3" name="t3" displayName="t3" source="network_FIND_MIN_VALUE_init" target="network_FIND_MIN_VALUE_l5">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id23">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id24" operator="LESS_THAN">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id25" field="network__global_FIND_MIN_VALUE_Value1"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id26" field="network__global_FIND_MIN_VALUE_Value2"/>
+          <type xsi:type="expr:BoolType" xmi:id="id27"/>
+        </operand>
+      </condition>
+      <assignments xmi:id="id28">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id29" field="network__global_FIND_MIN_VALUE_MinValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id30" field="network__global_FIND_MIN_VALUE_Value2"/>
+      </assignments>
+    </transitions>
+    <localDataStructure xmi:id="id31" definition="network__global_FIND_MIN_VALUE"/>
+  </automata>
+  <automata xmi:id="network_FIND_MAX_OF_THREE" name="FIND_MAX_OF_THREE" displayName="FIND_MAX_OF_THREE" initialLocation="network_FIND_MAX_OF_THREE_init" endLocation="network_FIND_MAX_OF_THREE_l9">
+    <locations xmi:id="network_FIND_MAX_OF_THREE_init" name="init" displayName="init" frozen="true" outgoing="network_FIND_MAX_OF_THREE_t1"/>
+    <locations xmi:id="network_FIND_MAX_OF_THREE_l1" name="l1" displayName="l1" incoming="network_FIND_MAX_OF_THREE_t1" outgoing="network_FIND_MAX_OF_THREE_t2 network_FIND_MAX_OF_THREE_t4"/>
+    <locations xmi:id="network_FIND_MAX_OF_THREE_l5" name="l5" displayName="l5" incoming="network_FIND_MAX_OF_THREE_t4 network_FIND_MAX_OF_THREE_t2" outgoing="network_FIND_MAX_OF_THREE_t7 network_FIND_MAX_OF_THREE_t9"/>
+    <locations xmi:id="network_FIND_MAX_OF_THREE_l9" name="l9" displayName="l9" incoming="network_FIND_MAX_OF_THREE_t9 network_FIND_MAX_OF_THREE_t7"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_OF_THREE_t1" name="t1" displayName="t1" source="network_FIND_MAX_OF_THREE_init" target="network_FIND_MAX_OF_THREE_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id32" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id33"/>
+      </condition>
+      <assignments xmi:id="id34">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id35" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id36" field="network__global_FIND_MAX_OF_THREE_Value1"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_OF_THREE_t2" name="t2" displayName="t2" source="network_FIND_MAX_OF_THREE_l1" target="network_FIND_MAX_OF_THREE_l5">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id37" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id38" field="network__global_FIND_MAX_OF_THREE_Value2"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id39" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+        <type xsi:type="expr:BoolType" xmi:id="id40"/>
+      </condition>
+      <assignments xmi:id="id41">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id42" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id43" field="network__global_FIND_MAX_OF_THREE_Value2"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_OF_THREE_t4" name="t4" displayName="t4" source="network_FIND_MAX_OF_THREE_l1" target="network_FIND_MAX_OF_THREE_l5">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id44">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id45" operator="GREATER_THAN">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id46" field="network__global_FIND_MAX_OF_THREE_Value2"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id47" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+          <type xsi:type="expr:BoolType" xmi:id="id48"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_OF_THREE_t7" name="t7" displayName="t7" source="network_FIND_MAX_OF_THREE_l5" target="network_FIND_MAX_OF_THREE_l9">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id49" operator="GREATER_THAN">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id50" field="network__global_FIND_MAX_OF_THREE_Value3"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id51" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+        <type xsi:type="expr:BoolType" xmi:id="id52"/>
+      </condition>
+      <assignments xmi:id="id53">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id54" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id55" field="network__global_FIND_MAX_OF_THREE_Value3"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FIND_MAX_OF_THREE_t9" name="t9" displayName="t9" source="network_FIND_MAX_OF_THREE_l5" target="network_FIND_MAX_OF_THREE_l9">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id56">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id57" operator="GREATER_THAN">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id58" field="network__global_FIND_MAX_OF_THREE_Value3"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id59" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+          <type xsi:type="expr:BoolType" xmi:id="id60"/>
+        </operand>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id61" definition="network__global_FIND_MAX_OF_THREE"/>
+  </automata>
+  <automata xmi:id="network_MainProgram" name="MainProgram" displayName="MainProgram" initialLocation="network_MainProgram_init" endLocation="network_MainProgram_l6">
+    <locations xmi:id="network_MainProgram_init" name="init" displayName="init" frozen="true" outgoing="network_MainProgram_t1"/>
+    <locations xmi:id="network_MainProgram_l1" name="l1" displayName="l1" incoming="network_MainProgram_t1" outgoing="network_MainProgram_t2"/>
+    <locations xmi:id="network_MainProgram_l2" name="l2" displayName="l2" incoming="network_MainProgram_t2" outgoing="network_MainProgram_t3"/>
+    <locations xmi:id="network_MainProgram_l3" name="l3" displayName="l3" incoming="network_MainProgram_t3" outgoing="network_MainProgram_t4"/>
+    <locations xmi:id="network_MainProgram_l4" name="l4" displayName="l4" incoming="network_MainProgram_t4" outgoing="network_MainProgram_t5"/>
+    <locations xmi:id="network_MainProgram_l5" name="l5" displayName="l5" incoming="network_MainProgram_t5" outgoing="network_MainProgram_t6"/>
+    <locations xmi:id="network_MainProgram_l6" name="l6" displayName="l6" incoming="network_MainProgram_t6"/>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_MainProgram_t1" name="t1" displayName="t1" source="network_MainProgram_init" target="network_MainProgram_l1">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id62" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id63"/>
+      </condition>
+      <calls xmi:id="id64" calledAutomaton="network_FIND_MAX_VALUE">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id65" field="network__global_MainProgram_fbMax"/>
+        <inputAssignments xmi:id="id66">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id67" field="network__global_FIND_MAX_VALUE_Value1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id68" value="10">
+            <type xsi:type="expr:IntType" xmi:id="id69" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+        <inputAssignments xmi:id="id70">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id71" field="network__global_FIND_MAX_VALUE_Value2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id72" value="5">
+            <type xsi:type="expr:IntType" xmi:id="id73" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_MainProgram_t2" name="t2" displayName="t2" source="network_MainProgram_l1" target="network_MainProgram_l2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id74" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id75"/>
+      </condition>
+      <assignments xmi:id="id76">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id77" field="network__global_MainProgram_maxValueResult"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id78" field="network__global_FIND_MAX_VALUE_MaxValue">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id79" field="network__global_MainProgram_fbMax"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_MainProgram_t3" name="t3" displayName="t3" source="network_MainProgram_l2" target="network_MainProgram_l3">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id80" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id81"/>
+      </condition>
+      <calls xmi:id="id82" calledAutomaton="network_FIND_MIN_VALUE">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id83" field="network__global_MainProgram_fbMin"/>
+        <inputAssignments xmi:id="id84">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id85" field="network__global_FIND_MIN_VALUE_Value1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id86" value="10">
+            <type xsi:type="expr:IntType" xmi:id="id87" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+        <inputAssignments xmi:id="id88">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id89" field="network__global_FIND_MIN_VALUE_Value2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id90" value="5">
+            <type xsi:type="expr:IntType" xmi:id="id91" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_MainProgram_t4" name="t4" displayName="t4" source="network_MainProgram_l3" target="network_MainProgram_l4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id92" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id93"/>
+      </condition>
+      <assignments xmi:id="id94">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id95" field="network__global_MainProgram_minValueResult"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id96" field="network__global_FIND_MIN_VALUE_MinValue">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id97" field="network__global_MainProgram_fbMin"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_MainProgram_t5" name="t5" displayName="t5" source="network_MainProgram_l4" target="network_MainProgram_l5">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id98" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id99"/>
+      </condition>
+      <calls xmi:id="id100" calledAutomaton="network_FIND_MAX_OF_THREE">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id101" field="network__global_MainProgram_fbMaxOfThree"/>
+        <inputAssignments xmi:id="id102">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id103" field="network__global_FIND_MAX_OF_THREE_Value1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id104" value="10">
+            <type xsi:type="expr:IntType" xmi:id="id105" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+        <inputAssignments xmi:id="id106">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id107" field="network__global_FIND_MAX_OF_THREE_Value2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id108" value="15">
+            <type xsi:type="expr:IntType" xmi:id="id109" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+        <inputAssignments xmi:id="id110">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id111" field="network__global_FIND_MAX_OF_THREE_Value3"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id112" value="12">
+            <type xsi:type="expr:IntType" xmi:id="id113" signed="true" bits="16"/>
+          </rightValue>
+        </inputAssignments>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_MainProgram_t6" name="t6" displayName="t6" source="network_MainProgram_l5" target="network_MainProgram_l6">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id114" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id115"/>
+      </condition>
+      <assignments xmi:id="id116">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id117" field="network__global_MainProgram_maxOfThreeResult"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id118" field="network__global_FIND_MAX_OF_THREE_MaxValue">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id119" field="network__global_MainProgram_fbMaxOfThree"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <localDataStructure xmi:id="id120" definition="network__global_MainProgram"/>
+  </automata>
+  <automata xmi:id="network_VerificationLoop" name="VerificationLoop" displayName="VerificationLoop" initialLocation="network_VerificationLoop_init" endLocation="network_VerificationLoop_end">
+    <locations xmi:id="network_VerificationLoop_init" name="init" displayName="init" frozen="true" outgoing="network_VerificationLoop_t_params"/>
+    <locations xmi:id="network_VerificationLoop_end" name="end" displayName="end" frozen="true" incoming="network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_loop_start" name="loop_start" displayName="loop_start" incoming="network_VerificationLoop_t_params network_VerificationLoop_restart" outgoing="network_VerificationLoop_set_BoC network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_prepare_BoC" name="prepare_BoC" displayName="prepare_BoC" frozen="true" incoming="network_VerificationLoop_set_BoC" outgoing="network_VerificationLoop_t_inputs"/>
+    <locations xmi:id="network_VerificationLoop_l_main_call" name="l_main_call" displayName="l_main_call" incoming="network_VerificationLoop_t_inputs" outgoing="network_VerificationLoop_main_call"/>
+    <locations xmi:id="network_VerificationLoop_callEnd" name="callEnd" displayName="callEnd" incoming="network_VerificationLoop_main_call" outgoing="network_VerificationLoop_set_EoC"/>
+    <locations xmi:id="network_VerificationLoop_prepare_EoC" name="prepare_EoC" displayName="prepare_EoC" frozen="true" incoming="network_VerificationLoop_set_EoC" outgoing="network_VerificationLoop_restart"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_params" name="t_params" displayName="t_params" source="network_VerificationLoop_init" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id121" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id122"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_BoC" name="set_BoC" displayName="set_BoC" frozen="true" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_prepare_BoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id123" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id124"/>
+      </condition>
+      <assignments xmi:id="id125">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id126" field="network__global_FIND_MAX_VALUE_Value1">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id127" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id128">
+          <type xsi:type="expr:IntType" xmi:id="id129" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id130">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id131" field="network__global_FIND_MAX_VALUE_Value2">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id132" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id133">
+          <type xsi:type="expr:IntType" xmi:id="id134" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id135" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id136" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id137" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id138"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_inputs" name="t_inputs" displayName="t_inputs" frozen="true" source="network_VerificationLoop_prepare_BoC" target="network_VerificationLoop_l_main_call">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id139" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id140"/>
+      </condition>
+      <assignments xmi:id="id141" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id142" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id143" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id144"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_VerificationLoop_main_call" name="main_call" displayName="main_call" source="network_VerificationLoop_l_main_call" target="network_VerificationLoop_callEnd">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id145" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id146"/>
+      </condition>
+      <calls xmi:id="id147" calledAutomaton="network_FIND_MAX_VALUE">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id148" field="network__global_instance"/>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_EoC" name="set_EoC" displayName="set_EoC" frozen="true" source="network_VerificationLoop_callEnd" target="network_VerificationLoop_prepare_EoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id149" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id150"/>
+      </condition>
+      <assignments xmi:id="id151" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id152" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id153" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id154"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_restart" name="restart" displayName="restart" frozen="true" source="network_VerificationLoop_prepare_EoC" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id155" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id156"/>
+      </condition>
+      <assignments xmi:id="id157" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id158" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id159" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id160"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_end1" name="end1" displayName="end" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_end">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id161" value="false">
+        <type xsi:type="expr:BoolType" xmi:id="id162"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id163" definition="network__global_VerificationLoopDS"/>
+  </automata>
+  <rootDataStructure xmi:id="network__global" name="_global" displayName="_global">
+    <fields xmi:id="network__global_instance" name="instance" displayName="instance">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id164" definition="network__global_FIND_MAX_VALUE"/>
+    </fields>
+    <fields xmi:id="network__global_verificationLoop" name="verificationLoop" displayName="verificationLoop">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id165" definition="network__global_VerificationLoopDS"/>
+    </fields>
+    <fields xmi:id="network__global_EoC" name="EoC" displayName="EoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id166"/>
+      <initialAssignments xmi:id="id167">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id168" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id169" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id170"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id171"/>
+    </fields>
+    <fields xmi:id="network__global_BoC" name="BoC" displayName="BoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id172"/>
+      <initialAssignments xmi:id="id173">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id174" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id175" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id176"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id177"/>
+    </fields>
+    <complexTypes xmi:id="network__global_FIND_MAX_VALUE" name="FIND_MAX_VALUE" displayName="FIND_MAX_VALUE">
+      <fields xmi:id="network__global_FIND_MAX_VALUE_Value1" name="Value1" displayName="Value1">
+        <type xsi:type="expr:IntType" xmi:id="id178" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id179">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id180" field="network__global_FIND_MAX_VALUE_Value1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id181" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id182" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id183"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id184" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MAX_VALUE_Value2" name="Value2" displayName="Value2">
+        <type xsi:type="expr:IntType" xmi:id="id185" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id186">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id187" field="network__global_FIND_MAX_VALUE_Value2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id188" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id189" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id190"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id191" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MAX_VALUE_MaxValue" name="MaxValue" displayName="MaxValue">
+        <type xsi:type="expr:IntType" xmi:id="id192" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id193">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id194" field="network__global_FIND_MAX_VALUE_MaxValue"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id195" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id196" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id197" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id198" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_FIND_MIN_VALUE" name="FIND_MIN_VALUE" displayName="FIND_MIN_VALUE">
+      <fields xmi:id="network__global_FIND_MIN_VALUE_Value1" name="Value1" displayName="Value1">
+        <type xsi:type="expr:IntType" xmi:id="id199" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id200">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id201" field="network__global_FIND_MIN_VALUE_Value1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id202" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id203" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id204"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id205" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MIN_VALUE_Value2" name="Value2" displayName="Value2">
+        <type xsi:type="expr:IntType" xmi:id="id206" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id207">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id208" field="network__global_FIND_MIN_VALUE_Value2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id209" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id210" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id211"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id212" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MIN_VALUE_MinValue" name="MinValue" displayName="MinValue">
+        <type xsi:type="expr:IntType" xmi:id="id213" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id214">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id215" field="network__global_FIND_MIN_VALUE_MinValue"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id216" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id217" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id218" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id219" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_FIND_MAX_OF_THREE" name="FIND_MAX_OF_THREE" displayName="FIND_MAX_OF_THREE">
+      <fields xmi:id="network__global_FIND_MAX_OF_THREE_Value1" name="Value1" displayName="Value1">
+        <type xsi:type="expr:IntType" xmi:id="id220" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id221">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id222" field="network__global_FIND_MAX_OF_THREE_Value1"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id223" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id224" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id225"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id226" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MAX_OF_THREE_Value2" name="Value2" displayName="Value2">
+        <type xsi:type="expr:IntType" xmi:id="id227" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id228">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id229" field="network__global_FIND_MAX_OF_THREE_Value2"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id230" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id231" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id232"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id233" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MAX_OF_THREE_Value3" name="Value3" displayName="Value3">
+        <type xsi:type="expr:IntType" xmi:id="id234" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id235">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id236" field="network__global_FIND_MAX_OF_THREE_Value3"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id237" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id238" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id239"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id240" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FIND_MAX_OF_THREE_MaxValue" name="MaxValue" displayName="MaxValue">
+        <type xsi:type="expr:IntType" xmi:id="id241" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id242">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id243" field="network__global_FIND_MAX_OF_THREE_MaxValue"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id244" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id245" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id246" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id247" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_MainProgram" name="MainProgram" displayName="MainProgram">
+      <fields xmi:id="network__global_MainProgram_maxValueResult" name="maxValueResult" displayName="maxValueResult">
+        <type xsi:type="expr:IntType" xmi:id="id248" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id249">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id250" field="network__global_MainProgram_maxValueResult"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id251" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id252" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id253" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id254" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_MainProgram_minValueResult" name="minValueResult" displayName="minValueResult">
+        <type xsi:type="expr:IntType" xmi:id="id255" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id256">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id257" field="network__global_MainProgram_minValueResult"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id258" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id259" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id260" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id261" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_MainProgram_maxOfThreeResult" name="maxOfThreeResult" displayName="maxOfThreeResult">
+        <type xsi:type="expr:IntType" xmi:id="id262" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id263">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id264" field="network__global_MainProgram_maxOfThreeResult"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id265" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id266" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id267" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id268" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_MainProgram_fbMax" name="fbMax" displayName="fbMax">
+        <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id269" definition="network__global_FIND_MAX_VALUE"/>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id270" direction="LOCAL"/>
+      </fields>
+      <fields xmi:id="network__global_MainProgram_fbMin" name="fbMin" displayName="fbMin">
+        <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id271" definition="network__global_FIND_MIN_VALUE"/>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id272" direction="LOCAL"/>
+      </fields>
+      <fields xmi:id="network__global_MainProgram_fbMaxOfThree" name="fbMaxOfThree" displayName="fbMaxOfThree">
+        <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id273" definition="network__global_FIND_MAX_OF_THREE"/>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id274" direction="LOCAL"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_VerificationLoopDS" name="VerificationLoopDS" displayName="VerificationLoopDS"/>
+  </rootDataStructure>
+  <mainContext xsi:type="cfadeclaration:FieldRef" xmi:id="id275" field="network__global_verificationLoop"/>
+</cfadeclaration:CfaNetworkDeclaration>

@@ -1,0 +1,5 @@
+Total files: 7
+Syntax compilation passed: 7/7 (100.0%)
+Pass >= 80% properties: 1/7 (14.3%)
+Pass >= 50% properties: 1/7 (14.3%)
+Verified >= 80% properties: 2/7 (28.6%)

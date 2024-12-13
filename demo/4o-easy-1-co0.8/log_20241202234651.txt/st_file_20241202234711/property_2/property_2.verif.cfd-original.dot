@@ -1,0 +1,97 @@
+digraph G {
+	subgraph cluster__global286947699 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global286947699 [label="_global"];
+		_global286947699 -> instance768413249;
+		instance768413249 [label = "(F) instance : _global/NOT_GATE", fillcolor="white" ];
+		_global286947699 -> verificationLoop904050847;
+		verificationLoop904050847 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global286947699 -> EoC1373172466;
+		EoC1373172466 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global286947699 -> BoC1341548823;
+		BoC1341548823 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global286947699 -> NOT_GATE438793128;
+		subgraph cluster_NOT_GATE438793128 {
+			node [shape="folder", style="filled"];
+			//label="NOT_GATE";
+			NOT_GATE438793128 [label="NOT_GATE"];
+			NOT_GATE438793128 -> Input977645524;
+			Input977645524 [label = "(F) Input : bool", fillcolor="white" ];
+			NOT_GATE438793128 -> NegatedOutput750667100;
+			NegatedOutput750667100 [label = "(F) NegatedOutput : bool", fillcolor="white" ];
+			
+			annotations_pseudonode_NOT_GATE438793128 [
+				label="ANNOTATIONS\lInput : direction=INPUT\lInput : PLC type=BOOL\lNegatedOutput : direction=OUTPUT\lNegatedOutput : PLC type=BOOL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_NOT_GATE438793128 [
+				label="INITIAL\lInput := false\lNegatedOutput := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global286947699 -> VerificationLoopDS1777030223;
+		subgraph cluster_VerificationLoopDS1777030223 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS1777030223 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS1777030223 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS1777030223 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global286947699 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global286947699 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterNOT_GATE {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="NOT_GATE : NOT_GATE";
+		
+		annotations_pseudonode_NOT_GATE [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_NOT_GATE [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_NOT_GATE [label="l1", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_NOT_GATE -> l1_NOT_GATE [color="black", label="NegatedOutput := (! Input)"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/Input := NONDETERMINISTIC of bool\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: NOT_GATE:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

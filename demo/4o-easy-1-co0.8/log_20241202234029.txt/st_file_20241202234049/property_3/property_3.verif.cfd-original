@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfadeclaration:CfaNetworkDeclaration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfabase="cern.plcverif.base.models.cfa.cfabase" xmlns:cfadeclaration="cern.plcverif.base.models.cfa.cfadeclaration" xmlns:expr="cern.plcverif.base.models.expr" xmi:id="network" name="network" displayName="network" mainAutomaton="network_VerificationLoop">
+  <automata xmi:id="network_FB_LoopCounter" name="FB_LoopCounter" displayName="FB_LoopCounter" initialLocation="network_FB_LoopCounter_init" endLocation="network_FB_LoopCounter_l10">
+    <locations xmi:id="network_FB_LoopCounter_init" name="init" displayName="init" frozen="true" outgoing="network_FB_LoopCounter_t1 network_FB_LoopCounter_t9"/>
+    <locations xmi:id="network_FB_LoopCounter_l1" name="l1" displayName="l1" incoming="network_FB_LoopCounter_t1" outgoing="network_FB_LoopCounter_t2"/>
+    <locations xmi:id="network_FB_LoopCounter_l2" name="l2" displayName="l2" incoming="network_FB_LoopCounter_t2" outgoing="network_FB_LoopCounter_t3 network_FB_LoopCounter_t6"/>
+    <locations xmi:id="network_FB_LoopCounter_l3" name="l3" displayName="l3" incoming="network_FB_LoopCounter_t3" outgoing="network_FB_LoopCounter_t4"/>
+    <locations xmi:id="network_FB_LoopCounter_l4" name="l4" displayName="l4" incoming="network_FB_LoopCounter_t4" outgoing="network_FB_LoopCounter_t5"/>
+    <locations xmi:id="network_FB_LoopCounter_l5" name="l5" displayName="l5" incoming="network_FB_LoopCounter_t5" outgoing="network_FB_LoopCounter_t7"/>
+    <locations xmi:id="network_FB_LoopCounter_l6" name="l6" displayName="l6" incoming="network_FB_LoopCounter_t6" outgoing="network_FB_LoopCounter_t8"/>
+    <locations xmi:id="network_FB_LoopCounter_l7" name="l7" displayName="l7" incoming="network_FB_LoopCounter_t7 network_FB_LoopCounter_t8" outgoing="network_FB_LoopCounter_t10"/>
+    <locations xmi:id="network_FB_LoopCounter_l8" name="l8" displayName="l8" incoming="network_FB_LoopCounter_t9" outgoing="network_FB_LoopCounter_t11"/>
+    <locations xmi:id="network_FB_LoopCounter_l9" name="l9" displayName="l9" incoming="network_FB_LoopCounter_t10 network_FB_LoopCounter_t11" outgoing="network_FB_LoopCounter_t12"/>
+    <locations xmi:id="network_FB_LoopCounter_l10" name="l10" displayName="l10" incoming="network_FB_LoopCounter_t12"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t1" name="t1" displayName="t1" source="network_FB_LoopCounter_init" target="network_FB_LoopCounter_l1">
+      <condition xsi:type="cfadeclaration:FieldRef" xmi:id="id0" field="network__global_FB_LoopCounter_i"/>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t2" name="t2" displayName="t2" source="network_FB_LoopCounter_l1" target="network_FB_LoopCounter_l2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id1" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id2"/>
+      </condition>
+      <assignments xmi:id="id3">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id4" field="network__global_FB_LoopCounter_micro"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id5" operator="MINUS">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id6" field="network__global_FB_LoopCounter_micro"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id7" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id8" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t3" name="t3" displayName="t3" source="network_FB_LoopCounter_l2" target="network_FB_LoopCounter_l3">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id9" operator="LESS_EQ">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id10" field="network__global_FB_LoopCounter_micro"/>
+        <rightOperand xsi:type="expr:IntLiteral" xmi:id="id11" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id12" signed="true" bits="16"/>
+        </rightOperand>
+        <type xsi:type="expr:BoolType" xmi:id="id13"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t4" name="t4" displayName="t4" source="network_FB_LoopCounter_l3" target="network_FB_LoopCounter_l4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id14" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id15"/>
+      </condition>
+      <assignments xmi:id="id16">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id17" field="network__global_FB_LoopCounter_macro"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id18">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id19" field="network__global_FB_LoopCounter_macro"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id20" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id21" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t5" name="t5" displayName="t5" source="network_FB_LoopCounter_l4" target="network_FB_LoopCounter_l5">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id22" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id23"/>
+      </condition>
+      <assignments xmi:id="id24">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id25" field="network__global_FB_LoopCounter_micro"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id26" field="network__global_FB_LoopCounter_macro"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t6" name="t6" displayName="t6" source="network_FB_LoopCounter_l2" target="network_FB_LoopCounter_l6">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id27">
+        <type xsi:type="expr:BoolType" xmi:id="id28"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t7" name="t7" displayName="t7" source="network_FB_LoopCounter_l5" target="network_FB_LoopCounter_l7">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id29" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id30"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t8" name="t8" displayName="t8" source="network_FB_LoopCounter_l6" target="network_FB_LoopCounter_l7">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id31" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id32"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t9" name="t9" displayName="t9" source="network_FB_LoopCounter_init" target="network_FB_LoopCounter_l8">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id33">
+        <type xsi:type="expr:BoolType" xmi:id="id34"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t10" name="t10" displayName="t10" source="network_FB_LoopCounter_l7" target="network_FB_LoopCounter_l9">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id35" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id36"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t11" name="t11" displayName="t11" source="network_FB_LoopCounter_l8" target="network_FB_LoopCounter_l9">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id37" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id38"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_FB_LoopCounter_t12" name="t12" displayName="t12" source="network_FB_LoopCounter_l9" target="network_FB_LoopCounter_l10">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id39" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id40"/>
+      </condition>
+      <assignments xmi:id="id41">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id42" field="network__global_FB_LoopCounter_o"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id43" field="network__global_FB_LoopCounter_macro"/>
+      </assignments>
+    </transitions>
+    <localDataStructure xmi:id="id44" definition="network__global_FB_LoopCounter"/>
+  </automata>
+  <automata xmi:id="network_VerificationLoop" name="VerificationLoop" displayName="VerificationLoop" initialLocation="network_VerificationLoop_init" endLocation="network_VerificationLoop_end">
+    <locations xmi:id="network_VerificationLoop_init" name="init" displayName="init" frozen="true" outgoing="network_VerificationLoop_t_params"/>
+    <locations xmi:id="network_VerificationLoop_end" name="end" displayName="end" frozen="true" incoming="network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_loop_start" name="loop_start" displayName="loop_start" incoming="network_VerificationLoop_t_params network_VerificationLoop_restart" outgoing="network_VerificationLoop_set_BoC network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_prepare_BoC" name="prepare_BoC" displayName="prepare_BoC" frozen="true" incoming="network_VerificationLoop_set_BoC" outgoing="network_VerificationLoop_t_inputs"/>
+    <locations xmi:id="network_VerificationLoop_l_main_call" name="l_main_call" displayName="l_main_call" incoming="network_VerificationLoop_t_inputs" outgoing="network_VerificationLoop_main_call"/>
+    <locations xmi:id="network_VerificationLoop_callEnd" name="callEnd" displayName="callEnd" incoming="network_VerificationLoop_main_call" outgoing="network_VerificationLoop_set_EoC"/>
+    <locations xmi:id="network_VerificationLoop_prepare_EoC" name="prepare_EoC" displayName="prepare_EoC" frozen="true" incoming="network_VerificationLoop_set_EoC" outgoing="network_VerificationLoop_restart"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_params" name="t_params" displayName="t_params" source="network_VerificationLoop_init" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id45" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id46"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_BoC" name="set_BoC" displayName="set_BoC" frozen="true" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_prepare_BoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id47" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id48"/>
+      </condition>
+      <assignments xmi:id="id49">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id50" field="network__global_FB_LoopCounter_i">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id51" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id52">
+          <type xsi:type="expr:BoolType" xmi:id="id53"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id54" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id55" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id56" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id57"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_inputs" name="t_inputs" displayName="t_inputs" frozen="true" source="network_VerificationLoop_prepare_BoC" target="network_VerificationLoop_l_main_call">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id58" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id59"/>
+      </condition>
+      <assignments xmi:id="id60" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id61" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id62" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id63"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_VerificationLoop_main_call" name="main_call" displayName="main_call" source="network_VerificationLoop_l_main_call" target="network_VerificationLoop_callEnd">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id64" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id65"/>
+      </condition>
+      <calls xmi:id="id66" calledAutomaton="network_FB_LoopCounter">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id67" field="network__global_instance"/>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_EoC" name="set_EoC" displayName="set_EoC" frozen="true" source="network_VerificationLoop_callEnd" target="network_VerificationLoop_prepare_EoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id68" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id69"/>
+      </condition>
+      <assignments xmi:id="id70" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id71" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id72" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id73"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_restart" name="restart" displayName="restart" frozen="true" source="network_VerificationLoop_prepare_EoC" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id74" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id75"/>
+      </condition>
+      <assignments xmi:id="id76" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id77" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id78" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id79"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_end1" name="end1" displayName="end" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_end">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id80" value="false">
+        <type xsi:type="expr:BoolType" xmi:id="id81"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id82" definition="network__global_VerificationLoopDS"/>
+  </automata>
+  <rootDataStructure xmi:id="network__global" name="_global" displayName="_global">
+    <fields xmi:id="network__global_instance" name="instance" displayName="instance">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id83" definition="network__global_FB_LoopCounter"/>
+    </fields>
+    <fields xmi:id="network__global_verificationLoop" name="verificationLoop" displayName="verificationLoop">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id84" definition="network__global_VerificationLoopDS"/>
+    </fields>
+    <fields xmi:id="network__global_EoC" name="EoC" displayName="EoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id85"/>
+      <initialAssignments xmi:id="id86">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id87" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id88" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id89"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id90"/>
+    </fields>
+    <fields xmi:id="network__global_BoC" name="BoC" displayName="BoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id91"/>
+      <initialAssignments xmi:id="id92">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id93" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id94" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id95"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id96"/>
+    </fields>
+    <complexTypes xmi:id="network__global_FB_LoopCounter" name="FB_LoopCounter" displayName="FB_LoopCounter">
+      <fields xmi:id="network__global_FB_LoopCounter_i" name="i" displayName="i">
+        <type xsi:type="expr:BoolType" xmi:id="id97"/>
+        <initialAssignments xmi:id="id98">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id99" field="network__global_FB_LoopCounter_i"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id100" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id101"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id102"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id103" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_FB_LoopCounter_macro" name="macro" displayName="macro">
+        <type xsi:type="expr:IntType" xmi:id="id104" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id105">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id106" field="network__global_FB_LoopCounter_macro"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id107" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id108" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id109" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id110" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_LoopCounter_micro" name="micro" displayName="micro">
+        <type xsi:type="expr:IntType" xmi:id="id111" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id112">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id113" field="network__global_FB_LoopCounter_micro"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id114" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id115" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id116" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id117" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_FB_LoopCounter_o" name="o" displayName="o">
+        <type xsi:type="expr:IntType" xmi:id="id118" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id119">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id120" field="network__global_FB_LoopCounter_o"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id121" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id122" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id123" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id124" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_VerificationLoopDS" name="VerificationLoopDS" displayName="VerificationLoopDS"/>
+  </rootDataStructure>
+  <mainContext xsi:type="cfadeclaration:FieldRef" xmi:id="id125" field="network__global_verificationLoop"/>
+</cfadeclaration:CfaNetworkDeclaration>

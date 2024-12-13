@@ -1,0 +1,120 @@
+digraph G {
+	subgraph cluster__global2137748518 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global2137748518 [label="_global"];
+		_global2137748518 -> instance1978471002;
+		instance1978471002 [label = "(F) instance : _global/CALCULATE_OUTPUT", fillcolor="white" ];
+		_global2137748518 -> verificationLoop2016067912;
+		verificationLoop2016067912 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global2137748518 -> EoC1129874021;
+		EoC1129874021 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global2137748518 -> BoC79362455;
+		BoC79362455 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global2137748518 -> CALCULATE_OUTPUT1753134165;
+		subgraph cluster_CALCULATE_OUTPUT1753134165 {
+			node [shape="folder", style="filled"];
+			//label="CALCULATE_OUTPUT";
+			CALCULATE_OUTPUT1753134165 [label="CALCULATE_OUTPUT"];
+			CALCULATE_OUTPUT1753134165 -> i1421940560;
+			i1421940560 [label = "(F) i : signed int16", fillcolor="white" ];
+			CALCULATE_OUTPUT1753134165 -> o1144539978;
+			o1144539978 [label = "(F) o : signed int16", fillcolor="white" ];
+			CALCULATE_OUTPUT1753134165 -> result892299047;
+			result892299047 [label = "(F) result : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_CALCULATE_OUTPUT1753134165 [
+				label="ANNOTATIONS\li : direction=INPUT\li : PLC type=INT\lo : direction=OUTPUT\lo : PLC type=INT\lresult : direction=LOCAL\lresult : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_CALCULATE_OUTPUT1753134165 [
+				label="INITIAL\li := 0\lo := 0\lresult := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global2137748518 -> VerificationLoopDS166788150;
+		subgraph cluster_VerificationLoopDS166788150 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS166788150 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS166788150 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS166788150 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global2137748518 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global2137748518 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterCALCULATE_OUTPUT {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="CALCULATE_OUTPUT : CALCULATE_OUTPUT";
+		
+		annotations_pseudonode_CALCULATE_OUTPUT [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_CALCULATE_OUTPUT [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_CALCULATE_OUTPUT [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l2_CALCULATE_OUTPUT [label="l2", color="black", fillcolor="white", shape="ellipse"];
+		l3_CALCULATE_OUTPUT [label="l3", color="black", fillcolor="white", shape="ellipse"];
+		l4_CALCULATE_OUTPUT [label="l4", color="black", fillcolor="white", shape="ellipse"];
+		l5_CALCULATE_OUTPUT [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l6_CALCULATE_OUTPUT [label="l6", color="black", fillcolor="white", shape="ellipse"];
+		l7_CALCULATE_OUTPUT [label="l7", color="black", fillcolor="white", shape="ellipse"];
+		l8_CALCULATE_OUTPUT [label="l8", color="black", fillcolor="white", shape="ellipse"];
+		l9_CALCULATE_OUTPUT [label="l9", color="black", fillcolor="white", shape="ellipse"];
+		l10_CALCULATE_OUTPUT [label="l10", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_CALCULATE_OUTPUT -> l1_CALCULATE_OUTPUT [color="black", label="[(i = 0)]"];
+		l1_CALCULATE_OUTPUT -> l2_CALCULATE_OUTPUT [color="black", label="result := 0"];
+		init_CALCULATE_OUTPUT -> l3_CALCULATE_OUTPUT [color="black", label="[((! (i = 0)) && ((i >= 1) && (i <= 5)))]"];
+		l3_CALCULATE_OUTPUT -> l4_CALCULATE_OUTPUT [color="black", label="result := (i * i)"];
+		init_CALCULATE_OUTPUT -> l5_CALCULATE_OUTPUT [color="black", label="[(((! (i = 0)) && (! ((i >= 1) && (i <= 5)))) && (\l(i >= 6) && (i <= 10)))]\l"];
+		l5_CALCULATE_OUTPUT -> l6_CALCULATE_OUTPUT [color="black", label="result := (i + (2 * i))"];
+		init_CALCULATE_OUTPUT -> l7_CALCULATE_OUTPUT [color="black", label="[ELSE]"];
+		l7_CALCULATE_OUTPUT -> l8_CALCULATE_OUTPUT [color="black", label="result := (- 1)"];
+		l2_CALCULATE_OUTPUT -> l9_CALCULATE_OUTPUT [color="black", label=""];
+		l4_CALCULATE_OUTPUT -> l9_CALCULATE_OUTPUT [color="black", label=""];
+		l6_CALCULATE_OUTPUT -> l9_CALCULATE_OUTPUT [color="black", label=""];
+		l8_CALCULATE_OUTPUT -> l9_CALCULATE_OUTPUT [color="black", label=""];
+		l9_CALCULATE_OUTPUT -> l10_CALCULATE_OUTPUT [color="black", label="o := result"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/i := NONDETERMINISTIC of signed int16\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: CALCULATE_OUTPUT:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

@@ -1,0 +1,191 @@
+digraph G {
+	subgraph cluster__global62085016 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global62085016 [label="_global"];
+		_global62085016 -> instance1214498988;
+		instance1214498988 [label = "(F) instance : _global/F_CollectInput", fillcolor="white" ];
+		_global62085016 -> __assertion_error357272758;
+		__assertion_error357272758 [label = "(F) __assertion_error : unsigned int16", fillcolor="white" ];
+		_global62085016 -> verificationLoop1568638055;
+		verificationLoop1568638055 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global62085016 -> EoC300355969;
+		EoC300355969 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global62085016 -> BoC63583816;
+		BoC63583816 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global62085016 -> F_CollectInput503365602;
+		subgraph cluster_F_CollectInput503365602 {
+			node [shape="folder", style="filled"];
+			//label="F_CollectInput";
+			F_CollectInput503365602 [label="F_CollectInput"];
+			F_CollectInput503365602 -> TICK339734447;
+			TICK339734447 [label = "(F) TICK : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> RESET1287728562;
+			RESET1287728562 [label = "(F) RESET : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> IN1550498846;
+			IN1550498846 [label = "(F) IN1 : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> IN2681514473;
+			IN2681514473 [label = "(F) IN2 : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> IN3508122132;
+			IN3508122132 [label = "(F) IN3 : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> IN4155224151;
+			IN4155224151 [label = "(F) IN4 : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> IN5334761329;
+			IN5334761329 [label = "(F) IN5 : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> Data307148861;
+			Data307148861 [label = "(F) Data : bool[1..5]", fillcolor="white" ];
+			F_CollectInput503365602 -> Finished73689328;
+			Finished73689328 [label = "(F) Finished : bool", fillcolor="white" ];
+			F_CollectInput503365602 -> i751628596;
+			i751628596 [label = "(F) i : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_F_CollectInput503365602 [
+				label="ANNOTATIONS\lTICK : direction=INPUT\lTICK : PLC type=BOOL\lRESET : direction=INPUT\lRESET : PLC type=BOOL\lIN1 : direction=INPUT\lIN1 : PLC type=BOOL\lIN2 : direction=INPUT\lIN2 : PLC type=BOOL\lIN3 : direction=INPUT\lIN3 : PLC type=BOOL\lIN4 : direction=INPUT\lIN4 : PLC type=BOOL\lIN5 : direction=INPUT\lIN5 : PLC type=BOOL\lData : direction=OUTPUT\lFinished : direction=OUTPUT\lFinished : PLC type=BOOL\li : direction=LOCAL\li : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_F_CollectInput503365602 [
+				label="INITIAL\lTICK := false\lRESET := false\lIN1 := false\lIN2 := false\lIN3 := false\lIN4 := false\lIN5 := false\lData[1] := false\lData[2] := false\lData[3] := false\lData[4] := false\lData[5] := false\lFinished := false\li := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global62085016 -> MAIN40829249;
+		subgraph cluster_MAIN40829249 {
+			node [shape="folder", style="filled"];
+			//label="MAIN";
+			MAIN40829249 [label="MAIN"];
+			MAIN40829249 -> TICK1043907698;
+			TICK1043907698 [label = "(F) TICK : bool", fillcolor="white" ];
+			MAIN40829249 -> RESET928099543;
+			RESET928099543 [label = "(F) RESET : bool", fillcolor="white" ];
+			MAIN40829249 -> IN1107041335;
+			IN1107041335 [label = "(F) IN1 : bool", fillcolor="white" ];
+			MAIN40829249 -> IN2387410712;
+			IN2387410712 [label = "(F) IN2 : bool", fillcolor="white" ];
+			MAIN40829249 -> IN31920566957;
+			IN31920566957 [label = "(F) IN3 : bool", fillcolor="white" ];
+			MAIN40829249 -> IN4345099628;
+			IN4345099628 [label = "(F) IN4 : bool", fillcolor="white" ];
+			MAIN40829249 -> IN51480893137;
+			IN51480893137 [label = "(F) IN5 : bool", fillcolor="white" ];
+			MAIN40829249 -> Out1346672634;
+			Out1346672634 [label = "(F) Out : bool", fillcolor="white" ];
+			MAIN40829249 -> OutReady886693791;
+			OutReady886693791 [label = "(F) OutReady : bool", fillcolor="white" ];
+			MAIN40829249 -> fbCollect1753607449;
+			fbCollect1753607449 [label = "(F) fbCollect : _global/F_CollectInput", fillcolor="white" ];
+			
+			annotations_pseudonode_MAIN40829249 [
+				label="ANNOTATIONS\lTICK : direction=LOCAL\lTICK : PLC type=BOOL\lRESET : direction=LOCAL\lRESET : PLC type=BOOL\lIN1 : direction=LOCAL\lIN1 : PLC type=BOOL\lIN2 : direction=LOCAL\lIN2 : PLC type=BOOL\lIN3 : direction=LOCAL\lIN3 : PLC type=BOOL\lIN4 : direction=LOCAL\lIN4 : PLC type=BOOL\lIN5 : direction=LOCAL\lIN5 : PLC type=BOOL\lOut : direction=LOCAL\lOut : PLC type=BOOL\lOutReady : direction=LOCAL\lOutReady : PLC type=BOOL\lfbCollect : direction=LOCAL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_MAIN40829249 [
+				label="INITIAL\lTICK := false\lRESET := false\lIN1 := false\lIN2 := false\lIN3 := false\lIN4 := false\lIN5 := false\lOut := false\lOutReady := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global62085016 -> VerificationLoopDS232782444;
+		subgraph cluster_VerificationLoopDS232782444 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS232782444 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS232782444 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS232782444 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global62085016 [
+			label="ANNOTATIONS\l__assertion_error : generated\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global62085016 [
+			label="INITIAL\l__assertion_error := 0\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterF_CollectInput {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="F_CollectInput : F_CollectInput";
+		
+		annotations_pseudonode_F_CollectInput [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_F_CollectInput [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l4_F_CollectInput [label="l4", color="black", fillcolor="white", shape="ellipse"];
+		l5_F_CollectInput [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l7_F_CollectInput [label="l7", color="black", fillcolor="white", shape="ellipse"];
+		l10_F_CollectInput [label="l10", color="black", fillcolor="white", shape="ellipse"];
+		l13_F_CollectInput [label="l13", color="black", fillcolor="white", shape="ellipse"];
+		l16_F_CollectInput [label="l16", color="black", fillcolor="white", shape="ellipse"];
+		l21_F_CollectInput [label="l21", color="black", fillcolor="white", shape="ellipse"];
+		l25_F_CollectInput [label="l25", color="black", fillcolor="white", shape="ellipse"];
+		l27_F_CollectInput [label="l27", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_F_CollectInput -> l27_F_CollectInput [color="black", label="[RESET]\li := 1\lFinished := false\l"];
+		init_F_CollectInput -> l4_F_CollectInput [color="black", label="[((! RESET) && (TICK && (! Finished)))]"];
+		l4_F_CollectInput -> l5_F_CollectInput [color="black", label="[(i = 1)]\lData[1] := IN1\l"];
+		l4_F_CollectInput -> l7_F_CollectInput [color="black", label="[(! (i = 1))]"];
+		l7_F_CollectInput -> l5_F_CollectInput [color="black", label="[(i = 2)]\lData[2] := IN2\l"];
+		l7_F_CollectInput -> l10_F_CollectInput [color="black", label="[(! (i = 2))]"];
+		l10_F_CollectInput -> l5_F_CollectInput [color="black", label="[(i = 3)]\lData[3] := IN3\l"];
+		l10_F_CollectInput -> l13_F_CollectInput [color="black", label="[(! (i = 3))]"];
+		l13_F_CollectInput -> l5_F_CollectInput [color="black", label="[(i = 4)]\lData[4] := IN4\l"];
+		l13_F_CollectInput -> l16_F_CollectInput [color="black", label="[(! (i = 4))]"];
+		l16_F_CollectInput -> l5_F_CollectInput [color="black", label="[(i = 5)]\lData[5] := IN5\l"];
+		l16_F_CollectInput -> l5_F_CollectInput [color="black", label="[(! (i = 5))]"];
+		l5_F_CollectInput -> l21_F_CollectInput [color="black", label="i := (i + 1)"];
+		l21_F_CollectInput -> l25_F_CollectInput [color="black", label="[(i > 5)]\lFinished := true\l"];
+		l21_F_CollectInput -> l25_F_CollectInput [color="black", label="[(! (i > 5))]"];
+		init_F_CollectInput -> l27_F_CollectInput [color="black", label="[((! RESET) && (! ((! RESET) && (TICK && (! Finish\led)))))]\l"];
+		l25_F_CollectInput -> l27_F_CollectInput [color="black", label=""];
+	}
+	subgraph clusterMAIN {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="MAIN : MAIN";
+		
+		annotations_pseudonode_MAIN [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_MAIN [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_MAIN [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l9_MAIN [label="l9", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_MAIN -> l1_MAIN [color="black", label="CALL: F_CollectInput:fbCollect(\l   IN: TICK := TICK\l, RESET := RESET\l, IN1 := IN1\l, IN2 := IN2\l, IN3 := IN3\l, IN4 := IN4\l, IN5 := IN5\l   OUT: )\l"];
+		l1_MAIN -> l9_MAIN [color="black", label="[fbCollect/Finished]\lOutReady := true\lOut := (((fbCollect/Data[1] && fbCollect/Data[2]) \l|| ((! fbCollect/Data[3]) && fbCollect/Data[4])) |\l| fbCollect/Data[5])\lRESET := true\l"];
+		l1_MAIN -> l9_MAIN [color="black", label="[(! fbCollect/Finished)]\lOutReady := false\lRESET := false\l"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/IN1 := NONDETERMINISTIC of bool\linstance/IN2 := NONDETERMINISTIC of bool\linstance/IN3 := NONDETERMINISTIC of bool\linstance/IN4 := NONDETERMINISTIC of bool\linstance/IN5 := NONDETERMINISTIC of bool\linstance/RESET := NONDETERMINISTIC of bool\linstance/TICK := NONDETERMINISTIC of bool\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: F_CollectInput:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

@@ -1,0 +1,54 @@
+-- Model
+MODULE main
+	VAR
+		loc : {init_pv, end, loop_start, prepare_BoC, l_main_call, callEnd, prepare_EoC, verificationLoop_VerificationLoop_l4};
+		instance_Button : boolean; -- frozen
+		instance_ToggledOutput : boolean; -- frozen
+		instance_PrevButtonState : boolean;
+		EoC : boolean; -- frozen
+		BoC : boolean; -- frozen
+	
+	ASSIGN
+		-- CFA structure (loc)
+		init(loc) := init_pv;
+		next(loc) := case
+			loc = init_pv & (TRUE) : loop_start;
+			loc = loop_start & (TRUE) : prepare_BoC;
+			loc = prepare_BoC & (TRUE) : l_main_call;
+			loc = callEnd & (TRUE) : prepare_EoC;
+			loc = prepare_EoC & (TRUE) : loop_start;
+			loc = verificationLoop_VerificationLoop_l4 & (TRUE) : callEnd;
+			loc = l_main_call & (TRUE) : verificationLoop_VerificationLoop_l4;
+			TRUE: loc;
+		esac;
+		
+		init(instance_Button) := FALSE;
+		next(instance_Button) := case
+			loc = loop_start & (TRUE) : {TRUE, FALSE};
+			TRUE  : instance_Button;
+		esac;
+		init(instance_ToggledOutput) := FALSE;
+		next(instance_ToggledOutput) := case
+			loc = l_main_call & (TRUE) : (((instance_Button) & ((instance_PrevButtonState) = (FALSE))) & (!(instance_ToggledOutput))) | ((!((instance_Button) & ((instance_PrevButtonState) = (FALSE)))) & (instance_ToggledOutput));
+			TRUE  : instance_ToggledOutput;
+		esac;
+		init(instance_PrevButtonState) := FALSE;
+		next(instance_PrevButtonState) := case
+			loc = verificationLoop_VerificationLoop_l4 & (TRUE) : instance_Button;
+			TRUE  : instance_PrevButtonState;
+		esac;
+		init(EoC) := FALSE;
+		next(EoC) := case
+			loc = callEnd & (TRUE) : TRUE;
+			loc = prepare_EoC & (TRUE) : FALSE;
+			TRUE  : EoC;
+		esac;
+		init(BoC) := FALSE;
+		next(BoC) := case
+			loc = loop_start & (TRUE) : TRUE;
+			loc = prepare_BoC & (TRUE) : FALSE;
+			TRUE  : BoC;
+		esac;
+
+-- Requirement
+LTLSPEC G((((EoC) & ((!(instance_Button)) & (instance_ToggledOutput))) & (X(((!(EoC))  U  ((EoC) & (instance_Button)))))) -> (X(((!(EoC))  U  ((EoC) & (!(instance_ToggledOutput)))))));

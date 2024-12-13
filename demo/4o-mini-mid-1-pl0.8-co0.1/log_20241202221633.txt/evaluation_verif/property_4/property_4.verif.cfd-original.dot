@@ -1,0 +1,115 @@
+digraph G {
+	subgraph cluster__global869413070 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global869413070 [label="_global"];
+		_global869413070 -> instance42496654;
+		instance42496654 [label = "(F) instance : _global/LED_Motor_Controller", fillcolor="white" ];
+		_global869413070 -> verificationLoop1922881634;
+		verificationLoop1922881634 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global869413070 -> EoC999749808;
+		EoC999749808 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global869413070 -> BoC1134384220;
+		BoC1134384220 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global869413070 -> LED_Motor_Controller904351240;
+		subgraph cluster_LED_Motor_Controller904351240 {
+			node [shape="folder", style="filled"];
+			//label="LED_Motor_Controller";
+			LED_Motor_Controller904351240 [label="LED_Motor_Controller"];
+			LED_Motor_Controller904351240 -> PI_Button_Left1929955360;
+			PI_Button_Left1929955360 [label = "(F) PI_Button_Left : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> PI_Button_Right1045622109;
+			PI_Button_Right1045622109 [label = "(F) PI_Button_Right : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> E_Left501599368;
+			E_Left501599368 [label = "(F) E_Left : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> E_Right195730660;
+			E_Right195730660 [label = "(F) E_Right : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> PI_LED_Red1179573791;
+			PI_LED_Red1179573791 [label = "(F) PI_LED_Red : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> PI_LED_Green1534265514;
+			PI_LED_Green1534265514 [label = "(F) PI_LED_Green : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> A_Motor_Left26428217;
+			A_Motor_Left26428217 [label = "(F) A_Motor_Left : bool", fillcolor="white" ];
+			LED_Motor_Controller904351240 -> A_Motor_Right2074865054;
+			A_Motor_Right2074865054 [label = "(F) A_Motor_Right : bool", fillcolor="white" ];
+			
+			annotations_pseudonode_LED_Motor_Controller904351240 [
+				label="ANNOTATIONS\lPI_Button_Left : direction=INPUT\lPI_Button_Left : PLC type=BOOL\lPI_Button_Right : direction=INPUT\lPI_Button_Right : PLC type=BOOL\lE_Left : direction=INPUT\lE_Left : PLC type=BOOL\lE_Right : direction=INPUT\lE_Right : PLC type=BOOL\lPI_LED_Red : direction=OUTPUT\lPI_LED_Red : PLC type=BOOL\lPI_LED_Green : direction=OUTPUT\lPI_LED_Green : PLC type=BOOL\lA_Motor_Left : direction=OUTPUT\lA_Motor_Left : PLC type=BOOL\lA_Motor_Right : direction=OUTPUT\lA_Motor_Right : PLC type=BOOL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_LED_Motor_Controller904351240 [
+				label="INITIAL\lPI_Button_Left := false\lPI_Button_Right := false\lE_Left := false\lE_Right := false\lPI_LED_Red := false\lPI_LED_Green := false\lA_Motor_Left := false\lA_Motor_Right := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global869413070 -> VerificationLoopDS209029677;
+		subgraph cluster_VerificationLoopDS209029677 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS209029677 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS209029677 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS209029677 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global869413070 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global869413070 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterLED_Motor_Controller {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="LED_Motor_Controller : LED_Motor_Controller";
+		
+		annotations_pseudonode_LED_Motor_Controller [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_LED_Motor_Controller [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_LED_Motor_Controller [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l2_LED_Motor_Controller [label="l2", color="black", fillcolor="white", shape="ellipse"];
+		l3_LED_Motor_Controller [label="l3", color="black", fillcolor="white", shape="ellipse"];
+		l4_LED_Motor_Controller [label="l4", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_LED_Motor_Controller -> l1_LED_Motor_Controller [color="black", label="PI_LED_Red := E_Left"];
+		l1_LED_Motor_Controller -> l2_LED_Motor_Controller [color="black", label="PI_LED_Green := E_Right"];
+		l2_LED_Motor_Controller -> l3_LED_Motor_Controller [color="black", label="A_Motor_Left := (! PI_Button_Left)"];
+		l3_LED_Motor_Controller -> l4_LED_Motor_Controller [color="black", label="A_Motor_Right := (! PI_Button_Right)"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/E_Left := NONDETERMINISTIC of bool\linstance/E_Right := NONDETERMINISTIC of bool\linstance/PI_Button_Left := NONDETERMINISTIC of boo\ll\linstance/PI_Button_Right := NONDETERMINISTIC of bo\lol\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: LED_Motor_Controller:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

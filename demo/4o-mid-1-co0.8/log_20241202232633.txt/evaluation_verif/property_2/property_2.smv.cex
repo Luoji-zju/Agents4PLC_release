@@ -1,0 +1,1 @@
+-- specification AG ((BoC & ((instance_latency_xx_ms = 0sd16_0 | instance_NODE_xx_STATUS != 0sd16_1) & instance_errors_xx = 0sd16_0)) -> A [ !EoC U (EoC & instance_errors_xx = 0sd16_1) ] )  is true

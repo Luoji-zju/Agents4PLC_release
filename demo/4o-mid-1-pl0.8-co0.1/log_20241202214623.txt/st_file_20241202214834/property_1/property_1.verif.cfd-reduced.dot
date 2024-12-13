@@ -1,0 +1,166 @@
+digraph G {
+	subgraph cluster__global1886938557 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global1886938557 [label="_global"];
+		_global1886938557 -> instance1367900185;
+		instance1367900185 [label = "(F) instance : _global/F_CollectInput", fillcolor="white" ];
+		_global1886938557 -> __assertion_error154923232;
+		__assertion_error154923232 [label = "(F) __assertion_error : unsigned int16", fillcolor="white" ];
+		_global1886938557 -> verificationLoop238590461;
+		verificationLoop238590461 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global1886938557 -> EoC99253188;
+		EoC99253188 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global1886938557 -> BoC1816978819;
+		BoC1816978819 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global1886938557 -> F_CollectInput838301585;
+		subgraph cluster_F_CollectInput838301585 {
+			node [shape="folder", style="filled"];
+			//label="F_CollectInput";
+			F_CollectInput838301585 [label="F_CollectInput"];
+			F_CollectInput838301585 -> TICK683573228;
+			TICK683573228 [label = "(F) TICK : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> RESET1739986996;
+			RESET1739986996 [label = "(F) RESET : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> IN11357663228;
+			IN11357663228 [label = "(F) IN1 : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> IN2677007331;
+			IN2677007331 [label = "(F) IN2 : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> IN3123045427;
+			IN3123045427 [label = "(F) IN3 : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> IN4940905579;
+			IN4940905579 [label = "(F) IN4 : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> IN51401564942;
+			IN51401564942 [label = "(F) IN5 : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> OutputSignal1824819735;
+			OutputSignal1824819735 [label = "(F) OutputSignal : bool", fillcolor="white" ];
+			F_CollectInput838301585 -> InternalState870563118;
+			InternalState870563118 [label = "(F) InternalState : bool", fillcolor="white" ];
+			
+			annotations_pseudonode_F_CollectInput838301585 [
+				label="ANNOTATIONS\lTICK : direction=INPUT\lTICK : PLC type=BOOL\lRESET : direction=INPUT\lRESET : PLC type=BOOL\lIN1 : direction=INPUT\lIN1 : PLC type=BOOL\lIN2 : direction=INPUT\lIN2 : PLC type=BOOL\lIN3 : direction=INPUT\lIN3 : PLC type=BOOL\lIN4 : direction=INPUT\lIN4 : PLC type=BOOL\lIN5 : direction=INPUT\lIN5 : PLC type=BOOL\lOutputSignal : direction=OUTPUT\lOutputSignal : PLC type=BOOL\lInternalState : direction=LOCAL\lInternalState : PLC type=BOOL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_F_CollectInput838301585 [
+				label="INITIAL\lTICK := false\lRESET := false\lIN1 := false\lIN2 := false\lIN3 := false\lIN4 := false\lIN5 := false\lOutputSignal := false\lInternalState := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1886938557 -> MainProgram1042863993;
+		subgraph cluster_MainProgram1042863993 {
+			node [shape="folder", style="filled"];
+			//label="MainProgram";
+			MainProgram1042863993 [label="MainProgram"];
+			MainProgram1042863993 -> ClockSignal334761329;
+			ClockSignal334761329 [label = "(F) ClockSignal : bool", fillcolor="white" ];
+			MainProgram1042863993 -> ResetSignal39476366;
+			ResetSignal39476366 [label = "(F) ResetSignal : bool", fillcolor="white" ];
+			MainProgram1042863993 -> InputSignal11999784536;
+			InputSignal11999784536 [label = "(F) InputSignal1 : bool", fillcolor="white" ];
+			MainProgram1042863993 -> InputSignal2936000680;
+			InputSignal2936000680 [label = "(F) InputSignal2 : bool", fillcolor="white" ];
+			MainProgram1042863993 -> InputSignal31473128600;
+			InputSignal31473128600 [label = "(F) InputSignal3 : bool", fillcolor="white" ];
+			MainProgram1042863993 -> InputSignal41393710872;
+			InputSignal41393710872 [label = "(F) InputSignal4 : bool", fillcolor="white" ];
+			MainProgram1042863993 -> InputSignal5378797968;
+			InputSignal5378797968 [label = "(F) InputSignal5 : bool", fillcolor="white" ];
+			MainProgram1042863993 -> fbCollectInput1320791629;
+			fbCollectInput1320791629 [label = "(F) fbCollectInput : _global/F_CollectInput", fillcolor="white" ];
+			MainProgram1042863993 -> ResultSignal1223820621;
+			ResultSignal1223820621 [label = "(F) ResultSignal : bool", fillcolor="white" ];
+			
+			annotations_pseudonode_MainProgram1042863993 [
+				label="ANNOTATIONS\lClockSignal : direction=LOCAL\lClockSignal : PLC type=BOOL\lResetSignal : direction=LOCAL\lResetSignal : PLC type=BOOL\lInputSignal1 : direction=LOCAL\lInputSignal1 : PLC type=BOOL\lInputSignal2 : direction=LOCAL\lInputSignal2 : PLC type=BOOL\lInputSignal3 : direction=LOCAL\lInputSignal3 : PLC type=BOOL\lInputSignal4 : direction=LOCAL\lInputSignal4 : PLC type=BOOL\lInputSignal5 : direction=LOCAL\lInputSignal5 : PLC type=BOOL\lfbCollectInput : direction=LOCAL\lResultSignal : direction=LOCAL\lResultSignal : PLC type=BOOL\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_MainProgram1042863993 [
+				label="INITIAL\lClockSignal := false\lResetSignal := false\lInputSignal1 := false\lInputSignal2 := false\lInputSignal3 := false\lInputSignal4 := false\lInputSignal5 := false\lResultSignal := false\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global1886938557 -> VerificationLoopDS1990828041;
+		subgraph cluster_VerificationLoopDS1990828041 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS1990828041 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS1990828041 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS1990828041 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global1886938557 [
+			label="ANNOTATIONS\l__assertion_error : generated\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global1886938557 [
+			label="INITIAL\l__assertion_error := 0\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterF_CollectInput {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="F_CollectInput : F_CollectInput";
+		
+		annotations_pseudonode_F_CollectInput [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_F_CollectInput [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l6_F_CollectInput [label="l6", color="black", fillcolor="white", shape="ellipse"];
+		l7_F_CollectInput [label="l7", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_F_CollectInput -> l6_F_CollectInput [color="black", label="[RESET]\lInternalState := false\l"];
+		init_F_CollectInput -> l6_F_CollectInput [color="black", label="[((! RESET) && TICK)]\lInternalState := ((((IN1 || IN2) || IN3) || IN4) |\l| IN5)\l"];
+		init_F_CollectInput -> l6_F_CollectInput [color="black", label="[((! RESET) && (! ((! RESET) && TICK)))]"];
+		l6_F_CollectInput -> l7_F_CollectInput [color="black", label="OutputSignal := InternalState"];
+	}
+	subgraph clusterMainProgram {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="MainProgram : MainProgram";
+		
+		annotations_pseudonode_MainProgram [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_MainProgram [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l1_MainProgram [label="l1", color="black", fillcolor="white", shape="ellipse"];
+		l2_MainProgram [label="l2", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_MainProgram -> l1_MainProgram [color="black", label="CALL: F_CollectInput:fbCollectInput(\l   IN: TICK := ClockSignal\l, RESET := ResetSignal\l, IN1 := InputSignal1\l, IN2 := InputSignal2\l, IN3 := InputSignal3\l, IN4 := InputSignal4\l, IN5 := InputSignal5\l   OUT: )\l"];
+		l1_MainProgram -> l2_MainProgram [color="black", label="ResultSignal := fbCollectInput/OutputSignal"];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/IN1 := NONDETERMINISTIC of bool\linstance/IN2 := NONDETERMINISTIC of bool\linstance/IN3 := NONDETERMINISTIC of bool\linstance/IN4 := NONDETERMINISTIC of bool\linstance/IN5 := NONDETERMINISTIC of bool\linstance/RESET := NONDETERMINISTIC of bool\linstance/TICK := NONDETERMINISTIC of bool\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: F_CollectInput:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

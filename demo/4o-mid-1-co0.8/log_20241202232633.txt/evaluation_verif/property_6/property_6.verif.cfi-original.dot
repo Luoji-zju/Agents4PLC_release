@@ -1,0 +1,45 @@
+digraph G {
+	vars_declaration_pseudonode_network [
+		label="VARIABLES\linstance/latency_xx_ms = 0\linstance/NODE_xx_STATUS = 0\linstance/errors_xx = 0\linstance/errors_all = 0\linstance/min_latency_ms = 0\linstance/max_latency_ms = 0\lEoC = false\lBoC = false\l",
+		fillcolor="lightgray", shape="rectangle"];
+	subgraph clusterverificationLoop_VerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="verificationLoop.VerificationLoop";
+		
+		annotations_pseudonode_verificationLoop_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_verificationLoop_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_verificationLoop_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_verificationLoop_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_verificationLoop_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_verificationLoop_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_verificationLoop_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_verificationLoop_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		verificationLoop_VerificationLoop_init_verificationLoop_VerificationLoop [label="verificationLoop.VerificationLoop_init", color="black", fillcolor="white", shape="ellipse"];
+		verificationLoop_VerificationLoop_l5_verificationLoop_VerificationLoop [label="verificationLoop.VerificationLoop_l5", color="black", fillcolor="white", shape="ellipse"];
+		verificationLoop_VerificationLoop_l9_verificationLoop_VerificationLoop [label="verificationLoop.VerificationLoop_l9", color="black", fillcolor="white", shape="ellipse"];
+		verificationLoop_VerificationLoop_l13_verificationLoop_VerificationLoop [label="verificationLoop.VerificationLoop_l13", color="black", fillcolor="white", shape="ellipse"];
+		init_verificationLoop_VerificationLoop -> loop_start_verificationLoop_VerificationLoop [color="black", label=""];
+		loop_start_verificationLoop_VerificationLoop -> prepare_BoC_verificationLoop_VerificationLoop [color="blue", label="instance/NODE_xx_STATUS := NONDETERMINISTIC of sig\lned int16\linstance/errors_all := NONDETERMINISTIC of signed \lint16\linstance/errors_xx := NONDETERMINISTIC of signed i\lnt16\linstance/latency_xx_ms := NONDETERMINISTIC of sign\led int16\linstance/max_latency_ms := NONDETERMINISTIC of sig\lned int16\linstance/min_latency_ms := NONDETERMINISTIC of sig\lned int16\lBoC := true (*)\l"];
+		prepare_BoC_verificationLoop_VerificationLoop -> l_main_call_verificationLoop_VerificationLoop [color="blue", label="BoC := false (*)"];
+		callEnd_verificationLoop_VerificationLoop -> prepare_EoC_verificationLoop_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_verificationLoop_VerificationLoop -> loop_start_verificationLoop_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_verificationLoop_VerificationLoop -> end_verificationLoop_VerificationLoop [color="black", label="[false]"];
+		verificationLoop_VerificationLoop_init_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_l5_verificationLoop_VerificationLoop [color="black", label="[((instance/latency_xx_ms = 0) || (instance/NODE_x\lx_STATUS != 1))]\linstance/errors_xx := (instance/errors_xx + 1)\linstance/errors_all := (instance/errors_all + 1)\l"];
+		verificationLoop_VerificationLoop_init_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_l5_verificationLoop_VerificationLoop [color="black", label="[(! ((instance/latency_xx_ms = 0) || (instance/NOD\lE_xx_STATUS != 1)))]\l"];
+		verificationLoop_VerificationLoop_l5_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_l9_verificationLoop_VerificationLoop [color="black", label="[((instance/latency_xx_ms < instance/min_latency_m\ls) || (instance/min_latency_ms < 0))]\linstance/min_latency_ms := instance/latency_xx_ms\l"];
+		verificationLoop_VerificationLoop_l5_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_l9_verificationLoop_VerificationLoop [color="black", label="[(! ((instance/latency_xx_ms < instance/min_latenc\ly_ms) || (instance/min_latency_ms < 0)))]\l"];
+		verificationLoop_VerificationLoop_l9_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_l13_verificationLoop_VerificationLoop [color="black", label="[((instance/latency_xx_ms > instance/max_latency_m\ls) || (instance/max_latency_ms < 0))]\linstance/max_latency_ms := instance/latency_xx_ms\l"];
+		verificationLoop_VerificationLoop_l9_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_l13_verificationLoop_VerificationLoop [color="black", label="[(! ((instance/latency_xx_ms > instance/max_latenc\ly_ms) || (instance/max_latency_ms < 0)))]\l"];
+		l_main_call_verificationLoop_VerificationLoop -> verificationLoop_VerificationLoop_init_verificationLoop_VerificationLoop [color="black", label=""];
+		verificationLoop_VerificationLoop_l13_verificationLoop_VerificationLoop -> callEnd_verificationLoop_VerificationLoop [color="black", label=""];
+	}
+}
+
