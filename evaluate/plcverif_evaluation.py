@@ -171,28 +171,27 @@ def plcverif_evaluation(input_files, base_dir):
             
             
     # step 1: compiling using compiler
-    for input_file in input_files:
+    for valid_input_file in valid_input_files:
         if evaluate_compiler == "matiec":
-            compile_result = matiec_compiler(input_file["st_file_path"])
+            compile_result = matiec_compiler(valid_input_file["st_file_path"])
         elif evaluate_compiler == "rusty":
-            compile_result = rusty_compiler(input_file["st_file_path"])
+            compile_result = rusty_compiler(valid_input_file["st_file_path"])
         else:
-            compile_result = rusty_compiler(input_file["st_file_path"])
+            compile_result = rusty_compiler(valid_input_file["st_file_path"])
             
         if compile_result:
             compilation_validation_statistics["compilation_success"] += 1
-            verif_files.append(input_file)
+            verif_files.append(valid_input_file)
     
         # step 2: automated verification
     for verif_file in verif_files:
-        verif_result = single_file_plcverif_evaluation(input_file["st_file_path"], input_file["eval_folder_path"], input_file["properties"])
+        verif_result = single_file_plcverif_evaluation(verif_file["st_file_path"], verif_file["eval_folder_path"], verif_file["properties"])
         if verif_result is not None:
             compilation_validation_statistics["verified"] += 1
-            if verif_file == True:
+            if verif_result == True:
                 compilation_validation_statistics["validation_satisfied"] += 1
            
     summary(compilation_validation_statistics, base_dir=base_dir)     
-    # print(compilation_validation_statistics)
 
 
 if __name__ == "__main__":
@@ -238,57 +237,3 @@ if __name__ == "__main__":
     ]
     plcverif_evaluation(input_files, folder_path)
 
-    # # Print results with one decimal place
-    # print(f"Total files: {all_number}, Syntax compilation passed: {compilation_validation_statistics["compilation_success"]}")
-    # print(f"Pass >= 80% properties: {pass_thres_080_num}, Pass >= 50% properties: {pass_thres_050_num}")
-    # print(f"Verified >= 80% properties: {verified_thres_080_num}")
-
-    # # Optionally, write the statistics to a file in the base directory
-    # if base_dir:
-    #     file_path = os.path.join(base_dir, "evaluation_summary.txt")
-    #     with open(file_path, "w") as f:
-    #         f.write(f"Total files: {all_number}\n")
-    #         f.write(f"Syntax compilation passed: {compilation_validation_statistics["compilation_success"]}/{all_number} "
-    #                 f"({compilation_validation_statistics["compilation_success"]/all_number:.1%})\n")
-    #         f.write(f"Pass >= 80% properties: {pass_thres_080_num}/{compilation_validation_statistics["compilation_success"]} "
-    #                 f"({pass_thres_080_num/compilation_validation_statistics["compilation_success"]:.1%})\n")
-    #         f.write(f"Pass >= 50% properties: {pass_thres_050_num}/{compilation_validation_statistics["compilation_success"]} "
-    #                 f"({pass_thres_050_num/compilation_validation_statistics["compilation_success"]:.1%})\n")
-    #         f.write(f"Verified >= 80% properties: {verified_thres_080_num}/{compilation_validation_statistics["compilation_success"]} "
-    #                 f"({verified_thres_080_num/compilation_validation_statistics["compilation_success"]:.1%})\n")
-
-    #     # Write input_files content to a separate file
-    #     log_summaries_file_path = os.path.join(base_dir, "input_files.txt")
-    #     with open(log_summaries_file_path, "w") as log_file:
-    #         try:
-    #             # Try to dump as JSON string
-    #             summaries_str = json.dumps(input_files, indent=4)
-    #         except (TypeError, ValueError):
-    #             # If it fails, use repr() to convert the object to a string
-    #             summaries_str = repr(input_files)
-            
-    #         log_file.write(summaries_str)
-
-            
-
-
-    
-
-
-# if __name__ == "__main__":
-#     # Determine the source for JSON input
-#     # json_file_path = '/home/lzh/work/dataset/dataset_raw/test.json'
-#     # bm_file_path = "/home/lzh/work/Agents4ICS/benchmark/benchmark/test.txt"
-#     json_file_path = "/home/lzh/work/Agents4ICS/benchmark/benchmark/test.json"
-    
-#     # experiment setting: read from benchmark dataset
-#     # json_input = parse_plc_instructions(bm_file_path)
-#     json_input = load_json_from_file(json_file_path)
-    
-#     if json_input is not None:
-#         # Run the batch process on the JSON input
-#         results = batch_run_json_dataset(json_input)
-
-#         # Output the results
-#         for result in results:
-#             print(f"Instruction:\n{result['instruction']}\nGenerated Output:\n{result['output']}\n")
