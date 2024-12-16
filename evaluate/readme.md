@@ -15,19 +15,16 @@ Input : minimal structure for the input format should be a list like:
 [
     {
         "st_file_path": str,   # Dictionary to record generated ST file paths and their validation status.
-        "folder_path": str,         # log folder. Recommended to be auto-generated like /root_folder_path/{st_file_name}_{timestamp}.
+        # "folder_path": str,         # log folder. Recommended to be auto-generated like /root_folder_path/{st_file_name}_{timestamp}.
         "properties": prop_content  # properties copied from origin benchmark.
     }
 ]
 
-Output: statistics about program verification in the format of {number in class/all_number/ratio}. for example:
+Output: statistics about program verification in the format of {number in class/all_number/ratio}. for example for the 
+single test file benchmark/test.ST:
 
-f"Total files: {all_number}"
-f"Syntax compilation passed: {syntax_compilation_num}/{all_number} "
-                    f"({syntax_compilation_num/all_number:.1%})"
-f"Pass >= 80% properties: {pass_thres_080_num}/{syntax_compilation_num} "
-                    f"({pass_thres_080_num/syntax_compilation_num:.1%})\n")
-f"Pass >= 50% properties: {pass_thres_050_num}/{syntax_compilation_num} "
-                    f"({pass_thres_050_num/syntax_compilation_num:.1%})\n")
-f"Verified >= 80% properties: {verified_thres_080_num}/{syntax_compilation_num} "
-                    f"({verified_thres_080_num/syntax_compilation_num:.1%})\n")
+Total files: 1
+Syntax compilation passed: 1/1 (100.0%)
+Verified: 1/1 (100.0%)
+Validation satisfied: 1/1 (100.0%)
+Valid inputs: 1/1 (100.0%)
