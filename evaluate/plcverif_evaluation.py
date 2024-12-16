@@ -195,8 +195,8 @@ def plcverif_evaluation(input_files, base_dir):
 
 
 if __name__ == "__main__":
-    st_file_path = "/home/lzh/work/Agents4PLC-release/benchmark/test.ST"
-    folder_path = "/home/lzh/work/Agents4PLC-release/result/plcverif_evaluation"
+    st_file_path = "/home/work/Agents4PLC-release/benchmark/test.ST"
+    folder_path = "/home/work/Agents4PLC-release/result/plcverif_evaluation"
     properties = [
             {
                 "property_description": "Verify that all assertions are satisfied in the program.",
