@@ -1,1 +1,0 @@
--- specification AG ((EoC & (instance_latency_xx_ms < instance_min_latency_ms | instance_min_latency_ms < 0sd32_0)) -> instance_min_latency_ms = instance_latency_xx_ms)  is true

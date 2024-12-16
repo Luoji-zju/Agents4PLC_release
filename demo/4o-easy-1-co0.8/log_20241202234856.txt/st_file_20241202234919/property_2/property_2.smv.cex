@@ -1,1 +1,0 @@
--- specification AG ((EoC & (!instance_Input1 | !instance_Input2)) -> !instance_AndResult)  is true

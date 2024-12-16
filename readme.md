@@ -25,7 +25,7 @@ result/ demonstrate the experiment statistics and detailed responses.
 prompts/ contain specified prompts for each agent, including agent prompt engineering ways mentioned in our paper to 
 enhance ability of agents.
 
-LangChain/, MetaGPT/, LLM4PLC_reproduce/ or other folders corresponding to a certain multi agent framework's contain the implementation of the framework. You are free to create one for your own task, as long as the output satisfy the verification standards.
+LangChain/, MetaGPT/, LLM4PLC_reproduce/ or other folders corresponding to a certain multi agent framework's contain the implementation of the framework. You are free to create one for your own task, as long as the output satisfy the verification standards. (not available)
 
 Notice: you should adjust content in config otherwise our framework could not work!
 

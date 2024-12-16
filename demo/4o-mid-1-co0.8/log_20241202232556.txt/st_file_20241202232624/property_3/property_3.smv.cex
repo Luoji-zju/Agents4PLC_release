@@ -1,1 +1,0 @@
--- specification  G ((EoC & instance_ONS_Trig = TRUE) ->  O ((EoC -> instance_ON_OFF = TRUE) U (EoC -> instance_ON_OFF = FALSE)))  is true

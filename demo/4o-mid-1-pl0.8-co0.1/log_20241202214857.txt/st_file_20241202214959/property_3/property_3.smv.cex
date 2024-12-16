@@ -1,1 +1,0 @@
--- specification AG ((EoC & (instance_input1 < instance_input3 & instance_input3 >= instance_input2)) -> instance_M = instance_input3)  is true

@@ -1,6 +1,0 @@
-set on_failure_script_quits
-set traces_hiding_prefix ___
-set default_trace_plugin 1
-go
-check_ctlspec -o "/home/Agents4ICS-main/result/experiment_20241202220850/log_20241202221633.txt/evaluation_verif/property_1/property_1.smv.cex"
-quit

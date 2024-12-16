@@ -1,1 +1,0 @@
--- specification AG ((BoC & instance_Start_Stop = TRUE) -> A [ !EoC U (EoC & instance_Rising_ONS = TRUE) ] )  is true

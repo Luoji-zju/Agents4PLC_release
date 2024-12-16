@@ -1,1 +1,0 @@
--- specification  G (((EoC & (!instance_Button & !instance_ToggledOutput)) &  X (!EoC U (EoC & instance_Button))) ->  X (!EoC U (EoC & instance_ToggledOutput)))  is true
