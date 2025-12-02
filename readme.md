@@ -4,6 +4,10 @@ A Multi-Agent System for Programmable Logic Controller (PLC) Code Generation bas
 
 ![Overview of our workflow.](pics/workflow.png)
 
+
+**Important Notice**: 
+Due to collaboration agreements with industrial partners, we are unable to release the full implementation of our multi-agent framework at this time. However, we provide comprehensive resources to reproduce our research, including benchmark datasets, evaluation methodologies, demos, formal verification tools, and reproduction code for key baselines. Researchers can rebuild the framework following the detailed methodology described in our paper.
+
 ## Dataset
 
 **Dataset v2.0 – New Extended Release**
