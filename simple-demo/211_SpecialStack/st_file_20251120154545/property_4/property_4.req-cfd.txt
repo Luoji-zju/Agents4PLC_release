@@ -1,0 +1,54 @@
+{UnaryCtlExpression operator=AG}
+ ├──operand: 
+ │  {BinaryLogicExpression operator=IMPLIES}
+ │   ├──leftOperand: 
+ │   │  {FieldRef frozen=false field:EoC}
+ │   │   └──prefix: <null>
+ │   └──rightOperand: 
+ │      {UnaryLogicExpression operator=NEG}
+ │       └──operand: 
+ │          {BinaryLogicExpression operator=AND}
+ │           ├──leftOperand: 
+ │           │  {BinaryLogicExpression operator=OR}
+ │           │   ├──leftOperand: 
+ │           │   │  {ComparisonExpression operator=EQUALS}
+ │           │   │   ├──leftOperand: 
+ │           │   │   │  {FieldRef frozen=false field:pop}
+ │           │   │   │   └──prefix: 
+ │           │   │   │      {FieldRef frozen=false field:instance}
+ │           │   │   │       └──prefix: <null>
+ │           │   │   ├──rightOperand: 
+ │           │   │   │  {BoolLiteral value=true}
+ │           │   │   │   └──type: 
+ │           │   │   │      {BoolType}
+ │           │   │   └──type: 
+ │           │   │      {BoolType}
+ │           │   └──rightOperand: 
+ │           │      {ComparisonExpression operator=EQUALS}
+ │           │       ├──leftOperand: 
+ │           │       │  {FieldRef frozen=false field:reset}
+ │           │       │   └──prefix: 
+ │           │       │      {FieldRef frozen=false field:instance}
+ │           │       │       └──prefix: <null>
+ │           │       ├──rightOperand: 
+ │           │       │  {BoolLiteral value=true}
+ │           │       │   └──type: 
+ │           │       │      {BoolType}
+ │           │       └──type: 
+ │           │          {BoolType}
+ │           └──rightOperand: 
+ │              {ComparisonExpression operator=EQUALS}
+ │               ├──leftOperand: 
+ │               │  {FieldRef frozen=false field:status}
+ │               │   └──prefix: 
+ │               │      {FieldRef frozen=false field:instance}
+ │               │       └──prefix: <null>
+ │               ├──rightOperand: 
+ │               │  {IntLiteral value=35332}
+ │               │   └──type: 
+ │               │      {IntType signed=false bits=16}
+ │               └──type: 
+ │                  {BoolType}
+ └──type: 
+    {TemporalBoolType}
+

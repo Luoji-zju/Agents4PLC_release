@@ -1,0 +1,141 @@
+digraph G {
+	subgraph cluster__global106095429 {
+		node [shape="folder", style="filled"];
+		//label="_global";
+		_global106095429 [label="_global"];
+		_global106095429 -> instance1694355353;
+		instance1694355353 [label = "(F) instance : _global/StackMin", fillcolor="white" ];
+		_global106095429 -> verificationLoop202453803;
+		verificationLoop202453803 [label = "(F) verificationLoop : _global/VerificationLoopDS", fillcolor="white" , peripheries=2];
+		_global106095429 -> EoC806073091;
+		EoC806073091 [label = "(F) EoC : bool", fillcolor="white" ];
+		_global106095429 -> BoC668707379;
+		BoC668707379 [label = "(F) BoC : bool", fillcolor="white" ];
+		_global106095429 -> StackMin1970590893;
+		subgraph cluster_StackMin1970590893 {
+			node [shape="folder", style="filled"];
+			//label="StackMin";
+			StackMin1970590893 [label="StackMin"];
+			StackMin1970590893 -> push1296953588;
+			push1296953588 [label = "(F) push : bool", fillcolor="white" ];
+			StackMin1970590893 -> pop1407795127;
+			pop1407795127 [label = "(F) pop : bool", fillcolor="white" ];
+			StackMin1970590893 -> reset820781338;
+			reset820781338 [label = "(F) reset : bool", fillcolor="white" ];
+			StackMin1970590893 -> error222088774;
+			error222088774 [label = "(F) error : bool", fillcolor="white" ];
+			StackMin1970590893 -> status1582427182;
+			status1582427182 [label = "(F) status : unsigned int16", fillcolor="white" ];
+			StackMin1970590893 -> item1388972756;
+			item1388972756 [label = "(F) item : signed int16", fillcolor="white" ];
+			StackMin1970590893 -> stack1159911315;
+			stack1159911315 [label = "(F) stack : signed int16[0..3]", fillcolor="white" ];
+			StackMin1970590893 -> top1701756941;
+			top1701756941 [label = "(F) top : signed int16", fillcolor="white" ];
+			StackMin1970590893 -> min_index535708280;
+			min_index535708280 [label = "(F) min_index : signed int16", fillcolor="white" ];
+			StackMin1970590893 -> i1154759881;
+			i1154759881 [label = "(F) i : signed int16", fillcolor="white" ];
+			StackMin1970590893 -> temp_min1042865302;
+			temp_min1042865302 [label = "(F) temp_min : signed int16", fillcolor="white" ];
+			
+			annotations_pseudonode_StackMin1970590893 [
+				label="ANNOTATIONS\lpush : direction=INPUT\lpush : PLC type=BOOL\lpop : direction=INPUT\lpop : PLC type=BOOL\lreset : direction=INPUT\lreset : PLC type=BOOL\lerror : direction=OUTPUT\lerror : PLC type=BOOL\lstatus : direction=OUTPUT\lstatus : PLC type=WORD\litem : direction=INOUT\litem : PLC type=INT\lstack : direction=INOUT\ltop : direction=LOCAL\ltop : PLC type=INT\lmin_index : direction=LOCAL\lmin_index : PLC type=INT\li : direction=LOCAL\li : PLC type=INT\ltemp_min : direction=LOCAL\ltemp_min : PLC type=INT\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_StackMin1970590893 [
+				label="INITIAL\lpush := false\lpop := false\lreset := false\lerror := false\lstatus := 0\litem := 0\lstack[0] := 0\lstack[1] := 0\lstack[2] := 0\lstack[3] := 0\ltop := -1\lmin_index := 0\li := 0\ltemp_min := 0\l",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		_global106095429 -> VerificationLoopDS2061164686;
+		subgraph cluster_VerificationLoopDS2061164686 {
+			node [shape="folder", style="filled"];
+			//label="VerificationLoopDS";
+			VerificationLoopDS2061164686 [label="VerificationLoopDS"];
+			
+			annotations_pseudonode_VerificationLoopDS2061164686 [
+				label="ANNOTATIONS",
+				fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+			initamt_pseudonode_VerificationLoopDS2061164686 [
+				label="INITIAL",
+				fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+		}
+		
+		annotations_pseudonode__global106095429 [
+			label="ANNOTATIONS\lEoC : generated\lBoC : generated\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		initamt_pseudonode__global106095429 [
+			label="INITIAL\lEoC := false\lBoC := false\l",
+			fontsize=9, margin="0.04,0.04", fillcolor="lightyellow", shape="rectangle", style="dashed"];
+	}
+	subgraph clusterStackMin {
+		node [style="filled"];
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="StackMin : StackMin";
+		
+		annotations_pseudonode_StackMin [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_StackMin [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		l5_StackMin [label="l5", color="black", fillcolor="white", shape="ellipse"];
+		l14_StackMin [label="l14", color="black", fillcolor="white", shape="ellipse"];
+		l15_StackMin [label="l15", color="black", fillcolor="white", shape="ellipse"];
+		l22_StackMin [label="l22", color="black", fillcolor="white", shape="ellipse"];
+		l27_StackMin [label="l27", color="black", fillcolor="white", shape="ellipse"];
+		l29_StackMin [label="l29", color="black", fillcolor="white", shape="ellipse"];
+		l33_StackMin [label="l33", color="black", fillcolor="white", shape="ellipse"];
+		l35_StackMin [label="l35", color="black", fillcolor="white", shape="ellipse"];
+		l40_StackMin [label="l40", color="black", fillcolor="white", shape="ellipse"];
+		l44_StackMin [label="l44", color="black", fillcolor="white", style=bold, shape="ellipse"];
+		init_StackMin -> l44_StackMin [color="black", label="[reset]\ltop := (- 1)\lerror := false\lstatus := 0\l"];
+		init_StackMin -> l5_StackMin [color="black", label="[((! reset) && push)]"];
+		l5_StackMin -> l14_StackMin [color="black", label="[(top = 3)]\lerror := true\lstatus := 35332\l"];
+		l5_StackMin -> l14_StackMin [color="black", label="[(! (top = 3))]\ltop := (top + 1)\lstack[top] := item\lerror := false\lstatus := 0\l"];
+		init_StackMin -> l15_StackMin [color="black", label="[(((! reset) && (! push)) && pop)]"];
+		l15_StackMin -> l40_StackMin [color="black", label="[(top = (- 1))]\lerror := true\lstatus := 35333\l"];
+		l15_StackMin -> l29_StackMin [color="black", label="[(! (top = (- 1)))]\lmin_index := 0\ltemp_min := stack[0]\li := 1\l"];
+		l22_StackMin -> l27_StackMin [color="black", label="[(stack[i] < temp_min)]\ltemp_min := stack[i]\lmin_index := i\l"];
+		l22_StackMin -> l27_StackMin [color="black", label="[(! (stack[i] < temp_min))]"];
+		l29_StackMin -> l22_StackMin [color="black", label="[(i <= top)]"];
+		l29_StackMin -> l35_StackMin [color="black", label="[(! (i <= top))]\litem := temp_min\li := min_index\l"];
+		l27_StackMin -> l29_StackMin [color="black", label="i := (i + 1)"];
+		l35_StackMin -> l33_StackMin [color="black", label="[(i <= (top - 1))]\lstack[i] := stack[(i + 1)]\l"];
+		l35_StackMin -> l40_StackMin [color="black", label="[(! (i <= (top - 1)))]\ltop := (top - 1)\lerror := false\lstatus := 0\l"];
+		l33_StackMin -> l35_StackMin [color="black", label="i := (i + 1)"];
+		init_StackMin -> l44_StackMin [color="black", label="[((! reset) && ((! ((! reset) && push)) && (! (((!\l reset) && (! push)) && pop))))]\lerror := false\lstatus := 0\l"];
+		l14_StackMin -> l44_StackMin [color="black", label=""];
+		l40_StackMin -> l44_StackMin [color="black", label=""];
+	}
+	subgraph clusterVerificationLoop {
+		node [style="filled"];
+		style=bold;
+		color="black";
+		fontsize=10;
+		ranksep=0.4;
+		
+		label="VerificationLoop : VerificationLoopDS";
+		
+		annotations_pseudonode_VerificationLoop [
+			label="ANNOTATIONS",
+			fontsize=9, margin="0.04,0.04", fillcolor="white", shape="rectangle", style="dashed"];
+		
+		init_VerificationLoop [label="init", color="black", fillcolor="cadetblue1", peripheries=2, shape="ellipse"];
+		end_VerificationLoop [label="end", color="black", fillcolor="cadetblue1", style=bold, shape="ellipse"];
+		loop_start_VerificationLoop [label="loop_start", color="black", fillcolor="white", shape="ellipse"];
+		prepare_BoC_VerificationLoop [label="prepare_BoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		l_main_call_VerificationLoop [label="l_main_call", color="black", fillcolor="white", shape="ellipse"];
+		callEnd_VerificationLoop [label="callEnd", color="black", fillcolor="white", shape="ellipse"];
+		prepare_EoC_VerificationLoop [label="prepare_EoC", color="black", fillcolor="cadetblue1", shape="ellipse"];
+		init_VerificationLoop -> loop_start_VerificationLoop [color="black", label=""];
+		loop_start_VerificationLoop -> prepare_BoC_VerificationLoop [color="blue", label="instance/item := NONDETERMINISTIC of signed int16\linstance/pop := NONDETERMINISTIC of bool\linstance/push := NONDETERMINISTIC of bool\linstance/reset := NONDETERMINISTIC of bool\linstance/stack[0] := NONDETERMINISTIC of signed in\lt16\linstance/stack[1] := NONDETERMINISTIC of signed in\lt16\linstance/stack[2] := NONDETERMINISTIC of signed in\lt16\linstance/stack[3] := NONDETERMINISTIC of signed in\lt16\lBoC := true (*)\l"];
+		prepare_BoC_VerificationLoop -> l_main_call_VerificationLoop [color="blue", label="BoC := false (*)"];
+		l_main_call_VerificationLoop -> callEnd_VerificationLoop [color="black", label="CALL: StackMin:instance(\l   IN:    OUT: )\l"];
+		callEnd_VerificationLoop -> prepare_EoC_VerificationLoop [color="blue", label="EoC := true (*)"];
+		prepare_EoC_VerificationLoop -> loop_start_VerificationLoop [color="blue", label="EoC := false (*)"];
+		loop_start_VerificationLoop -> end_VerificationLoop [color="black", label="[false]"];
+	}
+}
+

@@ -30,6 +30,9 @@ In Agents4PLC we established the **first verifiable benchmark** for automaticall
 
 All 73 new tasks are **tagged with new prefix** to avoid collisions with v1.0.
 
+** New in this release**: Added **High-Fidelity Dataset** with 21 industrial tasks collected from programming competitions (released 2024-2025, sourced from [https://github.com/cangkui/AutoPLC] with our added properties) specifically for efficiency and reliability analysis (RQ2). This dataset is designed to minimize pre-training contamination risks in LLM evaluations.
+
+
 ### File Layout
 
 ```
@@ -39,6 +42,7 @@ benchmark_v1/
 benchmark_v2/
 │   ├── medium.jsonl
 │   └── hard.jsonl
+│   └── high_fidelity.jsonl  # New dataset for efficiency analysis
 ├── readme.md
 ```
 
@@ -61,6 +65,11 @@ Notice: you should adjust content in config otherwise our framework could not wo
 
 For tools related to st compilation and smv verification not provided in src, see src/README.md.
 For benchmark's construction process and how to use it, see benchmark/readme.md.
+
+### Key Updates in This Release:
+- ✅ **LLM4PLC reproduction code updated**: Complete implementation of the LLM4PLC[https://github.com/AICPS/LLM_4_PLC] baseline with automation script, component interfaces, and file system interactions for fair comparison.
+- ✅ **New logs in simple-demo**: Updated demonstration logs showing the full multi-agent workflow trajectory, including structured context handoff between agents and asynchronous integration with formal verification environments.
+- ✅ **High-Fidelity dataset in benchmark_v2**: Added 21 complex industrial tasks specifically designed for efficiency and reliability analysis (RQ2) with minimal risk of pre-training contamination.
 
 ## Recommended Agent Related Tools & Works
 

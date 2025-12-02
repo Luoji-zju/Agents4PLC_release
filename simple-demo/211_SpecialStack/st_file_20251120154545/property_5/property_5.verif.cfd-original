@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfadeclaration:CfaNetworkDeclaration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfabase="cern.plcverif.base.models.cfa.cfabase" xmlns:cfadeclaration="cern.plcverif.base.models.cfa.cfadeclaration" xmlns:expr="cern.plcverif.base.models.expr" xmi:id="network" name="network" displayName="network" mainAutomaton="network_VerificationLoop">
+  <automata xmi:id="network_StackMin" name="StackMin" displayName="StackMin" initialLocation="network_StackMin_init" endLocation="network_StackMin_l44">
+    <locations xmi:id="network_StackMin_init" name="init" displayName="init" frozen="true" outgoing="network_StackMin_t1 network_StackMin_t5 network_StackMin_t16 network_StackMin_t46"/>
+    <locations xmi:id="network_StackMin_l1" name="l1" displayName="l1" incoming="network_StackMin_t1" outgoing="network_StackMin_t2"/>
+    <locations xmi:id="network_StackMin_l2" name="l2" displayName="l2" incoming="network_StackMin_t2" outgoing="network_StackMin_t3"/>
+    <locations xmi:id="network_StackMin_l3" name="l3" displayName="l3" incoming="network_StackMin_t3" outgoing="network_StackMin_t4"/>
+    <locations xmi:id="network_StackMin_l4" name="l4" displayName="l4" incoming="network_StackMin_t4" outgoing="network_StackMin_t49"/>
+    <locations xmi:id="network_StackMin_l5" name="l5" displayName="l5" incoming="network_StackMin_t5" outgoing="network_StackMin_t6 network_StackMin_t9"/>
+    <locations xmi:id="network_StackMin_l6" name="l6" displayName="l6" incoming="network_StackMin_t6" outgoing="network_StackMin_t7"/>
+    <locations xmi:id="network_StackMin_l7" name="l7" displayName="l7" incoming="network_StackMin_t7" outgoing="network_StackMin_t8"/>
+    <locations xmi:id="network_StackMin_l8" name="l8" displayName="l8" incoming="network_StackMin_t8" outgoing="network_StackMin_t14"/>
+    <locations xmi:id="network_StackMin_l9" name="l9" displayName="l9" incoming="network_StackMin_t9" outgoing="network_StackMin_t10"/>
+    <locations xmi:id="network_StackMin_l10" name="l10" displayName="l10" incoming="network_StackMin_t10" outgoing="network_StackMin_t11"/>
+    <locations xmi:id="network_StackMin_l11" name="l11" displayName="l11" incoming="network_StackMin_t11" outgoing="network_StackMin_t12"/>
+    <locations xmi:id="network_StackMin_l12" name="l12" displayName="l12" incoming="network_StackMin_t12" outgoing="network_StackMin_t13"/>
+    <locations xmi:id="network_StackMin_l13" name="l13" displayName="l13" incoming="network_StackMin_t13" outgoing="network_StackMin_t15"/>
+    <locations xmi:id="network_StackMin_l14" name="l14" displayName="l14" incoming="network_StackMin_t14 network_StackMin_t15" outgoing="network_StackMin_t50"/>
+    <locations xmi:id="network_StackMin_l15" name="l15" displayName="l15" incoming="network_StackMin_t16" outgoing="network_StackMin_t17 network_StackMin_t20"/>
+    <locations xmi:id="network_StackMin_l16" name="l16" displayName="l16" incoming="network_StackMin_t17" outgoing="network_StackMin_t18"/>
+    <locations xmi:id="network_StackMin_l17" name="l17" displayName="l17" incoming="network_StackMin_t18" outgoing="network_StackMin_t19"/>
+    <locations xmi:id="network_StackMin_l18" name="l18" displayName="l18" incoming="network_StackMin_t19" outgoing="network_StackMin_t44"/>
+    <locations xmi:id="network_StackMin_l19" name="l19" displayName="l19" incoming="network_StackMin_t20" outgoing="network_StackMin_t21"/>
+    <locations xmi:id="network_StackMin_l20" name="l20" displayName="l20" incoming="network_StackMin_t21" outgoing="network_StackMin_t22"/>
+    <locations xmi:id="network_StackMin_l21" name="l21" displayName="l21" incoming="network_StackMin_t22" outgoing="network_StackMin_t29"/>
+    <locations xmi:id="network_StackMin_l22" name="l22" displayName="l22" incoming="network_StackMin_entry30" outgoing="network_StackMin_t23 network_StackMin_t26"/>
+    <locations xmi:id="network_StackMin_l23" name="l23" displayName="l23" incoming="network_StackMin_t23" outgoing="network_StackMin_t24"/>
+    <locations xmi:id="network_StackMin_l24" name="l24" displayName="l24" incoming="network_StackMin_t24" outgoing="network_StackMin_t25"/>
+    <locations xmi:id="network_StackMin_l25" name="l25" displayName="l25" incoming="network_StackMin_t25" outgoing="network_StackMin_t27"/>
+    <locations xmi:id="network_StackMin_l26" name="l26" displayName="l26" incoming="network_StackMin_t26" outgoing="network_StackMin_t28"/>
+    <locations xmi:id="network_StackMin_l27" name="l27" displayName="l27" incoming="network_StackMin_t27 network_StackMin_t28" outgoing="network_StackMin_t32"/>
+    <locations xmi:id="network_StackMin_l28" name="l28" displayName="l28" incoming="network_StackMin_loopExit31" outgoing="network_StackMin_t34"/>
+    <locations xmi:id="network_StackMin_l29" name="l29" displayName="l29" incoming="network_StackMin_t29 network_StackMin_nextCycle33" outgoing="network_StackMin_entry30 network_StackMin_loopExit31"/>
+    <locations xmi:id="network_StackMin_l30" name="l30" displayName="l30" incoming="network_StackMin_t32" outgoing="network_StackMin_nextCycle33"/>
+    <locations xmi:id="network_StackMin_l31" name="l31" displayName="l31" incoming="network_StackMin_t34" outgoing="network_StackMin_t36"/>
+    <locations xmi:id="network_StackMin_l32" name="l32" displayName="l32" incoming="network_StackMin_entry37" outgoing="network_StackMin_t35"/>
+    <locations xmi:id="network_StackMin_l33" name="l33" displayName="l33" incoming="network_StackMin_t35" outgoing="network_StackMin_t39"/>
+    <locations xmi:id="network_StackMin_l34" name="l34" displayName="l34" incoming="network_StackMin_loopExit38" outgoing="network_StackMin_t41"/>
+    <locations xmi:id="network_StackMin_l35" name="l35" displayName="l35" incoming="network_StackMin_t36 network_StackMin_nextCycle40" outgoing="network_StackMin_entry37 network_StackMin_loopExit38"/>
+    <locations xmi:id="network_StackMin_l36" name="l36" displayName="l36" incoming="network_StackMin_t39" outgoing="network_StackMin_nextCycle40"/>
+    <locations xmi:id="network_StackMin_l37" name="l37" displayName="l37" incoming="network_StackMin_t41" outgoing="network_StackMin_t42"/>
+    <locations xmi:id="network_StackMin_l38" name="l38" displayName="l38" incoming="network_StackMin_t42" outgoing="network_StackMin_t43"/>
+    <locations xmi:id="network_StackMin_l39" name="l39" displayName="l39" incoming="network_StackMin_t43" outgoing="network_StackMin_t45"/>
+    <locations xmi:id="network_StackMin_l40" name="l40" displayName="l40" incoming="network_StackMin_t44 network_StackMin_t45" outgoing="network_StackMin_t51"/>
+    <locations xmi:id="network_StackMin_l41" name="l41" displayName="l41" incoming="network_StackMin_t46" outgoing="network_StackMin_t47"/>
+    <locations xmi:id="network_StackMin_l42" name="l42" displayName="l42" incoming="network_StackMin_t47" outgoing="network_StackMin_t48"/>
+    <locations xmi:id="network_StackMin_l43" name="l43" displayName="l43" incoming="network_StackMin_t48" outgoing="network_StackMin_t52"/>
+    <locations xmi:id="network_StackMin_l44" name="l44" displayName="l44" incoming="network_StackMin_t49 network_StackMin_t50 network_StackMin_t51 network_StackMin_t52"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t1" name="t1" displayName="t1" source="network_StackMin_init" target="network_StackMin_l1">
+      <condition xsi:type="cfadeclaration:FieldRef" xmi:id="id0" field="network__global_StackMin_reset"/>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t2" name="t2" displayName="t2" source="network_StackMin_l1" target="network_StackMin_l2">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id1" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id2"/>
+      </condition>
+      <assignments xmi:id="id3">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id4" field="network__global_StackMin_top"/>
+        <rightValue xsi:type="expr:UnaryArithmeticExpression" xmi:id="id5">
+          <operand xsi:type="expr:IntLiteral" xmi:id="id6" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id7" signed="true" bits="16"/>
+          </operand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t3" name="t3" displayName="t3" source="network_StackMin_l2" target="network_StackMin_l3">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id8" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id9"/>
+      </condition>
+      <assignments xmi:id="id10">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id11" field="network__global_StackMin_error"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id12" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id13"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t4" name="t4" displayName="t4" source="network_StackMin_l3" target="network_StackMin_l4">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id14" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id15"/>
+      </condition>
+      <assignments xmi:id="id16">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id17" field="network__global_StackMin_status"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id18" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id19" signed="false" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t5" name="t5" displayName="t5" source="network_StackMin_init" target="network_StackMin_l5">
+      <condition xsi:type="expr:BinaryLogicExpression" xmi:id="id20">
+        <leftOperand xsi:type="expr:UnaryLogicExpression" xmi:id="id21">
+          <operand xsi:type="cfadeclaration:FieldRef" xmi:id="id22" field="network__global_StackMin_reset"/>
+        </leftOperand>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id23" field="network__global_StackMin_push"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t6" name="t6" displayName="t6" source="network_StackMin_l5" target="network_StackMin_l6">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id24">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id25" field="network__global_StackMin_top"/>
+        <rightOperand xsi:type="expr:IntLiteral" xmi:id="id26" value="3">
+          <type xsi:type="expr:IntType" xmi:id="id27" signed="true" bits="16"/>
+        </rightOperand>
+        <type xsi:type="expr:BoolType" xmi:id="id28"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t7" name="t7" displayName="t7" source="network_StackMin_l6" target="network_StackMin_l7">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id29" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id30"/>
+      </condition>
+      <assignments xmi:id="id31">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id32" field="network__global_StackMin_error"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id33" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id34"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t8" name="t8" displayName="t8" source="network_StackMin_l7" target="network_StackMin_l8">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id35" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id36"/>
+      </condition>
+      <assignments xmi:id="id37">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id38" field="network__global_StackMin_status"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id39" value="35332">
+          <type xsi:type="expr:IntType" xmi:id="id40" signed="false" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t9" name="t9" displayName="t9" source="network_StackMin_l5" target="network_StackMin_l9">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id41">
+        <type xsi:type="expr:BoolType" xmi:id="id42"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t10" name="t10" displayName="t10" source="network_StackMin_l9" target="network_StackMin_l10">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id43" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id44"/>
+      </condition>
+      <assignments xmi:id="id45">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id46" field="network__global_StackMin_top"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id47">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id48" field="network__global_StackMin_top"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id49" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id50" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t11" name="t11" displayName="t11" source="network_StackMin_l10" target="network_StackMin_l11">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id51" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id52"/>
+      </condition>
+      <assignments xmi:id="id53">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id54">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id55" field="network__global_StackMin_stack"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id56" field="network__global_StackMin_top"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id57" field="network__global_StackMin_item"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t12" name="t12" displayName="t12" source="network_StackMin_l11" target="network_StackMin_l12">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id58" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id59"/>
+      </condition>
+      <assignments xmi:id="id60">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id61" field="network__global_StackMin_error"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id62" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id63"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t13" name="t13" displayName="t13" source="network_StackMin_l12" target="network_StackMin_l13">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id64" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id65"/>
+      </condition>
+      <assignments xmi:id="id66">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id67" field="network__global_StackMin_status"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id68" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id69" signed="false" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t14" name="t14" displayName="t14" source="network_StackMin_l8" target="network_StackMin_l14">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id70" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id71"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t15" name="t15" displayName="t15" source="network_StackMin_l13" target="network_StackMin_l14">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id72" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id73"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t16" name="t16" displayName="t16" source="network_StackMin_init" target="network_StackMin_l15">
+      <condition xsi:type="expr:BinaryLogicExpression" xmi:id="id74">
+        <leftOperand xsi:type="expr:BinaryLogicExpression" xmi:id="id75">
+          <leftOperand xsi:type="expr:UnaryLogicExpression" xmi:id="id76">
+            <operand xsi:type="cfadeclaration:FieldRef" xmi:id="id77" field="network__global_StackMin_reset"/>
+          </leftOperand>
+          <rightOperand xsi:type="expr:UnaryLogicExpression" xmi:id="id78">
+            <operand xsi:type="cfadeclaration:FieldRef" xmi:id="id79" field="network__global_StackMin_push"/>
+          </rightOperand>
+        </leftOperand>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id80" field="network__global_StackMin_pop"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t17" name="t17" displayName="t17" source="network_StackMin_l15" target="network_StackMin_l16">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id81">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id82" field="network__global_StackMin_top"/>
+        <rightOperand xsi:type="expr:UnaryArithmeticExpression" xmi:id="id83">
+          <operand xsi:type="expr:IntLiteral" xmi:id="id84" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id85" signed="true" bits="16"/>
+          </operand>
+        </rightOperand>
+        <type xsi:type="expr:BoolType" xmi:id="id86"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t18" name="t18" displayName="t18" source="network_StackMin_l16" target="network_StackMin_l17">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id87" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id88"/>
+      </condition>
+      <assignments xmi:id="id89">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id90" field="network__global_StackMin_error"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id91" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id92"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t19" name="t19" displayName="t19" source="network_StackMin_l17" target="network_StackMin_l18">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id93" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id94"/>
+      </condition>
+      <assignments xmi:id="id95">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id96" field="network__global_StackMin_status"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id97" value="35333">
+          <type xsi:type="expr:IntType" xmi:id="id98" signed="false" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t20" name="t20" displayName="t20" source="network_StackMin_l15" target="network_StackMin_l19">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id99">
+        <type xsi:type="expr:BoolType" xmi:id="id100"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t21" name="t21" displayName="t21" source="network_StackMin_l19" target="network_StackMin_l20">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id101" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id102"/>
+      </condition>
+      <assignments xmi:id="id103">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id104" field="network__global_StackMin_min_index"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id105" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id106" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t22" name="t22" displayName="t22" source="network_StackMin_l20" target="network_StackMin_l21">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id107" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id108"/>
+      </condition>
+      <assignments xmi:id="id109">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id110" field="network__global_StackMin_temp_min"/>
+        <rightValue xsi:type="cfadeclaration:Indexing" xmi:id="id111">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id112" field="network__global_StackMin_stack"/>
+          <index xsi:type="expr:IntLiteral" xmi:id="id113" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id114" signed="true" bits="16"/>
+          </index>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t23" name="t23" displayName="t23" source="network_StackMin_l22" target="network_StackMin_l23">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id115" operator="LESS_THAN">
+        <leftOperand xsi:type="cfadeclaration:Indexing" xmi:id="id116">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id117" field="network__global_StackMin_stack"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id118" field="network__global_StackMin_i"/>
+        </leftOperand>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id119" field="network__global_StackMin_temp_min"/>
+        <type xsi:type="expr:BoolType" xmi:id="id120"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t24" name="t24" displayName="t24" source="network_StackMin_l23" target="network_StackMin_l24">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id121" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id122"/>
+      </condition>
+      <assignments xmi:id="id123">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id124" field="network__global_StackMin_temp_min"/>
+        <rightValue xsi:type="cfadeclaration:Indexing" xmi:id="id125">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id126" field="network__global_StackMin_stack"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id127" field="network__global_StackMin_i"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t25" name="t25" displayName="t25" source="network_StackMin_l24" target="network_StackMin_l25">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id128" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id129"/>
+      </condition>
+      <assignments xmi:id="id130">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id131" field="network__global_StackMin_min_index"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id132" field="network__global_StackMin_i"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t26" name="t26" displayName="t26" source="network_StackMin_l22" target="network_StackMin_l26">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id133">
+        <type xsi:type="expr:BoolType" xmi:id="id134"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t27" name="t27" displayName="t27" source="network_StackMin_l25" target="network_StackMin_l27">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id135" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id136"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t28" name="t28" displayName="t28" source="network_StackMin_l26" target="network_StackMin_l27">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id137" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id138"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t29" name="t29" displayName="t29" source="network_StackMin_l21" target="network_StackMin_l29">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id139" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id140"/>
+      </condition>
+      <assignments xmi:id="id141">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id142" field="network__global_StackMin_i"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id143" value="1">
+          <type xsi:type="expr:IntType" xmi:id="id144" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_entry30" name="entry30" displayName="entry30" source="network_StackMin_l29" target="network_StackMin_l22">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id145" operator="LESS_EQ">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id146" field="network__global_StackMin_i"/>
+        <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id147" field="network__global_StackMin_top"/>
+        <type xsi:type="expr:BoolType" xmi:id="id148"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_loopExit31" name="loopExit31" displayName="loopExit31" source="network_StackMin_l29" target="network_StackMin_l28">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id149">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id150" operator="LESS_EQ">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id151" field="network__global_StackMin_i"/>
+          <rightOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id152" field="network__global_StackMin_top"/>
+          <type xsi:type="expr:BoolType" xmi:id="id153"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t32" name="t32" displayName="t32" source="network_StackMin_l27" target="network_StackMin_l30">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id154" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id155"/>
+      </condition>
+      <assignments xmi:id="id156">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id157" field="network__global_StackMin_i"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id158">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id159" field="network__global_StackMin_i"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id160" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id161" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_nextCycle33" name="nextCycle33" displayName="nextCycle33" source="network_StackMin_l30" target="network_StackMin_l29">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id162" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id163"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t34" name="t34" displayName="t34" source="network_StackMin_l28" target="network_StackMin_l31">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id164" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id165"/>
+      </condition>
+      <assignments xmi:id="id166">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id167" field="network__global_StackMin_item"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id168" field="network__global_StackMin_temp_min"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t35" name="t35" displayName="t35" source="network_StackMin_l32" target="network_StackMin_l33">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id169" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id170"/>
+      </condition>
+      <assignments xmi:id="id171">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id172">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id173" field="network__global_StackMin_stack"/>
+          <index xsi:type="cfadeclaration:FieldRef" xmi:id="id174" field="network__global_StackMin_i"/>
+        </leftValue>
+        <rightValue xsi:type="cfadeclaration:Indexing" xmi:id="id175">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id176" field="network__global_StackMin_stack"/>
+          <index xsi:type="expr:BinaryArithmeticExpression" xmi:id="id177">
+            <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id178" field="network__global_StackMin_i"/>
+            <rightOperand xsi:type="expr:IntLiteral" xmi:id="id179" value="1">
+              <type xsi:type="expr:IntType" xmi:id="id180" signed="true" bits="16"/>
+            </rightOperand>
+          </index>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t36" name="t36" displayName="t36" source="network_StackMin_l31" target="network_StackMin_l35">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id181" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id182"/>
+      </condition>
+      <assignments xmi:id="id183">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id184" field="network__global_StackMin_i"/>
+        <rightValue xsi:type="cfadeclaration:FieldRef" xmi:id="id185" field="network__global_StackMin_min_index"/>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_entry37" name="entry37" displayName="entry37" source="network_StackMin_l35" target="network_StackMin_l32">
+      <condition xsi:type="expr:ComparisonExpression" xmi:id="id186" operator="LESS_EQ">
+        <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id187" field="network__global_StackMin_i"/>
+        <rightOperand xsi:type="expr:BinaryArithmeticExpression" xmi:id="id188" operator="MINUS">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id189" field="network__global_StackMin_top"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id190" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id191" signed="true" bits="16"/>
+          </rightOperand>
+        </rightOperand>
+        <type xsi:type="expr:BoolType" xmi:id="id192"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_loopExit38" name="loopExit38" displayName="loopExit38" source="network_StackMin_l35" target="network_StackMin_l34">
+      <condition xsi:type="expr:UnaryLogicExpression" xmi:id="id193">
+        <operand xsi:type="expr:ComparisonExpression" xmi:id="id194" operator="LESS_EQ">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id195" field="network__global_StackMin_i"/>
+          <rightOperand xsi:type="expr:BinaryArithmeticExpression" xmi:id="id196" operator="MINUS">
+            <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id197" field="network__global_StackMin_top"/>
+            <rightOperand xsi:type="expr:IntLiteral" xmi:id="id198" value="1">
+              <type xsi:type="expr:IntType" xmi:id="id199" signed="true" bits="16"/>
+            </rightOperand>
+          </rightOperand>
+          <type xsi:type="expr:BoolType" xmi:id="id200"/>
+        </operand>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t39" name="t39" displayName="t39" source="network_StackMin_l33" target="network_StackMin_l36">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id201" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id202"/>
+      </condition>
+      <assignments xmi:id="id203">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id204" field="network__global_StackMin_i"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id205">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id206" field="network__global_StackMin_i"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id207" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id208" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_nextCycle40" name="nextCycle40" displayName="nextCycle40" source="network_StackMin_l36" target="network_StackMin_l35">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id209" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id210"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t41" name="t41" displayName="t41" source="network_StackMin_l34" target="network_StackMin_l37">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id211" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id212"/>
+      </condition>
+      <assignments xmi:id="id213">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id214" field="network__global_StackMin_top"/>
+        <rightValue xsi:type="expr:BinaryArithmeticExpression" xmi:id="id215" operator="MINUS">
+          <leftOperand xsi:type="cfadeclaration:FieldRef" xmi:id="id216" field="network__global_StackMin_top"/>
+          <rightOperand xsi:type="expr:IntLiteral" xmi:id="id217" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id218" signed="true" bits="16"/>
+          </rightOperand>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t42" name="t42" displayName="t42" source="network_StackMin_l37" target="network_StackMin_l38">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id219" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id220"/>
+      </condition>
+      <assignments xmi:id="id221">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id222" field="network__global_StackMin_error"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id223" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id224"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t43" name="t43" displayName="t43" source="network_StackMin_l38" target="network_StackMin_l39">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id225" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id226"/>
+      </condition>
+      <assignments xmi:id="id227">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id228" field="network__global_StackMin_status"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id229" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id230" signed="false" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t44" name="t44" displayName="t44" source="network_StackMin_l18" target="network_StackMin_l40">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id231" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id232"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t45" name="t45" displayName="t45" source="network_StackMin_l39" target="network_StackMin_l40">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id233" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id234"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t46" name="t46" displayName="t46" source="network_StackMin_init" target="network_StackMin_l41">
+      <condition xsi:type="cfabase:ElseExpression" xmi:id="id235">
+        <type xsi:type="expr:BoolType" xmi:id="id236"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t47" name="t47" displayName="t47" source="network_StackMin_l41" target="network_StackMin_l42">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id237" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id238"/>
+      </condition>
+      <assignments xmi:id="id239">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id240" field="network__global_StackMin_error"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id241" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id242"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t48" name="t48" displayName="t48" source="network_StackMin_l42" target="network_StackMin_l43">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id243" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id244"/>
+      </condition>
+      <assignments xmi:id="id245">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id246" field="network__global_StackMin_status"/>
+        <rightValue xsi:type="expr:IntLiteral" xmi:id="id247" value="0">
+          <type xsi:type="expr:IntType" xmi:id="id248" signed="false" bits="16"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t49" name="t49" displayName="t49" source="network_StackMin_l4" target="network_StackMin_l44">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id249" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id250"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t50" name="t50" displayName="t50" source="network_StackMin_l14" target="network_StackMin_l44">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id251" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id252"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t51" name="t51" displayName="t51" source="network_StackMin_l40" target="network_StackMin_l44">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id253" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id254"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_StackMin_t52" name="t52" displayName="t52" source="network_StackMin_l43" target="network_StackMin_l44">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id255" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id256"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id257" definition="network__global_StackMin"/>
+  </automata>
+  <automata xmi:id="network_VerificationLoop" name="VerificationLoop" displayName="VerificationLoop" initialLocation="network_VerificationLoop_init" endLocation="network_VerificationLoop_end">
+    <locations xmi:id="network_VerificationLoop_init" name="init" displayName="init" frozen="true" outgoing="network_VerificationLoop_t_params"/>
+    <locations xmi:id="network_VerificationLoop_end" name="end" displayName="end" frozen="true" incoming="network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_loop_start" name="loop_start" displayName="loop_start" incoming="network_VerificationLoop_t_params network_VerificationLoop_restart" outgoing="network_VerificationLoop_set_BoC network_VerificationLoop_end1"/>
+    <locations xmi:id="network_VerificationLoop_prepare_BoC" name="prepare_BoC" displayName="prepare_BoC" frozen="true" incoming="network_VerificationLoop_set_BoC" outgoing="network_VerificationLoop_t_inputs"/>
+    <locations xmi:id="network_VerificationLoop_l_main_call" name="l_main_call" displayName="l_main_call" incoming="network_VerificationLoop_t_inputs" outgoing="network_VerificationLoop_main_call"/>
+    <locations xmi:id="network_VerificationLoop_callEnd" name="callEnd" displayName="callEnd" incoming="network_VerificationLoop_main_call" outgoing="network_VerificationLoop_set_EoC"/>
+    <locations xmi:id="network_VerificationLoop_prepare_EoC" name="prepare_EoC" displayName="prepare_EoC" frozen="true" incoming="network_VerificationLoop_set_EoC" outgoing="network_VerificationLoop_restart"/>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_params" name="t_params" displayName="t_params" source="network_VerificationLoop_init" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id258" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id259"/>
+      </condition>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_BoC" name="set_BoC" displayName="set_BoC" frozen="true" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_prepare_BoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id260" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id261"/>
+      </condition>
+      <assignments xmi:id="id262">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id263" field="network__global_StackMin_item">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id264" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id265">
+          <type xsi:type="expr:IntType" xmi:id="id266" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id267">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id268" field="network__global_StackMin_pop">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id269" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id270">
+          <type xsi:type="expr:BoolType" xmi:id="id271"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id272">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id273" field="network__global_StackMin_push">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id274" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id275">
+          <type xsi:type="expr:BoolType" xmi:id="id276"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id277">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id278" field="network__global_StackMin_reset">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id279" field="network__global_instance"/>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id280">
+          <type xsi:type="expr:BoolType" xmi:id="id281"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id282">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id283">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id284" field="network__global_StackMin_stack">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id285" field="network__global_instance"/>
+          </prefix>
+          <index xsi:type="expr:IntLiteral" xmi:id="id286" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id287" signed="true" bits="16"/>
+          </index>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id288">
+          <type xsi:type="expr:IntType" xmi:id="id289" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id290">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id291">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id292" field="network__global_StackMin_stack">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id293" field="network__global_instance"/>
+          </prefix>
+          <index xsi:type="expr:IntLiteral" xmi:id="id294" value="1">
+            <type xsi:type="expr:IntType" xmi:id="id295" signed="true" bits="16"/>
+          </index>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id296">
+          <type xsi:type="expr:IntType" xmi:id="id297" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id298">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id299">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id300" field="network__global_StackMin_stack">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id301" field="network__global_instance"/>
+          </prefix>
+          <index xsi:type="expr:IntLiteral" xmi:id="id302" value="2">
+            <type xsi:type="expr:IntType" xmi:id="id303" signed="true" bits="16"/>
+          </index>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id304">
+          <type xsi:type="expr:IntType" xmi:id="id305" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id306">
+        <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id307">
+          <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id308" field="network__global_StackMin_stack">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id309" field="network__global_instance"/>
+          </prefix>
+          <index xsi:type="expr:IntLiteral" xmi:id="id310" value="3">
+            <type xsi:type="expr:IntType" xmi:id="id311" signed="true" bits="16"/>
+          </index>
+        </leftValue>
+        <rightValue xsi:type="expr:Nondeterministic" xmi:id="id312">
+          <type xsi:type="expr:IntType" xmi:id="id313" signed="true" bits="16"/>
+        </rightValue>
+      </assignments>
+      <assignments xmi:id="id314" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id315" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id316" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id317"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_t_inputs" name="t_inputs" displayName="t_inputs" frozen="true" source="network_VerificationLoop_prepare_BoC" target="network_VerificationLoop_l_main_call">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id318" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id319"/>
+      </condition>
+      <assignments xmi:id="id320" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id321" frozen="true" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id322" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id323"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:CallTransition" xmi:id="network_VerificationLoop_main_call" name="main_call" displayName="main_call" source="network_VerificationLoop_l_main_call" target="network_VerificationLoop_callEnd">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id324" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id325"/>
+      </condition>
+      <calls xmi:id="id326" calledAutomaton="network_StackMin">
+        <calleeContext xsi:type="cfadeclaration:FieldRef" xmi:id="id327" field="network__global_instance"/>
+      </calls>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_set_EoC" name="set_EoC" displayName="set_EoC" frozen="true" source="network_VerificationLoop_callEnd" target="network_VerificationLoop_prepare_EoC">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id328" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id329"/>
+      </condition>
+      <assignments xmi:id="id330" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id331" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id332" value="true">
+          <type xsi:type="expr:BoolType" xmi:id="id333"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_restart" name="restart" displayName="restart" frozen="true" source="network_VerificationLoop_prepare_EoC" target="network_VerificationLoop_loop_start">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id334" value="true">
+        <type xsi:type="expr:BoolType" xmi:id="id335"/>
+      </condition>
+      <assignments xmi:id="id336" frozen="true">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id337" frozen="true" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id338" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id339"/>
+        </rightValue>
+      </assignments>
+    </transitions>
+    <transitions xsi:type="cfadeclaration:AssignmentTransition" xmi:id="network_VerificationLoop_end1" name="end1" displayName="end" source="network_VerificationLoop_loop_start" target="network_VerificationLoop_end">
+      <condition xsi:type="expr:BoolLiteral" xmi:id="id340" value="false">
+        <type xsi:type="expr:BoolType" xmi:id="id341"/>
+      </condition>
+    </transitions>
+    <localDataStructure xmi:id="id342" definition="network__global_VerificationLoopDS"/>
+  </automata>
+  <rootDataStructure xmi:id="network__global" name="_global" displayName="_global">
+    <fields xmi:id="network__global_instance" name="instance" displayName="instance">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id343" definition="network__global_StackMin"/>
+    </fields>
+    <fields xmi:id="network__global_verificationLoop" name="verificationLoop" displayName="verificationLoop">
+      <type xsi:type="cfadeclaration:DataStructureRef" xmi:id="id344" definition="network__global_VerificationLoopDS"/>
+    </fields>
+    <fields xmi:id="network__global_EoC" name="EoC" displayName="EoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id345"/>
+      <initialAssignments xmi:id="id346">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id347" field="network__global_EoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id348" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id349"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id350"/>
+    </fields>
+    <fields xmi:id="network__global_BoC" name="BoC" displayName="BoC" frozen="true">
+      <type xsi:type="expr:BoolType" xmi:id="id351"/>
+      <initialAssignments xmi:id="id352">
+        <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id353" field="network__global_BoC"/>
+        <rightValue xsi:type="expr:BoolLiteral" xmi:id="id354" value="false">
+          <type xsi:type="expr:BoolType" xmi:id="id355"/>
+        </rightValue>
+      </initialAssignments>
+      <annotations xsi:type="cfadeclaration:InternalGeneratedFieldAnnotation" xmi:id="id356"/>
+    </fields>
+    <complexTypes xmi:id="network__global_StackMin" name="StackMin" displayName="StackMin">
+      <fields xmi:id="network__global_StackMin_push" name="push" displayName="push">
+        <type xsi:type="expr:BoolType" xmi:id="id357"/>
+        <initialAssignments xmi:id="id358">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id359" field="network__global_StackMin_push"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id360" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id361"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id362"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id363" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_pop" name="pop" displayName="pop">
+        <type xsi:type="expr:BoolType" xmi:id="id364"/>
+        <initialAssignments xmi:id="id365">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id366" field="network__global_StackMin_pop"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id367" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id368"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id369"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id370" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_reset" name="reset" displayName="reset">
+        <type xsi:type="expr:BoolType" xmi:id="id371"/>
+        <initialAssignments xmi:id="id372">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id373" field="network__global_StackMin_reset"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id374" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id375"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id376"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id377" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_error" name="error" displayName="error">
+        <type xsi:type="expr:BoolType" xmi:id="id378"/>
+        <initialAssignments xmi:id="id379">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id380" field="network__global_StackMin_error"/>
+          <rightValue xsi:type="expr:BoolLiteral" xmi:id="id381" value="false">
+            <type xsi:type="expr:BoolType" xmi:id="id382"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id383" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id384" plcDataType="BOOL"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_status" name="status" displayName="status">
+        <type xsi:type="expr:IntType" xmi:id="id385" signed="false" bits="16"/>
+        <initialAssignments xmi:id="id386">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id387" field="network__global_StackMin_status"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id388" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id389" signed="false" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id390" direction="OUTPUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id391" plcDataType="WORD"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_item" name="item" displayName="item">
+        <type xsi:type="expr:IntType" xmi:id="id392" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id393">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id394" field="network__global_StackMin_item"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id395" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id396" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id397" direction="INOUT"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id398" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_stack" name="stack" displayName="stack">
+        <type xsi:type="cfabase:ArrayType" xmi:id="id399">
+          <elementType xsi:type="expr:IntType" xmi:id="id400" signed="true" bits="16"/>
+          <dimension xmi:id="id401" defined="true" lowerIndex="0" upperIndex="3"/>
+        </type>
+        <initialAssignments xmi:id="id402">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id403">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id404" field="network__global_StackMin_stack"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id405" value="0">
+              <type xsi:type="expr:IntType" xmi:id="id406" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id407" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id408" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id409">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id410">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id411" field="network__global_StackMin_stack"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id412" value="1">
+              <type xsi:type="expr:IntType" xmi:id="id413" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id414" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id415" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id416">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id417">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id418" field="network__global_StackMin_stack"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id419" value="2">
+              <type xsi:type="expr:IntType" xmi:id="id420" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id421" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id422" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <initialAssignments xmi:id="id423">
+          <leftValue xsi:type="cfadeclaration:Indexing" xmi:id="id424">
+            <prefix xsi:type="cfadeclaration:FieldRef" xmi:id="id425" field="network__global_StackMin_stack"/>
+            <index xsi:type="expr:IntLiteral" xmi:id="id426" value="3">
+              <type xsi:type="expr:IntType" xmi:id="id427" signed="true" bits="16"/>
+            </index>
+          </leftValue>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id428" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id429" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id430" direction="INOUT"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_top" name="top" displayName="top">
+        <type xsi:type="expr:IntType" xmi:id="id431" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id432">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id433" field="network__global_StackMin_top"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id434" value="-1">
+            <type xsi:type="expr:IntType" xmi:id="id435" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id436" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id437" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_min_index" name="min_index" displayName="min_index">
+        <type xsi:type="expr:IntType" xmi:id="id438" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id439">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id440" field="network__global_StackMin_min_index"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id441" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id442" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id443" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id444" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_i" name="i" displayName="i">
+        <type xsi:type="expr:IntType" xmi:id="id445" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id446">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id447" field="network__global_StackMin_i"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id448" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id449" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id450" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id451" plcDataType="INT"/>
+      </fields>
+      <fields xmi:id="network__global_StackMin_temp_min" name="temp_min" displayName="temp_min">
+        <type xsi:type="expr:IntType" xmi:id="id452" signed="true" bits="16"/>
+        <initialAssignments xmi:id="id453">
+          <leftValue xsi:type="cfadeclaration:FieldRef" xmi:id="id454" field="network__global_StackMin_temp_min"/>
+          <rightValue xsi:type="expr:IntLiteral" xmi:id="id455" value="0">
+            <type xsi:type="expr:IntType" xmi:id="id456" signed="true" bits="16"/>
+          </rightValue>
+        </initialAssignments>
+        <annotations xsi:type="cfadeclaration:DirectionFieldAnnotation" xmi:id="id457" direction="LOCAL"/>
+        <annotations xsi:type="cfadeclaration:OriginalDataTypeFieldAnnotation" xmi:id="id458" plcDataType="INT"/>
+      </fields>
+    </complexTypes>
+    <complexTypes xmi:id="network__global_VerificationLoopDS" name="VerificationLoopDS" displayName="VerificationLoopDS"/>
+  </rootDataStructure>
+  <mainContext xsi:type="cfadeclaration:FieldRef" xmi:id="id459" field="network__global_verificationLoop"/>
+</cfadeclaration:CfaNetworkDeclaration>

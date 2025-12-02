@@ -1,0 +1,93 @@
+# Agents4PLC
+A Multi-Agent System for Programmable Logic Controller (PLC) Code Generation based on IEC-61131 standard. The paper see:  
+[Agents4PLC: Automating Closed-loop PLC Code Generation and Verification in Industrial Control Systems using LLM-based Agents](https://arxiv.org/abs/2410.14209).
+
+![Overview of our workflow.](pics/workflow.png)
+
+## 📊 Dataset
+
+**Dataset v2.0 – New Extended Release**
+
+The dataset accompanies a new extension of Agents4PLC with a newly extended **benchmark dataset** of 70 *medium* cases and 3 *hard* cases. If you need functionality code to execute the formal specs, see [https://github.com/Luoji-zju/Agents4PLC_release](https://github.com/Luoji-zju/Agents4PLC_release).
+
+### Purpose & Role of the Dataset
+
+In Agents4PLC we established the **first verifiable benchmark** for automatically generating IEC-61131-3 Structured-Text (ST) code from natural-language requirements. The dataset serves three goals:
+
+1. Provide **formal specifications** (nuXmv / PLCverif compatible) so that correctness can be proven automatically.
+2. Supply **human-checked reference ST code** that compiles and satisfies the specs.
+3. Enable **fair comparison** of more complex PLC-code generation tasks with advanced tasks.
+
+### What's New in Dataset v2.0
+
+| Item | v1.0 (arXiv) | v2.0 (this release) |
+|---|---|---|
+| **#tasks** | 23 | **96** (23 + 73) |
+| **Task IDs** | not identified | M1-M70, H1-H3 |
+| **Granularity** | easy / medium | medium / **hard** |
+| **Quality gates** | basic manual review | manual review with PLC engineers **+** fine-tuned LLM evaluator |
+| **Annotations** | spec + reference | + difficulty tag |
+
+**✨ New in this release**: Added **High-Fidelity Dataset** with 21 industrial tasks collected from programming competitions (released 2024-2025) specifically for efficiency and reliability analysis (RQ2). This dataset is designed to minimize pre-training contamination risks in LLM evaluations.
+
+### File Layout
+
+```
+benchmark_v1/
+│   ├── easy.jsonl
+│   └── medium.jsonl
+benchmark_v2/
+│   ├── medium.jsonl
+│   ├── hard.jsonl
+│   └── high_fidelity.jsonl  # New dataset for efficiency analysis
+├── readme.md
+```
+
+### Dataset Composition
+The dataset is composed of benchmark dataset and RAG dataset:
+- **Benchmark datasets** are collected from open-source Github programs, with instructions manually converted to formalized and PLCverif-compatible properties.
+- **RAG dataset** includes ST examples and tags collected from OSCAT dataset.
+- **Industrial control documents** and unreleased parts of the benchmark are collected from partner companies and not publicly available.
+
+## 💻 Source Code Organization
+
+```
+├── benchmark_v1/          # Original benchmark tasks
+├── benchmark_v2/          # Extended benchmark with new efficiency dataset
+├── result/                # Experiment statistics and detailed agent responses
+├── prompts/               # Specified prompts for each agent
+├── simple-demo/           # Updated multi-agent trajectory logs
+├── LLM4PLC_reproduce/     # ✨ NEW: Full implementation of LLM4PLC baseline
+├── config/                # Framework configuration files
+└── src/
+    ├── README.md          # Setup guide for ST compilation and SMV verification tools
+```
+
+### Key Updates in This Release:
+- ✅ **LLM4PLC复现代码已更新**: Complete implementation of the LLM4PLC baseline with automation script, component interfaces, and file system interactions for fair comparison.
+- ✅ **New logs in simple-demo**: Updated demonstration logs showing the full multi-agent workflow trajectory, including structured context handoff between agents and asynchronous integration with formal verification environments.
+- ✅ **High-Fidelity dataset in benchmark_v2**: Added 21 complex industrial tasks specifically designed for efficiency and reliability analysis (RQ2) with minimal risk of pre-training contamination.
+
+## 📚 Documents
+
+- For tools related to ST compilation and SMV verification, see **src/README.md**.
+- For benchmark construction process and usage instructions, see **benchmark_v2/readme.md**.
+- For LLM4PLC baseline reproduction details, see **LLM4PLC_reproduce/README.md**.
+- For multi-agent workflow visualization, inspect logs in **simple-demo/**.
+
+## 🧠 Recommended Agent Frameworks & Tools
+
+Due to industrial partnerships, our full implementation cannot be released. However, the following frameworks can be used to build similar systems and reproduce our experiments:
+
+| Agent Framework | Link | Use Case |
+| :--- | :----------- | :------- |
+| **LangGraph**   | https://github.com/langchain-ai/langgraph | Low-level orchestration for stateful, long-running agents with human-in-the-loop capabilities |
+| **MetaGPT**     | https://github.com/geekan/MetaGPT | Multi-agent collaboration with specialized roles and SOPs |
+| **ChatDev**     | https://github.com/OpenBMB/ChatDev | Virtual software company with CEO/CTO/Programmer roles |
+| **MapCoder**    | https://arxiv.org/abs/2405.11403 | Multi-agent code generation for competitive problem solving |
+
+### Reproduction Guide
+1. Use **LLM4PLC_reproduce/** for baseline comparison
+2. Implement your version using **prompts/** as reference
+3. Evaluate on **benchmark_v2/** with the provided verification scripts
+4. Compare
